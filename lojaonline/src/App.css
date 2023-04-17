@@ -1,38 +1,154 @@
-.App {
-  text-align: center;
+*{
+    margin: 0;
+    padding: 0;
+    transition-duration: 0.5s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+    background-color: var(--bg-color-content);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#container{
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: var(--bg-color-content);
+    transition: 0s, background-color 0.5s, color 0.5s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body::after{
+    clear:both;
 }
 
-.App-link {
-  color: #61dafb;
+#navBar{
+    width: 100%;
+    height: var(--nav-height);
+
+    background-color: var(--bg-color-nav);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#userNav{
+    margin-right: 40px;
+    margin-left: 40px;
+    line-height: var(--nav-height);
+
+    font-size: 1.5em;
+
+    float: right;
+    border: none;
+
+    color: var(--text-color-nav);
+    background-color: var(--bg-color-nav);
+
+    cursor: pointer;
+}
+
+#logo{
+    margin-left: 80px;
+    line-height: var(--nav-height);
+
+    font-size: 2.9em;
+
+    float:left;
+    border: none;
+
+    color: var(--text-color-nav);
+    background-color: var(--bg-color-nav);
+
+    cursor: pointer;
+}
+
+:root {
+    /*Altura da barra de navegação*/
+    --nav-height: 80px;
+
+    /*Fonte*/
+    --text-font: 'Sawarabi Gothic', sans-serif;
+}
+
+/*Tema escuro*/
+.dark-theme {
+    /*Cores background*/
+    --bg-color-nav: #2d2d2d;
+    --bg-color-content: #242424;
+
+    /*Cores texto*/
+    --text-color-nav: #c1cccc;
+    --text-color-content: #c1cccc;
+
+    /*Cor para quando o texto é selecionado*/
+    --text-selection-color: #204182cc;
+
+    /*Cores das bordas*/
+    --bd-content: #464646;
+
+    /*Barra de scroll*/
+    --track-scrollbar-color: #2d2d2d;
+    --hump-scrollbar-color: #464646;
+    --hump-scrollbar-hover-color: #515151;
+}
+
+/*Tema claro*/
+.light-theme {
+    /*Cores background*/
+    --bg-color-nav: #ebebeb;
+    --bg-color-content: #ffffff;
+
+    /*Cores texto*/
+    --text-color-nav: #9d9e9e;
+    --text-color-content: #9d9e9e;
+
+    /*Cor para quando o texto for selecionado*/
+    --text-selection-color: #bad3fc;
+
+    /*Cores das bordas*/
+    --bd-content: #c0c0c0;
+
+    /*Barra de scroll*/
+    --track-scrollbar-color: #ebebeb;
+    --hump-scrollbar-color: #c0c0c0;
+    --hump-scrollbar-hover-color: #b0b0b0;
+}
+
+/*Altera a cor ao selecionar texto*/
+::-moz-selection { /* Código para Firefox */
+    background: var(--text-selection-color);
+}
+::selection {
+    background: var(--text-selection-color);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--track-scrollbar-color);;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--hump-scrollbar-color);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--hump-scrollbar-hover-color);
+}
+
+/*Botão para mudança do tema*/
+#switchTheme {
+    line-height: var(--nav-height);
+    font-size: 2em;
+
+    color: var(--text-color-nav);
+    background: none;
+
+    border: none;
+
+    float:right;
+
+    cursor: pointer;
 }
