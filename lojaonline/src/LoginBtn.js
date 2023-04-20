@@ -1,14 +1,17 @@
 import { memo } from "react";
-import { useLocation, Link, Navigate } from "react-router-dom";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 import "./LoginBtn.css";
 
 function LoginBtn({props}) {
     let location = useLocation();
-    function logout(){
-        props.setLogged(false);
-        props.setAdm(false);
-        props.setUser(null);
-        return <Navigate replace to="/" />;
+    
+    const navigate = useNavigate();
+
+    async function logout(){
+        await props.setLogged(false);
+        await props.setAdm(false);
+        await props.setUser({name: ""});
+        navigate("/");
     }
 
     if(location.pathname === "/login"){
@@ -17,9 +20,9 @@ function LoginBtn({props}) {
         );
     }
 
-    else if(props.logged){
+    else if(!props.logged){
         return(
-            <Link id="loginNav" to="/login" state={props}>Login</Link>
+            <Link id="loginNav" to="/login">Login</Link>
         );
     }
 

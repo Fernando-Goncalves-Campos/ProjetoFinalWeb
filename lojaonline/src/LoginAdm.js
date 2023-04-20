@@ -1,19 +1,20 @@
 import { useState, memo } from "react";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import './Login.css';
 
 function LoginAdm({props}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     
+    const navigate = useNavigate();
     const handleSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         const account = props.adms.find((user) => user.name === username);
         if (account && account.password === password) {
             props.setLogged(true);
             props.setAdm(true);
             props.setUser(account);
-            return <Navigate replace to="/" />;
+            navigate("/");
         }
         else{
             alert("account doesn't exist or the password is wrong!");

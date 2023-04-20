@@ -1,5 +1,5 @@
 import { useState, memo } from "react";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import './Login.css';
 
 function LoginSignIn({props}) {
@@ -8,9 +8,11 @@ function LoginSignIn({props}) {
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
     const [address, setAddress] = useState("");
+
+    const navigate = useNavigate();
     
-    const handleSubmit = (e) => {
-        e.preventDefault()
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         const account = props.logins.find((user) => user.name === username);
         if (account) {
             alert("Account already exists!!!")
@@ -18,19 +20,24 @@ function LoginSignIn({props}) {
         else{
             props.setLogged(true);
             props.setUser({
-                name: {username},
-                email: {email},
-                phone: {phone},
-                password: {password},
-                address: {address}
+                name: username,
+                email: email,
+                phone: phone,
+                password: password,
+                address: address
             });
             
-            props.setLogins(
-                ...props.logins,
-                props.user
-            );
-            
-            return <Navigate replace to="/" />;
+            props.setLogins(prevLogins => [
+                ...prevLogins,
+                {
+                    name: username,
+                    email: email,
+                    phone: phone,
+                    password: password,
+                    address: address
+                }
+            ]);
+            navigate("/");
         }
             
     };

@@ -3,12 +3,9 @@ import LoginUser from "./LoginUser.js";
 import LoginAdm from "./LoginAdm.js";
 import LoginSignIn from "./LoginSignIn.js";
 import './Login.css';
-import { useLocation } from "react-router-dom";
 
-function Login() {
-    const props = useLocation().state
+function Login({props}) {
     const [type, setType] = useState("user");
-
     if(type === "user"){
         return (
             <div id="loginType">
