@@ -1,10 +1,49 @@
 import { useState, memo } from "react";
 import { Outlet, Link } from "react-router-dom";
+import Search from "./Search.js";
+import LoginBtn from "./LoginBtn.js";
 import './Layout.css';
-import './Theme.css';
 
 function Layout() {
-    const [theme, setTheme] = useState("dark-theme")
+    const [items, setItems] = useState([{}]);
+    const [searchItem, setSearchItem] = useState("");
+
+    const [logged, setLogged] = useState(false);
+    const [adm, setAdm] = useState(false);
+    
+    const [logins, setLogins] = useState([{
+        name: "user",
+        password: "user",
+        phone: "000000000",
+        email: "user@user.com",
+        address: "userland"
+    }]);
+    const [adms, setAdms] = useState([{
+        name: "admin",
+        password: "admin",
+        phone: "999999999",
+        email: "admin@admin.com"
+    }])
+    
+    const [user, setUser] = useState({name:""})
+    const [theme, setTheme] = useState("dark-theme");
+
+    const props = { 
+        logged:{logged},
+        setLogged:{setLogged},
+        user:{user},
+        setUser:{setUser},
+        logins:{logins},
+        setLogins:{setLogins},
+        adms:{adms},
+        setAdms:{setAdms},
+        adm:{adm},
+        setAdm:{setAdm},
+        items:{items},
+        setItems:{setItems},
+        searchItem:{searchItem},
+        setSearchItem:{setSearchItem}
+    }
 
     // function to toggle between light and dark theme
     function toggleTheme() {
@@ -19,23 +58,19 @@ function Layout() {
     return (
         <><div className={theme}>
             <nav id="navBar">
-                <button id="logo">Logo</button>
+                <Link to="/" id="logo">Logo</Link>
                 
-                <div id="search">
-                    <input type="text" id="searchText"></input>
-                    <i className="fa-solid fa-magnifying-glass"></i>
-                </div>
+                <Search />
                 <button id="switchTheme" onClick={() => toggleTheme()}><i className="fa-solid fa-circle-half-stroke"></i></button>
-                <button id="userNav">Login</button>
+                <LoginBtn props = {props}/>
             </nav>
         
             <div id="content">
-                <div style={{backgroundImage: "linear-gradient(180deg, rgba(0,76,167,1) 0%, rgba(0,0,1,1) 100%)", height: "5000px"}}></div>
             
                 <Outlet />
             </div>
         </div></>
-  );
+    );
 }
 
 

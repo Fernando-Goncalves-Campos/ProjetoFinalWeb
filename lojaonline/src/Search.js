@@ -1,0 +1,25 @@
+import { memo } from "react";
+import { useLocation } from "react-router-dom";
+import "./Search.css";
+
+function Search() {
+    let location = useLocation();
+
+    if(location.pathname === "/"){
+        return (
+            <div id="search">
+                <input type="text" id="searchText"></input>
+                <i className="fa-solid fa-magnifying-glass"></i>
+            </div>
+        );
+    }
+
+    else{
+        return(
+            <div id="inviSearch"></div>
+        );
+    }
+}
+
+
+export default memo(Search);

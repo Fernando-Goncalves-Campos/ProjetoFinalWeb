@@ -8,10 +8,7 @@
 :root {
     /*Alturas*/
     --nav-height: 80px;
-    --search-height: 30px;
-
-    /*Fonte*/
-    --text-font: 'Sawarabi Gothic', sans-serif;
+    --search-height: 40px;
 }
 
 
@@ -33,7 +30,7 @@ body::after{
 
 /*Conteúdo*/
 #content{
-    min-width: 600px;
+    min-width: 800px;
     height: calc(100vh - var(--nav-height));
 
     background-color: var(--bg-color-content);
@@ -44,33 +41,17 @@ body::after{
 
 /*Barra de navegação*/
 #navBar{
-    min-width: 600px;
+    min-width: 800px;
     height: var(--nav-height);
 
     background-color: var(--bg-color-nav);
 
     display: flex;
     vertical-align: center;
+
+    padding-right: 16px;
 }
 
-
-
-/*Texto com o nome do usuário na barra de navegação*/
-#userNav{
-    margin-right: 40px;
-    margin-left: 40px;
-    line-height: var(--nav-height);
-
-    font-size: 1.5em;
-
-    float: right;
-    border: none;
-
-    color: var(--text-color-nav);
-    background-color: var(--bg-color-nav);
-
-    cursor: pointer;
-}
 
 
 
@@ -106,47 +87,5 @@ body::after{
     background-color: var(--bg-color-nav);
 
     cursor: pointer;
-}
-
-
-
-/*Barra de pesquisa na barra de navegação*/
-#search{
-    width: 200px;
-
-    margin: auto 40px auto auto;
-    height: var(--search-height);
-    
-    background-color: var(--bg-color-search);
-    border-radius: 100px;
-    
-    display: flex;
-    vertical-align: center;
-    float: right;
-}
-
-#search input{
-    display: inline-block;
-    outline: none;
-    border: none;
-    
-    width: 140px;
-    height: var(--search-height);
-    
-    margin-left: 20px;
-
-    background-color: transparent;
-    color: var(--text-color-search);
-
-    display: flex;
-    vertical-align: center;
-}
-
-#search i{
-    margin-right: 20px;
-    margin-left: 10px;
-    line-height: var(--search-height);
-    font-size: calc(var(--search-height)/2);
-    color: var(--text-color-search);
-    float: right;
+    text-decoration: none;
 }

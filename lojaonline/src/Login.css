@@ -1,0 +1,33 @@
+#loginType {
+    text-align: center;
+}
+#loginType label {
+    color: var(--text-color-content);
+    font-size: 30px;
+    margin:40px;
+    cursor: pointer;
+}
+.selectType {
+    margin: 10px;
+}
+
+#loginInfo {
+    color: var(--text-color-content);
+}
+.inputLogin {
+    display: block;
+    margin: auto;
+    width: 400px;
+    height: 50px;
+    background-color: var(--bg-color-search);
+    color: var(--text-color-search);
+}
+
+#confirmLogin{
+    display: block;
+    margin: auto;
+    width: 100px;
+    height: 50px;
+    background-color: var(--bg-color-search);
+    color: var(--text-color-search);
+}

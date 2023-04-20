@@ -53,7 +53,7 @@
 
 /*Esconde a barra de rolagem da página completa
   Para quando a janela for menor que o conteúdo*/
-  .dark-theme::-webkit-scrollbar, .light-theme::-webkit-scrollbar{
+.body, .dark-theme::-webkit-scrollbar, .light-theme::-webkit-scrollbar{
     display: none;
 }
 
