@@ -1,19 +1,94 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./Login.js";
 import Layout from "./Layout.js";
+import Store from "./Store.js";
+import Login from "./Login.js";
+import AddAdm from "./AddAdm.js";
+import AddItem from "./AddItem.js";
+
 import "./App.css";
 import "./Theme.css";
 
 function App() {
-    const [items, setItems] = useState([{}]);
+    const [items, setItems] = useState([{
+        name: "Capivara",
+        id: "0",
+        photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
+        description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como temdo o maior custo benefício do mercado.",
+        price: "R$420.69",
+        quantity: 666,
+        quantitySold: 0
+    },
+    {
+        name: "Capivara",
+        id: "0",
+        photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
+        description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como temdo o maior custo benefício do mercado.",
+        price: "R$420.69",
+        quantity: 666,
+        quantitySold: 0
+    },
+    {
+        name: "Capivara",
+        id: "0",
+        photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
+        description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como temdo o maior custo benefício do mercado.",
+        price: "R$420.69",
+        quantity: 666,
+        quantitySold: 0
+    },
+    {
+        name: "Capivara",
+        id: "0",
+        photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
+        description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como temdo o maior custo benefício do mercado.",
+        price: "R$420.69",
+        quantity: 666,
+        quantitySold: 0
+    },
+    {
+        name: "Capivara",
+        id: "0",
+        photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
+        description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como temdo o maior custo benefício do mercado.",
+        price: "R$420.69",
+        quantity: 666,
+        quantitySold: 0
+    },
+    {
+        name: "Capivara",
+        id: "0",
+        photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
+        description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como temdo o maior custo benefício do mercado.",
+        price: "R$420.69",
+        quantity: 666,
+        quantitySold: 0
+    },
+    {
+        name: "Capivara",
+        id: "0",
+        photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
+        description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como temdo o maior custo benefício do mercado.",
+        price: "R$420.69",
+        quantity: 666,
+        quantitySold: 0
+    },
+    {
+        name: "Capivara",
+        id: "0",
+        photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
+        description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como temdo o maior custo benefício do mercado.",
+        price: "R$420.69",
+        quantity: 666,
+        quantitySold: 0
+    }]);
     const [searchItem, setSearchItem] = useState("");
 
     const [logged, setLogged] = useState(false);
 
     const [adm, setAdm] = useState(false);
     
-    const [logins, setLogins] = useState([{
+    const [customers, setCustomers] = useState([{
         name: "user",
         password: "user",
         phone: "000000000",
@@ -35,8 +110,8 @@ function App() {
         setLogged: value => {setLogged(value)},
         user: user,
         setUser: value => {setUser(value)},
-        logins: logins,
-        setLogins: value => {setLogins(value)},
+        customers: customers,
+        setCustomers: value => {setCustomers(value)},
         adms: adms,
         setAdms: value => {setAdms(value)},
         adm: adm,
@@ -51,7 +126,10 @@ function App() {
         <BrowserRouter>
         <Routes>
             <Route path="/" element={<Layout  props = {props}/>}>
+                <Route index element={<Store props={props} />} />
                 <Route path="/login" element={<Login  props = {props}/>} />
+                <Route path="/addAdm" element={<AddAdm props = {props}/>} />
+                <Route path="/addItem" element={<AddItem props = {props}/>} />
                 <Route path="*" element={<NoPage />} />
             </Route>
         </Routes>

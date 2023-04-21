@@ -1,7 +1,9 @@
 *{
     margin: 0;
     padding: 0;
-    transition: 0s, background-color 0.5s, color 0.5s;
+    outline: none;
+    border: none;
+    transition: 0s, background-color 0.5s, color 0.5s, border 0.5s;
     box-sizing: border-box;
 }
 
@@ -37,8 +39,6 @@ body::after{
     overflow: auto;
 }
 
-
-
 /*Barra de navegação*/
 #navBar{
     min-width: 800px;
@@ -63,8 +63,6 @@ body::after{
     color: var(--text-color-nav);
     background: none;
 
-    border: none;
-
     float:right;
 
     cursor: pointer;
@@ -81,7 +79,6 @@ body::after{
     font-size: 2.9em;
 
     float:left;
-    border: none;
 
     color: var(--text-color-nav);
     background-color: var(--bg-color-nav);

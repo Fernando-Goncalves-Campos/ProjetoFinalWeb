@@ -6,7 +6,6 @@
     font-size: calc(var(--nav-height) / 3);
 
     float: right;
-    border: none;
 
     color: var(--text-color-nav);
     background-color: var(--bg-color-nav);
@@ -19,7 +18,6 @@
     width: 120px;
     line-height: var(--nav-height);
     float: right;
-    border: none;
 
     color: var(--text-color-nav);
     background-color: var(--bg-color-nav);
@@ -76,5 +74,6 @@ input {
 input:checked ~ .menu-content {
     max-height: 100vh;
 }
-input:checked ~ li {display: none;
+input:checked ~ li {
+    display: none;
 }

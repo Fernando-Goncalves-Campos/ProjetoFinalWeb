@@ -2,14 +2,14 @@ import { useState, memo } from "react";
 import { useNavigate } from "react-router-dom";
 import './Login.css';
 
-function LoginUser({props}) {
+function LoginCustomer({props}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const account = props.logins.find((user) => user.name === username);
+        const account = props.customers.find((user) => user.name === username);
         if (account && account.password === password) {
             props.setLogged(true);
             props.setUser(account);
@@ -33,4 +33,4 @@ function LoginUser({props}) {
 }
 
 
-export default memo(LoginUser);
+export default memo(LoginCustomer);

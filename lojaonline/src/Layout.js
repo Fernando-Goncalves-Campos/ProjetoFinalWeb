@@ -8,6 +8,7 @@ function Layout({props}) {
     // function to toggle between light and dark theme
     const [theme, setTheme] = useState("dark-theme");
     function toggleTheme() {
+        console.log(props);
         if (theme === 'dark-theme') {
             setTheme('light-theme');
         } 
@@ -21,14 +22,14 @@ function Layout({props}) {
             <nav id="navBar">
                 <Link to="/" id="logo">Logo</Link>
                 
-                <Search />
+                <Search props = {props}/>
                 <button id="switchTheme" onClick={() => toggleTheme()}><i className="fa-solid fa-circle-half-stroke"></i></button>
                 <LoginBtn props = {props}/>
             </nav>
         
             <div id="content">
             
-                <Outlet props = {props}/>
+                <Outlet/>
             </div>
         </div></>
     );
