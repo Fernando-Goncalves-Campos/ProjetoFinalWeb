@@ -5,6 +5,7 @@ import Store from "./Store.js";
 import Login from "./Login.js";
 import AddAdm from "./AddAdm.js";
 import AddItem from "./AddItem.js";
+import EditItem from "./EditItem.js";
 
 import "./App.css";
 import "./Theme.css";
@@ -14,70 +15,70 @@ function App() {
         name: "Capivara",
         id: "0",
         photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
-        description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como temdo o maior custo benefício do mercado.",
+        description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
         price: "R$420.69",
         quantity: 666,
         quantitySold: 0
     },
     {
         name: "Capivara",
-        id: "0",
+        id: "1",
         photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
-        description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como temdo o maior custo benefício do mercado.",
+        description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
         price: "R$420.69",
         quantity: 666,
         quantitySold: 0
     },
     {
         name: "Capivara",
-        id: "0",
+        id: "2",
         photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
-        description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como temdo o maior custo benefício do mercado.",
+        description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
         price: "R$420.69",
         quantity: 666,
         quantitySold: 0
     },
     {
         name: "Capivara",
-        id: "0",
+        id: "3",
         photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
-        description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como temdo o maior custo benefício do mercado.",
+        description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
         price: "R$420.69",
         quantity: 666,
         quantitySold: 0
     },
     {
         name: "Capivara",
-        id: "0",
+        id: "4",
         photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
-        description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como temdo o maior custo benefício do mercado.",
+        description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
         price: "R$420.69",
         quantity: 666,
         quantitySold: 0
     },
     {
         name: "Capivara",
-        id: "0",
+        id: "5",
         photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
-        description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como temdo o maior custo benefício do mercado.",
+        description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
         price: "R$420.69",
         quantity: 666,
         quantitySold: 0
     },
     {
         name: "Capivara",
-        id: "0",
+        id: "6",
         photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
-        description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como temdo o maior custo benefício do mercado.",
+        description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
         price: "R$420.69",
         quantity: 666,
         quantitySold: 0
     },
     {
         name: "Capivara",
-        id: "0",
+        id: "7",
         photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
-        description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como temdo o maior custo benefício do mercado.",
+        description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
         price: "R$420.69",
         quantity: 666,
         quantitySold: 0
@@ -122,14 +123,15 @@ function App() {
         setSearchItem: value => {setSearchItem(value)}
     }
 
-    return (
+    return ( 
         <BrowserRouter>
         <Routes>
-            <Route path="/" element={<Layout  props = {props}/>}>
-                <Route index element={<Store props={props} />} />
+            <Route path="/" element={<Layout  props = {props} />}>
+                <Route index element={<Store props = {props} />} />
                 <Route path="/login" element={<Login  props = {props}/>} />
                 <Route path="/addAdm" element={<AddAdm props = {props}/>} />
-                <Route path="/addItem" element={<AddItem props = {props}/>} />
+                <Route path="/:itemId/addItem" element={<AddItem props = {props}/>} />
+                <Route path="/:itemId/editItem" element={<EditItem props = {props}/>} />
                 <Route path="*" element={<NoPage />} />
             </Route>
         </Routes>

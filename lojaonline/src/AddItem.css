@@ -26,3 +26,13 @@
     color: var(--text-color-search);
     border: solid 3px var(--bg-color-nav);
 }
+
+#deleteItem {
+    display: block;
+    margin: auto;
+    width: 100px;
+    height: 50px;
+    background-color: var(--bg-color-search);
+    color: var(--text-color-search);
+    border: solid 3px var(--bg-color-nav);
+}
