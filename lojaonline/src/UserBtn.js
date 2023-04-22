@@ -1,8 +1,8 @@
 import { memo } from "react";
 import { useLocation, Link, useNavigate } from "react-router-dom";
-import "./LoginBtn.css";
+import "./UserBtn.css";
 
-function LoginBtn({props}) {
+function UserBtn({props}) {
     let location = useLocation();
     
     const navigate = useNavigate();
@@ -59,4 +59,4 @@ function LoginBtn({props}) {
 }
 
 
-export default memo(LoginBtn);
+export default memo(UserBtn);

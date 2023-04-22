@@ -1,7 +1,7 @@
 import { useState, memo } from "react";
 import { Outlet, Link } from "react-router-dom";
 import Search from "./Search.js";
-import LoginBtn from "./LoginBtn.js";
+import UserBtn from "./UserBtn.js";
 import './Layout.css';
 
 function Layout({props}) {
@@ -24,7 +24,7 @@ function Layout({props}) {
                 
                 <Search props = {props}/>
                 <button id="switchTheme" onClick={() => toggleTheme()}><i className="fa-solid fa-circle-half-stroke"></i></button>
-                <LoginBtn props = {props}/>
+                <UserBtn props = {props}/>
             </nav>
         
             <div id="content">

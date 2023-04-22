@@ -4,7 +4,8 @@ import './AddItem.css';
 
 function EditItem({props}) {
     const {itemId} = useParams();
-    const item = props.items.find(object => object.id === itemId);
+    const [item,setItem] = useState(props.items.find(object => object.id === itemId));
+
     const [name, setName] = useState(item.name);
     const [id, setId] = useState(item.id);
     const [photo, setPhoto] = useState(item.photo);
@@ -35,8 +36,10 @@ function EditItem({props}) {
     };
 
     function deleteItem(){
+        console.log(props)
+        console.log(props.items)
         props.setItems(
-            props.items.map(prevItems => 
+            props.items.filter(prevItems => 
                 prevItems.id !== item.id
     ))}
 
@@ -53,7 +56,7 @@ function EditItem({props}) {
                 Quantity:<br /><input type="number" className="inputItem" name="quantity" defaultValue={item.quantity} onChange={(e) => setQuantity( Number(e.target.value) )} /><br /><br />
 
                 <input type="submit" id="confirmItem" value="Submit"/>
-                <button id="deleteItem" onClick={deleteItem}/>
+                <button id="deleteItem" onClick={deleteItem}>Delete</button>
             </form>    
         </div>
     );

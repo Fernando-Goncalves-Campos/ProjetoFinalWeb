@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Layout.js";
 import Store from "./Store.js";
 import Login from "./Login.js";
+import ItemDetails from "./ItemDetails.js";
 import AddAdm from "./AddAdm.js";
 import AddItem from "./AddItem.js";
 import EditItem from "./EditItem.js";
@@ -17,7 +18,7 @@ function App() {
         photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
         description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
         price: "R$420.69",
-        quantity: 666,
+        quantity: 0,
         quantitySold: 0
     },
     {
@@ -26,7 +27,7 @@ function App() {
         photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
         description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
         price: "R$420.69",
-        quantity: 666,
+        quantity: 1,
         quantitySold: 0
     },
     {
@@ -35,7 +36,7 @@ function App() {
         photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
         description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
         price: "R$420.69",
-        quantity: 666,
+        quantity: 2,
         quantitySold: 0
     },
     {
@@ -44,7 +45,7 @@ function App() {
         photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
         description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
         price: "R$420.69",
-        quantity: 666,
+        quantity: 3,
         quantitySold: 0
     },
     {
@@ -53,7 +54,7 @@ function App() {
         photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
         description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
         price: "R$420.69",
-        quantity: 666,
+        quantity: 4,
         quantitySold: 0
     },
     {
@@ -62,7 +63,7 @@ function App() {
         photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
         description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
         price: "R$420.69",
-        quantity: 666,
+        quantity: 5,
         quantitySold: 0
     },
     {
@@ -71,7 +72,7 @@ function App() {
         photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
         description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
         price: "R$420.69",
-        quantity: 666,
+        quantity: 6,
         quantitySold: 0
     },
     {
@@ -80,7 +81,7 @@ function App() {
         photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
         description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
         price: "R$420.69",
-        quantity: 666,
+        quantity: 7,
         quantitySold: 0
     }]);
     const [searchItem, setSearchItem] = useState("");
@@ -129,8 +130,9 @@ function App() {
             <Route path="/" element={<Layout  props = {props} />}>
                 <Route index element={<Store props = {props} />} />
                 <Route path="/login" element={<Login  props = {props}/>} />
+                <Route path="/:itemId/itemDetails" element={<ItemDetails props = {props}/>} />
                 <Route path="/addAdm" element={<AddAdm props = {props}/>} />
-                <Route path="/:itemId/addItem" element={<AddItem props = {props}/>} />
+                <Route path="/addItem" element={<AddItem props = {props}/>} />
                 <Route path="/:itemId/editItem" element={<EditItem props = {props}/>} />
                 <Route path="*" element={<NoPage />} />
             </Route>
