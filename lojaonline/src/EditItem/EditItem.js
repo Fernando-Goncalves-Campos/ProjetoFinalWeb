@@ -3,9 +3,11 @@ import { useNavigate, useParams } from "react-router-dom";
 import './AddItem.css';
 
 function EditItem({props}) {
+    //Lê o item cujo ID esta no URL da página
     const {itemId} = useParams();
     const [item,setItem] = useState(props.items.find(object => object.id === itemId));
 
+    //Salva os dados do item e os modifica sempre que o input é modificado
     const [name, setName] = useState(item.name);
     const [id, setId] = useState(item.id);
     const [photo, setPhoto] = useState(item.photo);
@@ -13,8 +15,10 @@ function EditItem({props}) {
     const [price, setPrice] = useState(item.price);
     const [quantity, setQuantity] = useState(item.quantity);
 
+    //Usado para redirecionar o usuário para outra rota do site
     const navigate = useNavigate();
     
+    //Salva as alterações
     const handleSubmit = async (e) => {
         e.preventDefault();
         

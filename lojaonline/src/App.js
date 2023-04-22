@@ -1,17 +1,19 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./Layout.js";
-import Store from "./Store.js";
-import Login from "./Login.js";
-import ItemDetails from "./ItemDetails.js";
-import AddAdm from "./AddAdm.js";
-import AddItem from "./AddItem.js";
-import EditItem from "./EditItem.js";
+import Layout from "./NavBar/Layout.js";
+import Store from "./Store/Store.js";
+import Login from "./Login/Login.js";
+import ItemDetails from "./Store/ItemDetails.js";
+import AddAdm from "./Login/AddAdm.js";
+import AddItem from "./EditItem/AddItem.js";
+import EditItem from "./EditItem/EditItem.js";
 
 import "./App.css";
 import "./Theme.css";
 
 function App() {
+    //////Inicializa os estados que serão usados em todo o site (alguns deles seriam substituídos pelo banco de dados)//////
+    //Lista dos itens da loja
     const [items, setItems] = useState([{
         name: "Capivara",
         id: "0",
@@ -84,12 +86,17 @@ function App() {
         quantity: 7,
         quantitySold: 0
     }]);
+
+    //Valor que está na barra de pesquisa
     const [searchItem, setSearchItem] = useState("");
 
+    //Estado do login
     const [logged, setLogged] = useState(false);
 
+    //Tipo de usuário
     const [adm, setAdm] = useState(false);
     
+    //Lista de contas de clientes
     const [customers, setCustomers] = useState([{
         name: "user",
         password: "user",
@@ -98,6 +105,7 @@ function App() {
         address: "userland"
     }]);
 
+    //Lista de contas de adms
     const [adms, setAdms] = useState([{
         name: "admin",
         password: "admin",
@@ -105,8 +113,15 @@ function App() {
         email: "admin@admin.com"
     }]);
 
+    //Usuário logado
     const [user, setUser] = useState({name:""});
 
+
+    //////Guarda todos os valores dos estados, para ficar mais fácil de passar os valores//////
+    /*Não é recomendado se fazer isso em projetos grandes por questões de performance e de facilidade de manutenção,
+    mas como esse projeto é pequeno, fazer isso não seria tão ruim*/
+    /*Para imprimir os estados no console ppode-se alterar o tema do site
+    (é mais fácil de debugar o código se tiver um método para imprimir os estados)*/
     const props = { 
         logged: logged,
         setLogged: value => {setLogged(value)},
@@ -129,11 +144,15 @@ function App() {
         <Routes>
             <Route path="/" element={<Layout  props = {props} />}>
                 <Route index element={<Store props = {props} />} />
-                <Route path="/login" element={<Login  props = {props}/>} />
+
                 <Route path="/:itemId/itemDetails" element={<ItemDetails props = {props}/>} />
+
+                <Route path="/login" element={<Login  props = {props}/>} />
+                
                 <Route path="/addAdm" element={<AddAdm props = {props}/>} />
                 <Route path="/addItem" element={<AddItem props = {props}/>} />
                 <Route path="/:itemId/editItem" element={<EditItem props = {props}/>} />
+                
                 <Route path="*" element={<NoPage />} />
             </Route>
         </Routes>

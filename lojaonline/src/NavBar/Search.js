@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import "./Search.css";
 
 function Search({props}) {
+    //Verifica se esta na página inicial
     let location = useLocation();
     if(location.pathname === "/"){
         return (

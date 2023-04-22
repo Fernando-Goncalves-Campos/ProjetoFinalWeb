@@ -8,15 +8,22 @@ function AddAdm({props}) {
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
 
+    //Usado para redirecionar o usuário para outra rota do site
     const navigate = useNavigate();
     
+    //Realiza a validação dos dados
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        //Assegura que não existem outros adms com o mesmo nome
         const account = props.adms.find((user) => user.name === username);
         if (account) {
             alert("Account already exists!!!")
         }
+
+
         else{
+            //Adiciona o adm à lista
             props.setAdms(prevAdms => [
                 ...prevAdms,
                 {

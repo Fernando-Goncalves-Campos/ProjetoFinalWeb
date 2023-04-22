@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import './AddItem.css';
 
 function AddItem({props}) {
+    //Salva os valores inseridos nos inputs constantemente
     const [name, setName] = useState("");
     const [id, setId] = useState("");
     const [photo, setPhoto] = useState("");
@@ -10,15 +11,20 @@ function AddItem({props}) {
     const [price, setPrice] = useState("");
     const [quantity, setQuantity] = useState(0);
 
+    //Usado para redirecionar o usuário para outra rota do site
     const navigate = useNavigate();
     
+    //Realiza a validação dos dados
     const handleSubmit = async (e) => {
         e.preventDefault();
+
         const oldItem = props.items.find((item) => item.id === id);
+        //Garante que não existem itens com o mesmo id
         if (oldItem) {
             alert("Another item have the same id!!!!");
         }
         else{
+            //Adiciona o item à lista
             props.setItems(prevItems => [
                 ...prevItems,
                 {   
@@ -31,9 +37,10 @@ function AddItem({props}) {
                     quantitySold: 0
                 }
             ]);
+
+            //Retorna para a página inicial
             navigate("/");
         }
-            
     };
 
     return (

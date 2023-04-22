@@ -9,15 +9,20 @@ function LoginSignIn({props}) {
     const [email, setEmail] = useState("");
     const [address, setAddress] = useState("");
 
+    //Usado para redirecionar o usuário para outra rota do site
     const navigate = useNavigate();
     
+    //Realiza a validação dos dados
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        //Asseguram que não existam outros usuários com o mesmo nome
         const account = props.customers.find((user) => user.name === username);
         if (account) {
             alert("Account already exists!!!")
         }
         else{
+            //Faz o login
             props.setLogged(true);
             props.setUser({
                 name: username,
@@ -27,6 +32,8 @@ function LoginSignIn({props}) {
                 address: address
             });
             
+
+            //Adiciona a conta à lista de usuários
             props.setCustomers(prevCustomers => [
                 ...prevCustomers,
                 {

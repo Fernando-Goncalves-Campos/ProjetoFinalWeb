@@ -2,17 +2,21 @@ import { useState, memo } from "react";
 import { useNavigate } from "react-router-dom";
 import './Login.css';
 
-function LoginAdm({props}) {
+function LoginCustomer({props}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    
+
+    //Usado para redirecionar o usuário para outra rota do site
     const navigate = useNavigate();
+
+    //Realiza a validação dos dados
     const handleSubmit = (e) => {
         e.preventDefault();
-        const account = props.adms.find((user) => user.name === username);
+
+        //Verifica se a conta existe e se a senha está correta
+        const account = props.customers.find((user) => user.name === username);
         if (account && account.password === password) {
             props.setLogged(true);
-            props.setAdm(true);
             props.setUser(account);
             navigate("/");
         }
@@ -24,7 +28,7 @@ function LoginAdm({props}) {
     return (
         <div id="loginInfo">
             <form onSubmit={handleSubmit}>
-                Adm Name:<br /><input type="text" className="inputLogin" name="Username" onChange={(e) => setUsername(e.target.value)} /><br /><br />
+                Name:<br /><input type="text" className="inputLogin" name="Username" onChange={(e) => setUsername(e.target.value)} /><br /><br />
                 Password:<br /><input type="password" className="inputLogin" name="Password" onChange={(e) => setPassword(e.target.value)} /><br />
                 <input type="submit" id="confirmLogin" value="Submit"/>
             </form>    
@@ -34,4 +38,4 @@ function LoginAdm({props}) {
 }
 
 
-export default memo(LoginAdm);
+export default memo(LoginCustomer);

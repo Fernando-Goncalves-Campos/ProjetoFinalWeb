@@ -8,6 +8,7 @@ function Login({props}) {
     const [type, setType] = useState("customer");
     let dataSubmit;
 
+    //Modifica os dados conforme o tipo de login selecionado
     if(type === "customer"){
         dataSubmit = <LoginCustomer props={props}/>;
     }

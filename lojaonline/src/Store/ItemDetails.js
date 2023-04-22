@@ -5,11 +5,17 @@ import './ItemDetails.css';
 function ItemDetails({props}) {
     const {itemId} = useParams();
     const item = props.items.find(object => object.id === itemId);
+    
+    //Usado para redirecionar o usuário para outra rota do site
+    const navigate = useNavigate();
 
+    //Realiza a compra
     function handleBuy(){
+        //Modifica os valores que salvam as quantidades do item em estoque e vendidos
         item.quantity -= 1;
         item.quantitySold += 1;
         
+        //Atualiza os dados do item na lista de itens
         props.setItems(
             props.items.map(prevItems => 
                 prevItems.id === item.id ?
@@ -27,8 +33,8 @@ function ItemDetails({props}) {
         navigate("/");
     }
 
-    const navigate = useNavigate();
-
+    
+    //Determina se é possível realizar a compra (se existem itens em estoque)
     let buyButton = <button id="buyButton" onClick={handleBuy}>{item.price}</button>;
 
     if(item.quantity > 0){
