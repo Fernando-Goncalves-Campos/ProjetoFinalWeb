@@ -2,7 +2,7 @@ import { useState, memo } from "react";
 import { Outlet, Link } from "react-router-dom";
 import Search from "./Search.js";
 import UserBtn from "./UserBtn.js";
-import './Layout.css';
+import "./Layout.css";
 
 function Layout({props}) {
     // function to toggle between light and dark theme
