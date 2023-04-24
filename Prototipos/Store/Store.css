@@ -1,0 +1,27 @@
+#store{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.storeItem{
+    background-color: var(--bg-color-nav);
+    color: var(--text-color-nav);
+    width: 200px;
+}
+
+.storeItem img{
+    width: 200px;
+    height: 200px;
+}
+
+.itemName{
+    font-size: 1em;
+}
+
+.itemId{
+    font-size: 0.8em;
+}
+
+.itemPrice{
+    float: right;
+}

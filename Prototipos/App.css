@@ -1,0 +1,10 @@
+* {
+    font-family: sans-serif;
+}
+
+#Erro {
+    background-color: var(--bg-color-content);
+    color: var(--text-color-content);
+    font-size: 400px;
+    text-align: center;
+}

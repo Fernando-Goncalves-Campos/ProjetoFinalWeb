@@ -1,0 +1,41 @@
+#loginType {
+    text-align: center;
+}
+#loginType label {
+    color: var(--text-color-content);
+    font-size: 30px;
+    margin: 40px;
+    cursor: pointer;
+}
+.selectType {
+    margin: 10px;
+}
+
+#loginInfo {
+    text-align: center;
+    color: var(--text-color-content);
+}
+
+.inputLogin {
+    display: block;
+    margin: auto;
+    padding: 0 10px;
+    width: 400px;
+    height: 40px;
+    background-color: var(--bg-color-nav);
+    color: var(--text-color-nav);
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+#confirmLogin{
+    display: block;
+    margin: auto;
+    width: 100px;
+    height: 50px;
+    background-color: var(--bg-color-search);
+    color: var(--text-color-search);
+    border: solid 3px var(--bg-color-nav);
+}

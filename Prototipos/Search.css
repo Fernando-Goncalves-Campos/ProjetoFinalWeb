@@ -1,0 +1,57 @@
+/*Barra de pesquisa quando está no menu*/
+#search{
+    width: 300px;
+
+    margin: auto 40px auto auto;
+    height: var(--search-height);
+    
+    background-color: var(--bg-color-search);
+    border-radius: 100px;
+    
+    display: flex;
+    vertical-align: center;
+    float: right;
+}
+
+#search input{
+    margin-left: 20px;
+
+    width: 240px;
+    height: var(--search-height);
+
+    font-size: calc(var(--search-height) * 0.5);
+    background-color: transparent;
+    color: var(--text-color-search);
+
+    display: flex;
+    vertical-align: center;
+}
+
+#search i{
+    margin-right: 20px;
+    margin-left: 10px;
+
+    line-height: var(--search-height);
+    
+    font-size: calc(var(--search-height)/2);
+    color: var(--text-color-search);
+
+    float: right;
+    cursor: pointer;
+}
+
+/*Barra de pesquisa quando está fora do menu*/
+/*Ela é necessária para garantir que o restante dos elementos fiquem alinhados*/
+#inviSearch{
+    width: 300px;
+
+    margin: auto 40px auto auto;
+    height: var(--search-height);
+    
+    background-color: transparent;
+    border-radius: 100px;
+    
+    display: flex;
+    vertical-align: center;
+    float: right;
+}

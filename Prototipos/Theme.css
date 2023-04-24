@@ -1,0 +1,92 @@
+/*Tema escuro*/
+.dark-theme {
+    /*Cores background*/
+    --bg-color-nav: #2d2d2d;
+    --bg-color-content: #242424;
+    --bg-color-search: #242424;
+
+    /*Cores texto*/
+    --text-color-nav: #c1cccc;
+    --text-color-content: #c1cccc;
+    --text-color-search: #c1cccc;
+    /*Cor para quando o texto é selecionado*/
+    --text-selection-color: #204182cc;
+
+    /*Cores das bordas*/
+    --bd-content: #464646;
+
+    /*Barra de scroll*/
+    --track-scrollbar-color: #2d2d2d;
+    --hump-scrollbar-color: #464646;
+    --hump-scrollbar-hover-color: #515151;
+}
+
+/*Tema claro*/
+.light-theme {
+    /*Cores background*/
+    --bg-color-nav: #dbdbdb;
+    --bg-color-content: #ffffff;
+    --bg-color-search: #ffffff;
+
+
+    /*Cores texto*/
+    --text-color-nav: #5d5e5e;
+    --text-color-content: #5d5e5e;
+    --text-color-search: #5d5e5e;
+
+    /*Cor para quando o texto for selecionado*/
+    --text-selection-color: #3390ffaa;
+
+    /*Cores das bordas*/
+    --bd-content: #c0c0c0;
+
+    /*Barra de scroll*/
+    --track-scrollbar-color: #ebebeb;
+    --hump-scrollbar-color: #c0c0c0;
+    --hump-scrollbar-hover-color: #b0b0b0;
+}
+
+/*Altera a cor ao selecionar texto*/
+::selection {
+    background: var(--text-selection-color);
+}
+
+/*Esconde a barra de rolagem da página completa
+  Para quando a janela for menor que o conteúdo*/
+.body, .dark-theme::-webkit-scrollbar, .light-theme::-webkit-scrollbar{
+    display: none;
+}
+
+/* width  */
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--track-scrollbar-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--hump-scrollbar-color);
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--hump-scrollbar-hover-color);
+}
+
+
+/*Botão para mudança do tema*/
+#switchTheme {
+    line-height: var(--nav-height);
+    font-size: 2em;
+
+    color: var(--text-color-nav);
+    background: none;
+
+    float:right;
+
+    cursor: pointer;
+}
