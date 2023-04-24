@@ -102,7 +102,8 @@ function App() {
         password: "user",
         phone: "000000000",
         email: "user@user.com",
-        address: "userland"
+        address: "userland",
+        cart: []
     }]);
 
     //Lista de contas de adms
@@ -145,13 +146,13 @@ function App() {
             <Route path="/" element={<Layout  props = {props} />}>
                 <Route index element={<Store props = {props} />} />
 
-                <Route path="/:itemId/itemDetails" element={<ItemDetails props = {props}/>} />
+                <Route path="/itemDetails/:itemId" element={<ItemDetails props = {props}/>} />
 
                 <Route path="/login" element={<Login  props = {props}/>} />
                 
                 <Route path="/addAdm" element={<AddAdm props = {props}/>} />
                 <Route path="/addItem" element={<AddItem props = {props}/>} />
-                <Route path="/:itemId/editItem" element={<EditItem props = {props}/>} />
+                <Route path="/editItem/:itemId" element={<EditItem props = {props}/>} />
                 
                 <Route path="*" element={<NoPage />} />
             </Route>

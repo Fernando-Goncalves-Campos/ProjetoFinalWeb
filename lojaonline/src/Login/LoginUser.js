@@ -2,7 +2,7 @@ import { useState, memo } from "react";
 import { useNavigate } from "react-router-dom";
 import './Login.css';
 
-function LoginCustomer({props}) {
+function LoginUser({props}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -14,14 +14,24 @@ function LoginCustomer({props}) {
         e.preventDefault();
 
         //Verifica se a conta existe e se a senha está correta
-        const account = props.customers.find((user) => user.name === username);
+        let account = props.customers.find((user) => user.name === username);
         if (account && account.password === password) {
             props.setLogged(true);
             props.setUser(account);
             navigate("/");
         }
         else{
-            alert("account doesn't exist or the password is wrong!");
+            account = props.adms.find((user) => user.name === username);
+            if (account && account.password === password) {
+                props.setLogged(true);
+                props.setAdm(true);
+                props.setUser(account);
+                navigate("/");
+            }
+
+            else{
+                alert("account doesn't exist or the password is wrong!");
+            }
         }
     };
 
@@ -38,4 +48,4 @@ function LoginCustomer({props}) {
 }
 
 
-export default memo(LoginCustomer);
+export default memo(LoginUser);

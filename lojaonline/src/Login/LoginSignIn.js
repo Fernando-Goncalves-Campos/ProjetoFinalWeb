@@ -29,7 +29,8 @@ function LoginSignIn({props}) {
                 email: email,
                 phone: phone,
                 password: password,
-                address: address
+                address: address,
+                cart: []
             });
             
 
@@ -41,7 +42,8 @@ function LoginSignIn({props}) {
                     email: email,
                     phone: phone,
                     password: password,
-                    address: address
+                    address: address,
+                    cart: []
                 }
             ]);
             navigate("/");

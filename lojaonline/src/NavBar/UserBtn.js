@@ -55,6 +55,7 @@ function UserBtn({props}) {
                 <label htmlFor="menu">{props.user.name}</label>
                 <div className="menu-content">
                     <ul>
+                        <li><Link to="/cart">Cart</Link></li>
                         <li><button id="userNav" onClick={() => logout()}>Logout</button></li>
                     </ul>
                 </div>

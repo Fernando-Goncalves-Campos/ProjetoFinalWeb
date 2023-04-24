@@ -9,8 +9,14 @@ function ItemDetails({props}) {
     //Usado para redirecionar o usuário para outra rota do site
     const navigate = useNavigate();
 
-    //Realiza a compra
-    function handleBuy(){
+    //Determina para onde clicar no item exibido no menu irá levar o usuário
+    //Para a página de login
+    function login(){
+        navigate("/login");
+    }
+
+    //Para a tela com o restante dos dados do item, enviando o ID do item no URL
+    function buy(){
         //Modifica os valores que salvam as quantidades do item em estoque e vendidos
         item.quantity -= 1;
         item.quantitySold += 1;
@@ -33,16 +39,32 @@ function ItemDetails({props}) {
         navigate("/");
     }
 
-    
-    //Determina se é possível realizar a compra (se existem itens em estoque)
-    let buyButton = <button id="buyButton" onClick={handleBuy}>{item.price}</button>;
+    //Para a tela de edição de itens com o ID do item
+    function editItem(){
+        navigate(`/editItem/${item.id}`);
+    }
 
-    if(item.quantity > 0){
-        buyButton = <button id="buyButton" onClick={handleBuy}>{item.price}</button>;
+    //Seleciona a função de acordo com o tipo de login
+    let buyButton = <button id="buyButton" onClick={login}>{item.price}</button>;
+    if(props !== undefined){
+        if(!props.logged){
+            buyButton = <button id="buyButton" onClick={login}>Login {item.price}</button>;
+        }
+        else if(!props.adm){
+            //Determina se é possível realizar a compra (se existem itens em estoque)
+            if(item.quantity > 0){
+                buyButton = <button id="buyButton" onClick={buy}>Buy {item.price}</button>;
+            }
+            else{
+                buyButton = <button id="buyButton" disabled>Sold Out</button>
+            }
+        }
+        else{
+            buyButton = <button id="buyButton" onClick={editItem}>Edit {item.price}</button>;
+        }
     }
-    else{
-        buyButton = <button id="buyButton" disabled onClick={handleBuy}>Sold Out</button>
-    }
+    
+    
 
     return (
         <div id="itemDetails">
@@ -51,7 +73,7 @@ function ItemDetails({props}) {
                 <span id="detailsName">{item.name}</span> <br/>
                 <span id="detailsId">{item.id}</span> <br/><br/>
                 <p id="detailsText">{item.description}</p> <br/><br/>
-                <span id="detailsQuantity">{item.quantity}</span> <br/>
+                <span id="detailsQuantity">Quantity:{item.quantity}</span> <br/>
 
                 {buyButton}
             </div>
