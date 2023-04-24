@@ -1,7 +1,8 @@
 # ProjetoFinalWeb
 
 Fernando Gonçalves Campos 12542352 <br>
-José Pedro Cioni do Carmo 12623988
+José Pedro Cioni do Carmo 12623988 <br>
+Samuel Figueiredo Veronez 12542626
 
 <!--Requirements-->
 <details>
