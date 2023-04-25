@@ -22,7 +22,7 @@ function App() {
 			photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
 			description:
 				"Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
-			price: "R$420.69",
+			price: 420.69,
 			quantity: 0,
 			quantitySold: 0,
 		},
@@ -32,7 +32,7 @@ function App() {
 			photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
 			description:
 				"Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
-			price: "R$420.69",
+			price: 420.69,
 			quantity: 1,
 			quantitySold: 0,
 		},
@@ -42,7 +42,7 @@ function App() {
 			photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
 			description:
 				"Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
-			price: "R$420.69",
+			price: 420.69,
 			quantity: 2,
 			quantitySold: 0,
 		},
@@ -52,7 +52,7 @@ function App() {
 			photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
 			description:
 				"Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
-			price: "R$420.69",
+			price: 420.69,
 			quantity: 3,
 			quantitySold: 0,
 		},
@@ -62,7 +62,7 @@ function App() {
 			photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
 			description:
 				"Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
-			price: "R$420.69",
+			price: 420.69,
 			quantity: 4,
 			quantitySold: 0,
 		},
@@ -72,7 +72,7 @@ function App() {
 			photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
 			description:
 				"Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
-			price: "R$420.69",
+			price: 420.69,
 			quantity: 5,
 			quantitySold: 0,
 		},
@@ -82,7 +82,7 @@ function App() {
 			photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
 			description:
 				"Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
-			price: "R$420.69",
+			price: 420.69,
 			quantity: 6,
 			quantitySold: 0,
 		},
@@ -92,7 +92,7 @@ function App() {
 			photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
 			description:
 				"Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
-			price: "R$420.69",
+			price: 420.69,
 			quantity: 7,
 			quantitySold: 0,
 		},

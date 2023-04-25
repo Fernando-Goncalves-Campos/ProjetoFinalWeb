@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./ItemDetails.css";
 
@@ -11,9 +11,9 @@ function ItemDetails({ props }) {
 
 	//Determina para onde clicar no item exibido no menu irá levar o usuário
 	//Para a página de login
-	function login() {
+	const login = () => {
 		navigate("/login");
-	}
+	};
 
 	//Para a tela com o restante dos dados do item, enviando o ID do item no URL
 	function buy() {
@@ -63,11 +63,12 @@ function ItemDetails({ props }) {
 			{item.price}
 		</button>
 	);
+
 	if (props !== undefined) {
 		if (!props.logged) {
 			buyButton = (
 				<button id="buyButton" onClick={login}>
-					Login {item.price}
+					Buy {item.price}
 				</button>
 			);
 		} else if (!props.adm) {
