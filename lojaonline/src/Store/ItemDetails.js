@@ -1,4 +1,4 @@
-import { memo, useEffect } from "react";
+import { memo } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./ItemDetails.css";
 
@@ -11,35 +11,39 @@ function ItemDetails({ props }) {
 
 	//Determina para onde clicar no item exibido no menu irá levar o usuário
 	//Para a página de login
-	const login = () => {
+	function login() {
 		navigate("/login");
-	};
+	}
 
 	//Para a tela com o restante dos dados do item, enviando o ID do item no URL
 	function buy() {
 		//Modifica os valores que salvam as quantidades do item em estoque e vendidos
 		let newCart = props.user.cart;
-
 		let itemCartIndex = newCart.findIndex((itemCart) => itemCart[0] === itemId);
 
+		//caso já esteja no cart não faz nada
 		if (itemCartIndex !== -1) {
-			newCart[itemCartIndex][1]++;
 		} else {
 			newCart.push([itemId, 1]);
 		}
 
 		//Adiciona a conta à lista de usuários
-		props.setCustomers((prevCustomers) => [
-			...prevCustomers,
-			{
-				name: props.user.name,
-				email: props.user.email,
-				phone: props.user.phone,
-				password: props.user.password,
-				address: props.user.address,
-				cart: newCart,
-			},
-		]);
+		props.setCustomers((prevCustomers) =>
+			prevCustomers.map((cust) => {
+				if (cust.name === props.user.name) {
+					return {
+						name: props.user.name,
+						email: props.user.email,
+						phone: props.user.phone,
+						password: props.user.password,
+						address: props.user.address,
+						cart: newCart,
+					};
+				} else {
+					return cust;
+				}
+			})
+		);
 
 		props.setUser({
 			name: props.user.name,
@@ -63,12 +67,11 @@ function ItemDetails({ props }) {
 			{item.price}
 		</button>
 	);
-
 	if (props !== undefined) {
 		if (!props.logged) {
 			buyButton = (
 				<button id="buyButton" onClick={login}>
-					Buy {item.price}
+					Login {item.price}
 				</button>
 			);
 		} else if (!props.adm) {

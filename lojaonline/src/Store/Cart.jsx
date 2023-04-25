@@ -6,7 +6,7 @@ import ItemCart from "./ItemCart";
 const Cart = ({ props }) => {
 	const navigate = useNavigate();
 
-	console.log(props.user.cart, "custormer");
+	//console.log(props.user.cart, "custormer");
 	let sum = 0;
 
 	let itemsOnCart = props.user.cart.map((itemOnCart) => {
@@ -22,7 +22,7 @@ const Cart = ({ props }) => {
 
 	let Total;
 
-	console.log(itemsOnCart);
+	//console.log(itemsOnCart);
 
 	const handleExclude = (index) => {};
 
@@ -32,7 +32,7 @@ const Cart = ({ props }) => {
 	};
 
 	const handleBuy = () => {};
-	console.log(itemsOnCart);
+	//console.log(itemsOnCart);
 
 	if (itemsOnCart.length === 0) {
 		itemsOnCart = <div>Carrinho Vazio</div>;

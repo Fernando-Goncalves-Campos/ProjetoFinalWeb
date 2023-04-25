@@ -24,8 +24,9 @@ const ItemCart = ({ props, item, qnt }) => {
 
 	function buy(sum) {
 		//Modifica os valores que salvam as quantidades do item em estoque e vendidos
-		let remov = false;
 		let newCart = props.user.cart;
+		console.log(newCart);
+		console.log(props.user.cart);
 
 		let itemCartIndex = newCart.findIndex(
 			(itemCart) => itemCart[0] === item.id
@@ -40,24 +41,40 @@ const ItemCart = ({ props, item, qnt }) => {
 			newCart[itemCartIndex][1]--;
 			if (newCart[itemCartIndex][1] <= 0) {
 				newCart = newCart.filter((iten) => {
-					console.log("comp", iten.id, item.id);
 					return iten[0] !== item.id;
 				});
 			}
 		}
 
 		//Adiciona a conta à lista de usuários
-		props.setCustomers((prevCustomers) => [
-			...prevCustomers,
-			{
-				name: props.user.name,
-				email: props.user.email,
-				phone: props.user.phone,
-				password: props.user.password,
-				address: props.user.address,
-				cart: newCart,
-			},
-		]);
+		props.setCustomers((prevCustomers) =>
+			prevCustomers.map((cust) => {
+				if (cust.name === props.user.name) {
+					return {
+						name: props.user.name,
+						email: props.user.email,
+						phone: props.user.phone,
+						password: props.user.password,
+						address: props.user.address,
+						cart: { newCart },
+					};
+				} else {
+					return cust;
+				}
+			})
+		);
+
+		// (prevCustomers) => [
+		//     ...prevCustomers,
+		//     {
+		// name: props.user.name,
+		// email: props.user.email,
+		// phone: props.user.phone,
+		// password: props.user.password,
+		// address: props.user.address,
+		// cart: newCart,
+		//     },
+		// ]);
 
 		props.setUser({
 			name: props.user.name,
@@ -67,12 +84,13 @@ const ItemCart = ({ props, item, qnt }) => {
 			address: props.user.address,
 			cart: newCart,
 		});
+		console.log(newCart);
+		console.log(props.user.cart);
 	}
 
 	const handleQntBtnClick = (sum) => {
 		if (sum) {
 			if (qnt < item.quantity) {
-				console.log(buy);
 				qnt++;
 				{
 					buy(true);
@@ -101,7 +119,7 @@ const ItemCart = ({ props, item, qnt }) => {
 			setSubBtn(<button onClick={() => handleQntBtnClick(false)}>-</button>);
 			setAddBtn(<button onClick={() => handleQntBtnClick(true)}>+</button>);
 		}
-		console.log("qnt", qnt);
+		//console.log("qnt", qnt);
 	};
 
 	return (
