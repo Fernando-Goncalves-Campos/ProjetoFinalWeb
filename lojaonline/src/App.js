@@ -85,6 +85,24 @@ function App() {
         price: "R$420.69",
         quantity: 7,
         quantitySold: 0
+    },
+    {
+        name: "Capivara",
+        id: "8",
+        photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
+        description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
+        price: "R$420.69",
+        quantity: 7,
+        quantitySold: 0
+    },
+    {
+        name: "Capivara",
+        id: "9",
+        photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
+        description: "Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
+        price: "R$420.69",
+        quantity: 7,
+        quantitySold: 0
     }]);
 
     //Valor que está na barra de pesquisa

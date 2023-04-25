@@ -14,9 +14,11 @@ function ItemOption({props, item}) {
     return (
         <div className="storeItem" onClick={handleClick}>
             <img src={item.photo} alt={item.name} /> <br />
-            <span className="itemName"> {item.name} </span> <br />
-            <span className="itemId"> {item.id} </span> <br />
-            <span className="itemPrice"> {item.price} </span> <br />
+            <div class="storeItemText">
+                <span className="itemName"> {item.name} </span> <br/>
+                <span className="itemId"> {item.id} </span> <br/>
+                <span className="itemPrice"> {item.price} </span> <br/>
+            </div>
         </div>
     );
 }

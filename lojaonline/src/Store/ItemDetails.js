@@ -74,7 +74,6 @@ function ItemDetails({props}) {
                 <span id="detailsId">{item.id}</span> <br/><br/>
                 <p id="detailsText">{item.description}</p> <br/><br/>
                 <span id="detailsQuantity">Quantity:{item.quantity}</span> <br/>
-
                 {buyButton}
             </div>
         </div>

@@ -1,27 +1,40 @@
 #store{
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .storeItem{
     background-color: var(--bg-color-nav);
+    margin: 15px;
+    padding: 10px;
     color: var(--text-color-nav);
-    width: 200px;
+    text-align: center;
+    width: 225px;
+    cursor: pointer;
+}
+
+.storeItemText{
+    margin: 2px 10px 5px;
+    text-align: left;
 }
 
 .storeItem img{
-    width: 200px;
+    margin: 0px 0px 5px;
     height: 200px;
+    width: 200px;
 }
 
 .itemName{
+    text-align: left;
     font-size: 1em;
 }
 
 .itemId{
+    text-align: lef;
     font-size: 0.8em;
 }
 
 .itemPrice{
-    float: right;
+    text-align: right;
 }

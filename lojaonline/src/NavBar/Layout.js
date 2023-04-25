@@ -28,7 +28,6 @@ function Layout({props}) {
             </nav>
         
             <div id="content">
-            
                 <Outlet/>
             </div>
         </div></>
