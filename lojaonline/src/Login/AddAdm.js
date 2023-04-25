@@ -16,8 +16,9 @@ function AddAdm({props}) {
         e.preventDefault();
 
         //Assegura que não existem outros adms com o mesmo nome
-        const account = props.adms.find((user) => user.name === username);
-        if (account) {
+        const accountCustomer = props.customers.find((user) => user.name === username);
+        const accountAdm = props.adms.find((user) => user.name === username);
+        if (accountCustomer || accountAdm) {
             alert("Account already exists!!!")
         }
 

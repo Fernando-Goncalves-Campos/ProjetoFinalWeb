@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>LoginSignIn</title>
+		<meta charset="utf-8">
+
+        <link href="Login.css" rel="stylesheet">
+        <link href="../App.css" rel="stylesheet">
+        <link href="../Layout.css" rel="stylesheet">
+        <link href="../Search.css" rel="stylesheet">
+        <link href="../Theme.css" rel="stylesheet">
+        <link href="../UserBtn.css" rel="stylesheet">
+
+        <script src='https://kit.fontawesome.com/294557454d.js' crossorigin='anonymous'></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script src="../themeSwap.js"></script>
+	</head>
+	
+	<body>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="root">
+            <div id="theme" class="dark-theme">
+                <nav id="navBar">
+                    <span id="logo">Logo</span>
+                    <div id="inviSearch"></div>
+                    <button id="switchTheme" onClick="toggleTheme()"><i class="fa-solid fa-circle-half-stroke"></i></button>
+                </nav>
+                <div id="content">
+                    <div id="loginType"><br>
+                        <input type="radio" class="selectType" id="login" name="type" value="login"><label for="login">Login  </label>
+                        <input type="radio" class="selectType" id="signIn" name="type" value="signIn"><label for="signIn">Sign In  </label> <br><br><br>
+                        <div id="loginInfo">
+                            <form>
+                                Name:<br><input type="text" class="inputLogin" name="Username"><br><br>
+                                Password:<br><input type="password" class="inputLogin" name="Password"><br><br>
+                                Email:<br><input type="email" class="inputLogin" name="Email"><br><br>
+                                Phone:<br><input type="tel" class="inputLogin" name="Phone"><br><br>
+                                Address:<br><input type="text" class="inputLogin" name="Address"><br>
+                                <input type="submit" id="confirmLogin" value="Submit">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</body>
+</html>

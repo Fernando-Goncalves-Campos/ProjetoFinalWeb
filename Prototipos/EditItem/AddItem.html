@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>AddItem</title>
+		<meta charset="utf-8">
+
+        <link href="AddItem.css" rel="stylesheet">
+        <link href="../App.css" rel="stylesheet">
+        <link href="../Layout.css" rel="stylesheet">
+        <link href="../Search.css" rel="stylesheet">
+        <link href="../Theme.css" rel="stylesheet">
+        <link href="../UserBtn.css" rel="stylesheet">
+
+        <script src='https://kit.fontawesome.com/294557454d.js' crossorigin='anonymous'></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script src="../themeSwap.js"></script>
+	</head>
+	
+	<body>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="root">
+            <div id="theme" class="dark-theme">
+                <nav id="navBar">
+                    <span id="logo">Logo</span>
+                    <div id="inviSearch"></div>
+                    <button id="switchTheme" onClick="toggleTheme()"><i class="fa-solid fa-circle-half-stroke"></i></button>
+                    <div id="userNav"><input type="checkbox" id="menu"><label for="menu">admin</label>
+                        <div class="menu-content">
+                            <ul>
+                                <li><span>Add Item</span></li>
+                                <li><span>Add Adm</span></li>
+                                <li><button id="userNav">Logout</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div id="content">
+                    <div id="itemInfo">
+                        <br><br><form>
+                            Name:<br><input type="text" class="inputItem" name="name"><br><br>
+                            Id:<br><input type="text" class="inputItem" name="id"><br><br>
+                            Photo (the path to the img):<br><input type="text" class="inputItem" name="photo"><br><br>
+                            Description:<br><textarea rows="5" cols="30" class="inputItem" name="description"></textarea><br><br>
+                            Price:<br><input type="text" class="inputItem" name="price"><br><br>
+                            Quantity:<br><input type="number" class="inputItem" name="quantity"><br><br>
+                            <input type="submit" id="confirmItem" value="Submit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</body>
+</html>

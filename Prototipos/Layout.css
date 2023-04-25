@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    transition: 0s, background-color 0.5s, color 0.5s, border 0.5s;
+    box-sizing: border-box;
+}
+
+:root {
+    /*Alturas*/
+    --nav-height: 80px;
+    --search-height: 40px;
+}
+
+
+
+/*Envolve toda página*/
+body{
+    background-color: var(--bg-color-content);
+    overflow: auto;
+}
+
+body::after{
+    clear:both;
+}
+
+.dark-theme, light-theme{
+    background-color: var(--bg-color-content);
+    overflow: auto;
+}
+
+/*Conteúdo*/
+#content{
+    min-width: 800px;
+    height: calc(100vh - var(--nav-height));
+
+    background-color: var(--bg-color-content);
+    overflow: auto;
+}
+
+/*Barra de navegação*/
+#navBar{
+    min-width: 800px;
+    height: var(--nav-height);
+
+    background-color: var(--bg-color-nav);
+
+    display: flex;
+    vertical-align: center;
+
+    padding-right: 16px;
+}
+
+
+
+
+/*Botão para mudança do tema*/
+#switchTheme {
+    line-height: var(--nav-height);
+    font-size: 2em;
+
+    color: var(--text-color-nav);
+    background: none;
+
+    float:right;
+
+    cursor: pointer;
+}
+
+
+
+/*Logo na barra de navegação*/
+#logo{
+    margin-left: 80px;
+    margin-right: 40px;
+    line-height: var(--nav-height);
+
+    font-size: 2.9em;
+
+    float:left;
+
+    color: var(--text-color-nav);
+    background-color: var(--bg-color-nav);
+
+    cursor: pointer;
+    text-decoration: none;
+}

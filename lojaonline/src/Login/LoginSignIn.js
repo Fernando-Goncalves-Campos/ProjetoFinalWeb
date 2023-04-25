@@ -17,8 +17,9 @@ function LoginSignIn({props}) {
         e.preventDefault();
 
         //Asseguram que não existam outros usuários com o mesmo nome
-        const account = props.customers.find((user) => user.name === username);
-        if (account) {
+        const accountCustomer = props.customers.find((user) => user.name === username);
+        const accountAdm = props.adms.find((user) => user.name === username);
+        if (accountCustomer || accountAdm) {
             alert("Account already exists!!!")
         }
         else{
