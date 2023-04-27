@@ -2,32 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ItemDetails from "./ItemDetails";
 
-const ItemCart = ({ props, item, qnt }) => {
+const ItemCart = ({ props, item, qnt, newCart }) => {
 	//Usado para redirecionar o usuário para outra rota do site
 	const navigate = useNavigate();
 
-	const [addBtn, setAddBtn] = useState(() => {
-		if (qnt == item.quantity) {
-			return (
-				<button onClick={() => handleQntBtnClick(true)} disabled>
-					+
-				</button>
-			);
-		} else {
-			return <button onClick={() => handleQntBtnClick(true)}>+</button>;
-		}
-	});
+	let addBtn = <button onClick={() => handleQntBtnClick(true)}>+</button>;
 
-	const [subBtn, setSubBtn] = useState(
-		<button onClick={() => handleQntBtnClick(false)}>-</button>
-	);
+	let subBtn = <button onClick={() => handleQntBtnClick(false)}>-</button>;
 
 	function buy(sum) {
-		//Modifica os valores que salvam as quantidades do item em estoque e vendidos
-		let newCart = props.user.cart;
-		console.log(newCart);
-		console.log(props.user.cart);
-
 		let itemCartIndex = newCart.findIndex(
 			(itemCart) => itemCart[0] === item.id
 		);
@@ -64,18 +47,6 @@ const ItemCart = ({ props, item, qnt }) => {
 			})
 		);
 
-		// (prevCustomers) => [
-		//     ...prevCustomers,
-		//     {
-		// name: props.user.name,
-		// email: props.user.email,
-		// phone: props.user.phone,
-		// password: props.user.password,
-		// address: props.user.address,
-		// cart: newCart,
-		//     },
-		// ]);
-
 		props.setUser({
 			name: props.user.name,
 			email: props.user.email,
@@ -84,8 +55,6 @@ const ItemCart = ({ props, item, qnt }) => {
 			address: props.user.address,
 			cart: newCart,
 		});
-		console.log(newCart);
-		console.log(props.user.cart);
 	}
 
 	const handleQntBtnClick = (sum) => {
@@ -100,26 +69,6 @@ const ItemCart = ({ props, item, qnt }) => {
 			qnt--;
 			buy(false);
 		}
-
-		if (qnt === 0) {
-			setSubBtn(
-				<button onClick={() => handleQntBtnClick(false)} disabled>
-					-
-				</button>
-			);
-			setAddBtn(<button onClick={() => handleQntBtnClick(true)}>+</button>);
-		} else if (qnt === item.quantity) {
-			setAddBtn(
-				<button onClick={() => handleQntBtnClick(true)} disabled>
-					+
-				</button>
-			);
-			setSubBtn(<button onClick={() => handleQntBtnClick(false)}>-</button>);
-		} else {
-			setSubBtn(<button onClick={() => handleQntBtnClick(false)}>-</button>);
-			setAddBtn(<button onClick={() => handleQntBtnClick(true)}>+</button>);
-		}
-		//console.log("qnt", qnt);
 	};
 
 	return (

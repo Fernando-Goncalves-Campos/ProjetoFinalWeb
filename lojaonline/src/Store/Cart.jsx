@@ -6,33 +6,44 @@ import ItemCart from "./ItemCart";
 const Cart = ({ props }) => {
 	const navigate = useNavigate();
 
-	//console.log(props.user.cart, "custormer");
 	let sum = 0;
 
-	let itemsOnCart = props.user.cart.map((itemOnCart) => {
+	let Total;
+	let newCart = props.user.cart;
+
+	let itemsOnCart = newCart.map((itemOnCart) => {
 		let iten = props.items.find((t) => {
-			if (t.id == itemOnCart[0]) {
+			if (t.id === itemOnCart[0]) {
 				sum += t.price * itemOnCart[1];
 				return true;
 			}
 			return false;
 		});
-		return <ItemCart props={props} qnt={itemOnCart[1]} item={iten} />;
+
+		return (
+			<ItemCart
+				props={props}
+				newCart={newCart}
+				qnt={itemOnCart[1]}
+				item={iten}
+			/>
+		);
 	});
-
-	let Total;
-
-	//console.log(itemsOnCart);
-
-	const handleExclude = (index) => {};
 
 	const handleEmptyCart = () => {
 		props.user.cart = [];
-		navigate("/");
 	};
 
 	const handleBuy = () => {};
-	//console.log(itemsOnCart);
+
+	// props.setUser({
+	// 	name: props.user.name,
+	// 	email: props.user.email,
+	// 	phone: props.user.phone,
+	// 	password: props.user.password,
+	// 	address: props.user.address,
+	// 	cart: newCart,
+	// });
 
 	if (itemsOnCart.length === 0) {
 		itemsOnCart = <div>Carrinho Vazio</div>;
