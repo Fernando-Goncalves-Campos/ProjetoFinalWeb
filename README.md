@@ -67,8 +67,6 @@ Samuel Figueiredo Veronez 12542626
 
 </summary>
 
-O método utilizado para passagem de estados entre as diferentes páginas do site não é ideal para projetos grandes, por questões de performance e de manutenção,
-mas como o projeto é pequeno, passar todos os estados juntos facilita debugar o código e para fazer modificações
 
 </details>
 
@@ -119,6 +117,5 @@ Para abrir o site, deve-se abrir o diretório do react (lojaonline) no terminal 
 
 </summary>
 
-Caso se deseje verificar os estados do site pode-se alterar o tema, além de alterar o tema o botão também irá imprimir o objeto que salva os estados no console.
 
 </details>
