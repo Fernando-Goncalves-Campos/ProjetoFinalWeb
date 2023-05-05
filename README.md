@@ -8,6 +8,48 @@ Samuel Figueiredo Veronez 12542626
 
 ![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Diagrama.png?raw=true)
 
+<!--Mockups-->
+<details>
+<summary>
+
+## Mockup's
+
+</summary>
+  
+ Uma <a href="https://www.figma.com/proto/x9shT7gVxjjd68K5l27GCM/Web?type=design&node-id=1-3&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A3">Versão Figma</a> do mockup também foi feita.
+  
+  
+  
+  ### Página Principal
+  
+  ![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Mockup/Loja.png?raw=true)
+  
+  ### Página Principal - versão white mode
+ 
+  ![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Mockup/Loja-white.png?raw=true)
+  
+  ### Detalhes do item
+  
+  ![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Mockup/Item-details.png?raw=true)
+  
+  ### Carrinho de compra
+  
+  ![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Mockup/Cart.png?raw=true)
+  
+  ### Carrinho de compra + user menu
+  
+  ![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Mockup/Cart+usermenu.png?raw=true)
+  
+  ### Login
+  
+  ![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Mockup/Login.png?raw=true)
+  
+  ### Registrar
+  
+  ![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Mockup/Sing-in.png?raw=true)
+    
+
+</details>
 
 <!--Requirements-->
 <details>
