@@ -19,8 +19,8 @@ const ItemCart = ({ user, setUser, setCustomers, item, qnt, newCart }) => {
 		} else {
 			newCart[itemCartIndex][1]--;
 			if (newCart[itemCartIndex][1] <= 0) {
-				newCart = newCart.filter((iten) => {
-					return iten[0] !== item.id;
+				newCart = newCart.filter((itemNewCart) => {
+					return itemNewCart[0] !== item.id;
 				});
 			}
 		}
