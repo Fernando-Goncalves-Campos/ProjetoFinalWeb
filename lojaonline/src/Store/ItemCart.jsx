@@ -35,7 +35,7 @@ const ItemCart = ({ user, setUser, setCustomers, item, qnt, newCart }) => {
 						phone: user.phone,
 						password: user.password,
 						address: user.address,
-						cart: { newCart },
+						cart: newCart,
 					};
 				} else {
 					return cust;

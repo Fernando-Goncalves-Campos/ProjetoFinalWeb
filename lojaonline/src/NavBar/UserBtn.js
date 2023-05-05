@@ -10,10 +10,10 @@ function UserBtn({user, setUser, logged, setLogged, adm, setAdm}) {
 
     //Desfaz o login do usuário
     async function logout(){
+        navigate("/");
         await setLogged(false);
         await setAdm(false);
         await setUser({name: ""});
-        navigate("/");
     }
 
     //Caso esteja na página de login ele remove o botão
