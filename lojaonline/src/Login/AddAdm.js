@@ -2,7 +2,7 @@ import { useState, memo } from "react";
 import { useNavigate } from "react-router-dom";
 import './Login.css';
 
-function AddAdm({props}) {
+function AddAdm({customers, adms, setAdms}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [phone, setPhone] = useState("");
@@ -16,8 +16,8 @@ function AddAdm({props}) {
         e.preventDefault();
 
         //Assegura que não existem outros adms com o mesmo nome
-        const accountCustomer = props.customers.find((user) => user.name === username);
-        const accountAdm = props.adms.find((user) => user.name === username);
+        const accountCustomer = customers.find((user) => user.name === username);
+        const accountAdm = adms.find((user) => user.name === username);
         if (accountCustomer || accountAdm) {
             alert("Account already exists!!!")
         }
@@ -25,7 +25,7 @@ function AddAdm({props}) {
 
         else{
             //Adiciona o adm à lista
-            props.setAdms(prevAdms => [
+            setAdms(prevAdms => [
                 ...prevAdms,
                 {
                     name: username,

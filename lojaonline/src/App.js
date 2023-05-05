@@ -132,62 +132,20 @@ function App() {
 	//Usuário logado
 	const [user, setUser] = useState({ name: "" });
 
-	//////Guarda todos os valores dos estados, para ficar mais fácil de passar os valores//////
-	/*Não é recomendado se fazer isso em projetos grandes por questões de performance e de facilidade de manutenção,
-    mas como esse projeto é pequeno, fazer isso não seria tão ruim*/
-	/*Para imprimir os estados no console ppode-se alterar o tema do site
-    (é mais fácil de debugar o código se tiver um método para imprimir os estados)*/
-	const props = {
-		logged: logged,
-		setLogged: (value) => {
-			setLogged(value);
-		},
-		user: user,
-		setUser: (value) => {
-			setUser(value);
-		},
-		customers: customers,
-		setCustomers: (value) => {
-			setCustomers(value);
-		},
-		adms: adms,
-		setAdms: (value) => {
-			setAdms(value);
-		},
-		adm: adm,
-		setAdm: (value) => {
-			setAdm(value);
-		},
-		items: items,
-		setItems: (value) => {
-			setItems(value);
-		},
-		searchItem: searchItem,
-		setSearchItem: (value) => {
-			setSearchItem(value);
-		},
-	};
-
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" element={<Layout props={props} />}>
-					<Route index element={<Store props={props} />} />
+				<Route path="/" element={<Layout user={user} setUser={(value)=>{setUser(value)}} logged={logged} setLogged={(value)=>{setLogged(value)}} adm={adm} setAdm={(value)=>{setAdm(value)}} setSearchItem={(value)=>{setSearchItem(value)}}/>}>
+					<Route index element={<Store items={items} searchItem={searchItem}/>} />
 
-					<Route
-						path="/itemDetails/:itemId"
-						element={<ItemDetails props={props} />}
-					/>
+					<Route path="/itemDetails/:itemId"element={<ItemDetails user={user} setUser={(value)=>{setUser(value)}} logged={logged} adm={adm} items={items} setCustomers={(value)=>{setCustomers(value)}}/>} />
 
-					<Route path="/login" element={<Login props={props} />} />
+					<Route path="/login" element={<Login setUser={(value)=>{setUser(value)}} setLogged={(value)=>{setLogged(value)}} setAdm={(value)=>{setAdm(value)}} customers={customers} setCustomers={(value)=>{setCustomers(value)}} adms={adms} />} />
 
-					<Route path="/addAdm" element={<AddAdm props={props} />} />
-					<Route path="/addItem" element={<AddItem props={props} />} />
-					<Route
-						path="/editItem/:itemId"
-						element={<EditItem props={props} />}
-					/>
-					<Route path="/cart" element={<Cart props={props} />} />
+					<Route path="/addAdm" element={<AddAdm customers={customers} adms={adms} setAdms={(value)=>{setAdms(value)}}/>} />
+					<Route path="/addItem" element={<AddItem items={items} setItems={(value)=>{setItems(value)}} />} />
+					<Route path="/editItem/:itemId" element={<EditItem items={items} setItems={(value)=>{setItems(value)}}/>} />
+					<Route path="/cart" element={<Cart user={user} setUser={(value)=>{setUser(value)}} setCustomers={(value)=>{setCustomers(value)}} items={items} setItems={(value)=>{setItems(value)}}/>} />
 
 					<Route path="*" element={<NoPage />} />
 				</Route>

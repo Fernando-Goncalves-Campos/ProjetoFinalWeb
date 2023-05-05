@@ -2,10 +2,10 @@ import { useState, memo } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import './AddItem.css';
 
-function EditItem({props}) {
+function EditItem({items, setItems}) {
     //Lê o item cujo ID esta no URL da página
     const {itemId} = useParams();
-    const [item,setItem] = useState(props.items.find(object => object.id === itemId));
+    let item = items.find(object => object.id === itemId);
 
     //Salva os dados do item e os modifica sempre que o input é modificado
     const [name, setName] = useState(item.name);
@@ -22,8 +22,8 @@ function EditItem({props}) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         
-        props.setItems(
-            props.items.map(prevItems => 
+        setItems(
+            items.map(prevItems => 
                 prevItems.id === item.id ?
                 {   
                     name: name,
@@ -40,10 +40,8 @@ function EditItem({props}) {
     };
 
     function deleteItem(){
-        console.log(props)
-        console.log(props.items)
-        props.setItems(
-            props.items.filter(prevItems => 
+        setItems(
+            items.filter(prevItems => 
                 prevItems.id !== item.id
     ))}
 

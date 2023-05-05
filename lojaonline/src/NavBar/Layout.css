@@ -3,7 +3,7 @@
     padding: 0;
     outline: none;
     border: none;
-    transition: 0s, background-color 0.5s, color 0.5s, border 0.5s;
+    transition: 0s, background-color 0.5s, color 0.2s, border 0.5s;
     box-sizing: border-box;
 }
 

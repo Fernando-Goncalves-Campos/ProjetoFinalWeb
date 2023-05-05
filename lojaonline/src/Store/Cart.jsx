@@ -1,14 +1,14 @@
 import React from "react";
 import ItemCart from "./ItemCart";
 
-const Cart = ({ props }) => {
+const Cart = ({ user, setUser, setCustomers, items, setItems }) => {
 	let sum = 0;
 
 	let Total;
-	let newCart = props.user.cart;
+	let newCart = user.cart;
 
 	let itemsOnCart = newCart.map((itemOnCart) => {
-		let iten = props.items.find((t) => {
+		let iten = items.find((t) => {
 			if (t.id === itemOnCart[0]) {
 				sum += t.price * itemOnCart[1];
 				return true;
@@ -18,7 +18,9 @@ const Cart = ({ props }) => {
 
 		return (
 			<ItemCart
-				props={props}
+                user={user}
+                setUser={setUser}
+                setCustomers={setCustomers}
 				newCart={newCart}
 				qnt={itemOnCart[1]}
 				item={iten}
@@ -27,11 +29,11 @@ const Cart = ({ props }) => {
 	});
 
 	const handleEmptyCart = () => {
-		props.user.cart = [];
+		user.cart = [];
 	};
 
 	const handleBuy = () => {
-        props.user.cart = [];
+        user.cart = [];
     };
 
 	if (itemsOnCart.length === 0) {

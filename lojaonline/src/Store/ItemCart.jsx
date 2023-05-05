@@ -1,6 +1,6 @@
 import React from "react";
 
-const ItemCart = ({ props, item, qnt, newCart }) => {
+const ItemCart = ({ user, setUser, setCustomers, item, qnt, newCart }) => {
 
 	let addBtn = <button onClick={() => handleQntBtnClick(true)}>+</button>;
 
@@ -26,15 +26,15 @@ const ItemCart = ({ props, item, qnt, newCart }) => {
 		}
 
 		//Adiciona a conta à lista de usuários
-		props.setCustomers((prevCustomers) =>
+		setCustomers((prevCustomers) =>
 			prevCustomers.map((cust) => {
-				if (cust.name === props.user.name) {
+				if (cust.name === user.name) {
 					return {
-						name: props.user.name,
-						email: props.user.email,
-						phone: props.user.phone,
-						password: props.user.password,
-						address: props.user.address,
+						name: user.name,
+						email: user.email,
+						phone: user.phone,
+						password: user.password,
+						address: user.address,
 						cart: { newCart },
 					};
 				} else {
@@ -43,12 +43,12 @@ const ItemCart = ({ props, item, qnt, newCart }) => {
 			})
 		);
 
-		props.setUser({
-			name: props.user.name,
-			email: props.user.email,
-			phone: props.user.phone,
-			password: props.user.password,
-			address: props.user.address,
+		setUser({
+			name: user.name,
+			email: user.email,
+			phone: user.phone,
+			password: user.password,
+			address: user.address,
 			cart: newCart,
 		});
 	}
