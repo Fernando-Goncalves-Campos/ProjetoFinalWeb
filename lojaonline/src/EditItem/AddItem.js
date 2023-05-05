@@ -2,7 +2,7 @@ import { useState, memo } from "react";
 import { useNavigate } from "react-router-dom";
 import './AddItem.css';
 
-function AddItem({props}) {
+function AddItem({items, setItems}) {
     //Salva os valores inseridos nos inputs constantemente
     const [name, setName] = useState("");
     const [id, setId] = useState("");
@@ -18,14 +18,14 @@ function AddItem({props}) {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const oldItem = props.items.find((item) => item.id === id);
+        const oldItem = items.find((item) => item.id === id);
         //Garante que não existem itens com o mesmo id
         if (oldItem) {
             alert("Another item have the same id!!!!");
         }
         else{
             //Adiciona o item à lista
-            props.setItems(prevItems => [
+            setItems(prevItems => [
                 ...prevItems,
                 {   
                     name: name,

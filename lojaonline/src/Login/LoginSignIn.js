@@ -2,7 +2,7 @@ import { useState, memo } from "react";
 import { useNavigate } from "react-router-dom";
 import './Login.css';
 
-function LoginSignIn({props}) {
+function LoginSignIn({setUser, setLogged, customers, setCustomers, adms}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [phone, setPhone] = useState("");
@@ -17,15 +17,15 @@ function LoginSignIn({props}) {
         e.preventDefault();
 
         //Asseguram que não existam outros usuários com o mesmo nome
-        const accountCustomer = props.customers.find((user) => user.name === username);
-        const accountAdm = props.adms.find((user) => user.name === username);
+        const accountCustomer = customers.find((user) => user.name === username);
+        const accountAdm = adms.find((user) => user.name === username);
         if (accountCustomer || accountAdm) {
             alert("Account already exists!!!")
         }
         else{
             //Faz o login
-            props.setLogged(true);
-            props.setUser({
+            setLogged(true);
+            setUser({
                 name: username,
                 email: email,
                 phone: phone,
@@ -36,7 +36,7 @@ function LoginSignIn({props}) {
             
 
             //Adiciona a conta à lista de usuários
-            props.setCustomers(prevCustomers => [
+            setCustomers(prevCustomers => [
                 ...prevCustomers,
                 {
                     name: username,

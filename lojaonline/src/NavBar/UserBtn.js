@@ -2,7 +2,7 @@ import { memo } from "react";
 import { useLocation, Link, useNavigate } from "react-router-dom";
 import "./UserBtn.css";
 
-function UserBtn({props}) {
+function UserBtn({user, setUser, logged, setLogged, adm, setAdm}) {
     let location = useLocation();
     
     //Usado para redirecionar o usuário para outra rota do site
@@ -10,9 +10,9 @@ function UserBtn({props}) {
 
     //Desfaz o login do usuário
     async function logout(){
-        await props.setLogged(false);
-        await props.setAdm(false);
-        await props.setUser({name: ""});
+        await setLogged(false);
+        await setAdm(false);
+        await setUser({name: ""});
         navigate("/");
     }
 
@@ -24,18 +24,18 @@ function UserBtn({props}) {
     }
 
     //Caso não esteja logado ele mostra o botão para fazer o login
-    else if(!props.logged){
+    else if(!logged){
         return(
             <Link id="loginNav" to="/login">Login</Link>
         );
     }
 
     //Caso seja um adm ele cria um menu com as funções próprias do adm
-    else if(props.adm){
+    else if(adm){
         return(
             <div id="userNav">
                 <input type="checkbox" id="menu"></input>
-                <label htmlFor="menu">{props.user.name}</label>
+                <label htmlFor="menu">{user.name}</label>
                 <div className="menu-content">
                     <ul>
                         <li><Link to="/addItem">Add Item</Link></li>
@@ -52,7 +52,7 @@ function UserBtn({props}) {
         return(
             <div id="userNav">
                 <input type="checkbox" id="menu"></input>
-                <label htmlFor="menu">{props.user.name}</label>
+                <label htmlFor="menu">{user.name}</label>
                 <div className="menu-content">
                     <ul>
                         <li><Link to="/cart">Cart</Link></li>

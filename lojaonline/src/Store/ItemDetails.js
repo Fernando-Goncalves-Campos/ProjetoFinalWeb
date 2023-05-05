@@ -2,9 +2,9 @@ import { memo } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./ItemDetails.css";
 
-function ItemDetails({ props }) {
+function ItemDetails({ user, setUser, logged, adm, items, setCustomers }) {
 	const { itemId } = useParams();
-	const item = props.items.find((object) => object.id === itemId);
+	const item = items.find((object) => object.id === itemId);
 
 	//Usado para redirecionar o usuário para outra rota do site
 	const navigate = useNavigate();
@@ -18,7 +18,7 @@ function ItemDetails({ props }) {
 	//Para a tela com o restante dos dados do item, enviando o ID do item no URL
 	function buy() {
 		//Modifica os valores que salvam as quantidades do item em estoque e vendidos
-		let newCart = props.user.cart;
+		let newCart = user.cart;
 		let itemCartIndex = newCart.findIndex((itemCart) => itemCart[0] === itemId);
 
 		//Caso já esteja no cart não faz nada
@@ -26,15 +26,15 @@ function ItemDetails({ props }) {
 			newCart.push([itemId, 1]);
 
             //Adiciona a conta à lista de usuários
-            props.setCustomers((prevCustomers) =>
+            setCustomers((prevCustomers) =>
             prevCustomers.map((cust) => {
-                if (cust.name === props.user.name) {
+                if (cust.name === user.name) {
                     return {
-                        name: props.user.name,
-                        email: props.user.email,
-                        phone: props.user.phone,
-                        password: props.user.password,
-                        address: props.user.address,
+                        name: user.name,
+                        email: user.email,
+                        phone: user.phone,
+                        password: user.password,
+                        address: user.address,
                         cart: newCart,
                     };
                 } else {
@@ -42,12 +42,12 @@ function ItemDetails({ props }) {
                 }
             }));
 
-            props.setUser({
-                name: props.user.name,
-                email: props.user.email,
-                phone: props.user.phone,
-                password: props.user.password,
-                address: props.user.address,
+            setUser({
+                name: user.name,
+                email: user.email,
+                phone: user.phone,
+                password: user.password,
+                address: user.address,
                 cart: newCart,
             });
 		}
@@ -65,36 +65,35 @@ function ItemDetails({ props }) {
 			{item.price}
 		</button>
 	);
-	if (props !== undefined) {
-		if (!props.logged) {
-			buyButton = (
-				<button id="buyButton" onClick={login}>
-					Login {item.price}
-				</button>
-			);
-		} else if (!props.adm) {
-			//Determina se é possível realizar a compra (se existem itens em estoque)
-			if (item.quantity > 0) {
-				buyButton = (
-					<button id="buyButton" onClick={buy}>
-						Buy {item.price}
-					</button>
-				);
-			} else {
-				buyButton = (
-					<button id="buyButton" disabled>
-						Sold Out
-					</button>
-				);
-			}
-		} else {
-			buyButton = (
-				<button id="buyButton" onClick={editItem}>
-					Edit {item.price}
-				</button>
-			);
-		}
-	}
+
+    if (!logged) {
+        buyButton = (
+            <button id="buyButton" onClick={login}>
+                Login {item.price}
+            </button>
+        );
+    } else if (!adm) {
+        //Determina se é possível realizar a compra (se existem itens em estoque)
+        if (item.quantity > 0) {
+            buyButton = (
+                <button id="buyButton" onClick={buy}>
+                    Buy {item.price}
+                </button>
+            );
+        } else {
+            buyButton = (
+                <button id="buyButton" disabled>
+                    Sold Out
+                </button>
+            );
+        }
+    } else {
+        buyButton = (
+            <button id="buyButton" onClick={editItem}>
+                Edit {item.price}
+            </button>
+        );
+    }
 
 	return (
 		<div id="itemDetails">
