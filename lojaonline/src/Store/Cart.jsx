@@ -1,11 +1,7 @@
-import React, { useEffect, useState } from "react";
-import ItemOption from "./ItemOption";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 import ItemCart from "./ItemCart";
 
 const Cart = ({ props }) => {
-	const navigate = useNavigate();
-
 	let sum = 0;
 
 	let Total;
@@ -34,16 +30,9 @@ const Cart = ({ props }) => {
 		props.user.cart = [];
 	};
 
-	const handleBuy = () => {};
-
-	// props.setUser({
-	// 	name: props.user.name,
-	// 	email: props.user.email,
-	// 	phone: props.user.phone,
-	// 	password: props.user.password,
-	// 	address: props.user.address,
-	// 	cart: newCart,
-	// });
+	const handleBuy = () => {
+        props.user.cart = [];
+    };
 
 	if (itemsOnCart.length === 0) {
 		itemsOnCart = <div>Carrinho Vazio</div>;

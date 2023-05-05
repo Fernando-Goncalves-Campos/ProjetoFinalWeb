@@ -21,39 +21,37 @@ function ItemDetails({ props }) {
 		let newCart = props.user.cart;
 		let itemCartIndex = newCart.findIndex((itemCart) => itemCart[0] === itemId);
 
-		//caso já esteja no cart não faz nada
-		if (itemCartIndex !== -1) {
-		} else {
+		//Caso já esteja no cart não faz nada
+		if (itemCartIndex === -1) {
 			newCart.push([itemId, 1]);
+
+            //Adiciona a conta à lista de usuários
+            props.setCustomers((prevCustomers) =>
+            prevCustomers.map((cust) => {
+                if (cust.name === props.user.name) {
+                    return {
+                        name: props.user.name,
+                        email: props.user.email,
+                        phone: props.user.phone,
+                        password: props.user.password,
+                        address: props.user.address,
+                        cart: newCart,
+                    };
+                } else {
+                    return cust;
+                }
+            }));
+
+            props.setUser({
+                name: props.user.name,
+                email: props.user.email,
+                phone: props.user.phone,
+                password: props.user.password,
+                address: props.user.address,
+                cart: newCart,
+            });
 		}
-
-		//Adiciona a conta à lista de usuários
-		props.setCustomers((prevCustomers) =>
-			prevCustomers.map((cust) => {
-				if (cust.name === props.user.name) {
-					return {
-						name: props.user.name,
-						email: props.user.email,
-						phone: props.user.phone,
-						password: props.user.password,
-						address: props.user.address,
-						cart: newCart,
-					};
-				} else {
-					return cust;
-				}
-			})
-		);
-
-		props.setUser({
-			name: props.user.name,
-			email: props.user.email,
-			phone: props.user.phone,
-			password: props.user.password,
-			address: props.user.address,
-			cart: newCart,
-		});
-		navigate("/");
+		navigate("/cart");
 	}
 
 	//Para a tela de edição de itens com o ID do item

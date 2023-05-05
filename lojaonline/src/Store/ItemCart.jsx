@@ -1,10 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import ItemDetails from "./ItemDetails";
+import React from "react";
 
 const ItemCart = ({ props, item, qnt, newCart }) => {
-	//Usado para redirecionar o usuário para outra rota do site
-	const navigate = useNavigate();
 
 	let addBtn = <button onClick={() => handleQntBtnClick(true)}>+</button>;
 
@@ -61,9 +57,7 @@ const ItemCart = ({ props, item, qnt, newCart }) => {
 		if (sum) {
 			if (qnt < item.quantity) {
 				qnt++;
-				{
-					buy(true);
-				}
+                buy(true);
 			}
 		} else {
 			qnt--;
