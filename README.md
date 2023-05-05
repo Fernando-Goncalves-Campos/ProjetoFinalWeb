@@ -4,44 +4,46 @@ Fernando Gonçalves Campos 12542352 <br>
 José Pedro Cioni do Carmo 12623988 <br>
 Samuel Figueiredo Veronez 12542626
 
+## Diagrama de Navegação
+
+![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Diagrama.png?raw=true)
+
+
 <!--Requirements-->
 <details>
-  
-  ### New Requirements
-  
-  - Button to change the page color(Dark mode) <br>
-
-  ### Basis Requirements
-
-  - The system must have 2 types of users: Clients and Administrators<br>
-
-  - Administrators are responsible for registering/managing administrators, customers, and products/services provided. The application already comes with an account admin with password admin.<br>
-
-  - Customers are users who access the system to buy products/services.<br>
-
-  - The admin record includes, at least: name, id, phone, email.<br>
-
-  - Each customer's record includes, at least: name, id, address, phone, email<br>
-
-  - Product/services records include, at least: name, id, photo, description, price, quantity (in stock), quantity sold.<br>
-
-  - Your store may sell products, services or both (you decide)<br>
-
-  - Selling Products (or services): Products are selected, their quantity chosen, and are included in a cart. Products are purchased using a credit card number (any number is accepted by the system). The quantity of product sold is subtracted from the quantity in stock and added to the quantity sold. Carts are emptied only on payment or by customers.<br>
-
-  - Product/Service Management: Administrators can create/update/read/delete (crud) new products and services. For example, they can change the stock quantity.<br>
-
-  - Your functionality: Create a functionality that is specific to your application. It does not have to be something complicated. For instance, if you are selling cars, you may allow users to use an accelerator to hear how each car engine roars up and down.<br>
-
-  - The system must provide accessibility requirements and provide good usability. The system must be responsive, meaning that it should complete assigned tasks within a reasonable time.<br>
-
-
-
 <summary>
   
 ## Requirements
-
+  
 </summary>
+  
+  ### New Requirements
+  
+  1. Button to change the page color(Dark mode) <br>
+
+  ### Basis Requirements
+
+  2. The system must have 2 types of users: Clients and Administrators<br>
+
+  3. Administrators are responsible for registering/managing administrators, customers, and products/services provided. The application already comes with an account admin with password admin.<br>
+
+  4. Customers are users who access the system to buy products/services.<br>
+
+  5. The admin record includes, at least: name, id, phone, email.<br>
+
+  6. Each customer's record includes, at least: name, id, address, phone, email<br>
+
+  7. Product/services records include, at least: name, id, photo, description, price, quantity (in stock), quantity sold.<br>
+
+  8. Your store may sell products, services or both (you decide)<br>
+
+  9. Selling Products (or services): Products are selected, their quantity chosen, and are included in a cart. Products are purchased using a credit card number (any number is accepted by the system). The quantity of product sold is subtracted from the quantity in stock and added to the quantity sold. Carts are emptied only on payment or by customers.<br>
+
+  10. Product/Service Management: Administrators can create/update/read/delete (crud) new products and services. For example, they can change the stock quantity.<br>
+
+  11. Your functionality: Create a functionality that is specific to your application. It does not have to be something complicated. For instance, if you are selling cars, you may allow users to use an accelerator to hear how each car engine roars up and down.<br>
+  
+  12. The system must provide accessibility requirements and provide good usability. The system must be responsive, meaning that it should complete assigned tasks within a reasonable time.<br>
 
 </details>
 
@@ -52,6 +54,8 @@ Samuel Figueiredo Veronez 12542626
 ## Project description
 
 </summary>
+  
+  1. Os arquivos .css utilizam como cor uma váriavel, que é decidida que pode ter seu valor "invertido" utilizando o botão de Dark Mode
 
 </details>
 
