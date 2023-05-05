@@ -13,37 +13,37 @@ Samuel Figueiredo Veronez 12542626
 <details>
 <summary>
   
-## Requirements
+## Requerimentos
   
 </summary>
   
-  ### New Requirements
+  ### Novos Requerimentos
   
   1. Button to change the page color(Dark mode) <br>
 
-  ### Basis Requirements
+  ### Requerimentos Base
 
-  2. The system must have 2 types of users: Clients and Administrators<br>
-
-  3. Administrators are responsible for registering/managing administrators, customers, and products/services provided. The application already comes with an account admin with password admin.<br>
-
-  4. Customers are users who access the system to buy products/services.<br>
-
-  5. The admin record includes, at least: name, id, phone, email.<br>
-
-  6. Each customer's record includes, at least: name, id, address, phone, email<br>
-
-  7. Product/services records include, at least: name, id, photo, description, price, quantity (in stock), quantity sold.<br>
-
-  8. Your store may sell products, services or both (you decide)<br>
-
-  9. Selling Products (or services): Products are selected, their quantity chosen, and are included in a cart. Products are purchased using a credit card number (any number is accepted by the system). The quantity of product sold is subtracted from the quantity in stock and added to the quantity sold. Carts are emptied only on payment or by customers.<br>
-
-  10. Product/Service Management: Administrators can create/update/read/delete (crud) new products and services. For example, they can change the stock quantity.<br>
-
-  11. Your functionality: Create a functionality that is specific to your application. It does not have to be something complicated. For instance, if you are selling cars, you may allow users to use an accelerator to hear how each car engine roars up and down.<br>
+  2. Dois tipos de usuários: Clientes e Administradores.<br>
   
-  12. The system must provide accessibility requirements and provide good usability. The system must be responsive, meaning that it should complete assigned tasks within a reasonable time.<br>
+  3. Administradores gerenciam o registro de outros administradores, clientes e produtos/serviços.<br>
+
+  4. Os clientes são usuários que acessam o sistema para comprar produtos/serviços.<br>
+
+  5. O registro do administrador inclui, pelo menos: nome, id, telefone e e-mail.<br>
+
+  6. Cada registro de cliente inclui, pelo menos: nome, id, endereço, telefone e e-mail.<br>
+
+  7. Os registros de produtos/serviços incluem, pelo menos: nome, id, foto, descrição, preço, quantidade em estoque e quantidade vendida.<br>
+  
+  8. A loja pode vender produtos, serviços ou ambos (você decide).<br>
+
+  9. Venda de Produtos (ou Serviços): Produtos são selecionados, sua quantidade escolhida e incluídos em um carrinho. Os produtos são comprados usando um número de cartão de crédito (qualquer número é aceito pelo sistema). A quantidade de produto vendido é subtraída da quantidade em estoque e adicionada à quantidade vendida. Carrinhos são esvaziados somente após o pagamento ou pelo cliente.<br>
+
+  10. Gerenciamento de Produtos/Serviços: Administradores podem criar/atualizar/ler/excluir (CRUD) novos produtos e serviços. Por exemplo, eles podem alterar a quantidade em estoque.<br>
+
+  11. Sua funcionalidade: Crie uma funcionalidade específica para o seu aplicativo. Não precisa ser algo complicado. Por exemplo, se você está vendendo carros, pode permitir que os usuários usem um acelerador para ouvir como o motor de cada carro acelera e desacelera.<br>
+
+  12. O sistema deve atender aos requisitos de acessibilidade e oferecer boa usabilidade. O sistema deve ser responsivo, o que significa que deve concluir as tarefas atribuídas dentro de um tempo razoável.<br>
 
 </details>
 
@@ -51,7 +51,7 @@ Samuel Figueiredo Veronez 12542626
 <details>
 <summary>
 
-## Project description
+## Descrição do Projeto
 
 </summary>
   
@@ -63,7 +63,7 @@ Samuel Figueiredo Veronez 12542626
 <details>
 <summary>
 
-## Comments about the code
+## Comentários sobre o código
 
 </summary>
 
@@ -74,13 +74,13 @@ Samuel Figueiredo Veronez 12542626
 <details>
 <summary>
 
-## Tests
+## Testes
 
 </summary>
 
-### Test plan
+### Plano de teste
 
-### Test results
+### Resultado dos testes
 
 </details>
 
@@ -88,7 +88,7 @@ Samuel Figueiredo Veronez 12542626
 <details>
 <summary>
 
-## Build procedures
+## Processo para compilação
 
 </summary>
 
@@ -103,7 +103,7 @@ Para abrir o site, deve-se abrir o diretório do react (lojaonline) no terminal 
 <details>
 <summary>
 
-## Problems
+## Problemas
 
 </summary>
 
@@ -113,7 +113,7 @@ Para abrir o site, deve-se abrir o diretório do react (lojaonline) no terminal 
 <details>
 <summary>
 
-## Comments
+## Comentários
 
 </summary>
 
