@@ -4,6 +4,11 @@ Fernando Gonçalves Campos 12542352 <br>
 José Pedro Cioni do Carmo 12623988 <br>
 Samuel Figueiredo Veronez 12542626
 
+## Diagrama de Navegação
+
+![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Diagrama.png?raw=true)
+
+
 <!--Requirements-->
 <details>
 <summary>
