@@ -14,7 +14,7 @@ Samuel Figueiredo Veronez 12542626
   
   ### Funcionalidade Extra
   
-  1. Button to change the page color(Dark mode) <br>
+  1. Um botão para dark mode <br>
 
   ### Requerimentos Base
 
