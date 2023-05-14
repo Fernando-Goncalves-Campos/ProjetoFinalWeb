@@ -44,7 +44,7 @@ Samuel Figueiredo Veronez 12542626
 
 </summary>
   
-  O -Nome do projeto- é um site de vendas focado em - nsi-
+  PetLove é um site de petshop completo, oferecendo produtos e informações para cuidar dos animais de estimação. Com interface amigável.
   
 
   Uma <a href="https://www.figma.com/proto/x9shT7gVxjjd68K5l27GCM/Web?type=design&node-id=1-3&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A3">Versão Figma</a> do mockup também foi feita.
