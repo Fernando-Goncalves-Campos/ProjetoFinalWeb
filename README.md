@@ -12,7 +12,7 @@ Samuel Figueiredo Veronez 12542626
   
 </summary>
   
-  ### Novos Requerimentos
+  ### Funcionalidade Extra
   
   1. Button to change the page color(Dark mode) <br>
 
@@ -63,7 +63,7 @@ Samuel Figueiredo Veronez 12542626
   <details>
   <summary>
 
-  ### Fotos
+  ## Fotos
 
   </summary>
   
