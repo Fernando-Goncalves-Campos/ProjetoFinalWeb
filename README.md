@@ -65,15 +65,11 @@ Samuel Figueiredo Veronez 12542626
   
   ### Detalhes do item
   
-  ![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Mockup/Item-details.png?raw=true)
+  ![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Mockup/ItemDescription.png?raw=true)
   
   ### Carrinho de compra
   
   ![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Mockup/Cart.png?raw=true)
-  
-  ### Carrinho de compra + user menu
-  
-  ![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Mockup/Cart+usermenu.png?raw=true)
   
   ### Login
   
@@ -81,7 +77,7 @@ Samuel Figueiredo Veronez 12542626
   
   ### Registrar
   
-  ![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Mockup/Sing-in.png?raw=true)
+  ![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Mockup/CreateAccount.png?raw=true)
   
 </details>
 
