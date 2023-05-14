@@ -8,37 +8,29 @@ Samuel Figueiredo Veronez 12542626
 <details>
 <summary>
   
-## Requerimentos
+## Requisitos
   
 </summary>
+
+  1. Dois tipos de usuários: Clientes e Administradores:<br>
   
-  ### Funcionalidade Extra
+    . Administradores gerenciam o registro de outros administradores, clientes e produtos/serviços.
   
-  1. Um botão para dark mode <br>
-
-  ### Requerimentos Base
-
-  2. Dois tipos de usuários: Clientes e Administradores.<br>
+    . Os clientes são usuários que acessam o sistema para comprar produtos/serviços.
   
-  3. Administradores gerenciam o registro de outros administradores, clientes e produtos/serviços.<br>
-
-  4. Os clientes são usuários que acessam o sistema para comprar produtos/serviços.<br>
-
-  5. O registro do administrador inclui, pelo menos: nome, id, telefone e e-mail.<br>
-
-  6. Cada registro de cliente inclui, pelo menos: nome, id, endereço, telefone e e-mail.<br>
-
-  7. Os registros de produtos/serviços incluem, pelo menos: nome, id, foto, descrição, preço, quantidade em estoque e quantidade vendida.<br>
+    . O registro do administrador inclui, pelo menos: nome, id, telefone e e-mail.
   
-  8. A loja pode vender produtos, serviços ou ambos (você decide).<br>
+    . Cada registro de cliente inclui, pelo menos: nome, id, endereço, telefone e e-mail.
 
-  9. Venda de Produtos (ou Serviços): Produtos são selecionados, sua quantidade escolhida e incluídos em um carrinho. Os produtos são comprados usando um número de cartão de crédito (qualquer número é aceito pelo sistema). A quantidade de produto vendido é subtraída da quantidade em estoque e adicionada à quantidade vendida. Carrinhos são esvaziados somente após o pagamento ou pelo cliente.<br>
+  2. Produtos
+    . Os registros de produtos/serviços incluem, pelo menos: nome, id, foto, descrição, preço, quantidade em estoque e quantidade vendida.
 
-  10. Gerenciamento de Produtos/Serviços: Administradores podem criar/atualizar/ler/excluir (CRUD) novos produtos e serviços. Por exemplo, eles podem alterar a quantidade em estoque.<br>
+    . Venda de Produtos (ou Serviços): Produtos são selecionados, sua quantidade escolhida e incluídos em um carrinho. Os produtos são comprados usando um número de cartão de crédito.
 
-  11. Sua funcionalidade: Crie uma funcionalidade específica para o seu aplicativo. Não precisa ser algo complicado. Por exemplo, se você está vendendo carros, pode permitir que os usuários usem um acelerador para ouvir como o motor de cada carro acelera e desacelera.<br>
+    . Gerenciamento de Produtos/Serviços: Administradores podem criar/atualizar/ler/excluir (CRUD) novos produtos e serviços. Por exemplo, eles podem alterar a quantidade em estoque.
 
-  12. O sistema deve atender aos requisitos de acessibilidade e oferecer boa usabilidade. O sistema deve ser responsivo, o que significa que deve concluir as tarefas atribuídas dentro de um tempo razoável.<br>
+
+  3. O sistema deve atender aos requisitos de acessibilidade e oferecer boa usabilidade. O sistema deve ser responsivo, o que significa que deve concluir as tarefas atribuídas dentro de um tempo razoável.<br>
 
 </details>
 
