@@ -4,10 +4,6 @@ Fernando Gonçalves Campos 12542352 <br>
 José Pedro Cioni do Carmo 12623988 <br>
 Samuel Figueiredo Veronez 12542626
 
-## Diagrama de Navegação
-
-![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Diagrama.png?raw=true)
-
 <!--Requirements-->
 <details>
 <summary>
@@ -60,7 +56,18 @@ Samuel Figueiredo Veronez 12542626
   
   Os arquivos HTML/CSS de algumas dessas páginas estão disponibilizados na <a href="https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/tree/main/Prototipos">Pasta Prototipos</a>.
   
-  ### Página Principal
+   ## Diagrama de Navegação
+
+  ![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Diagrama.png?raw=true)
+  
+  <details>
+  <summary>
+
+  ### Fotos
+
+  </summary>
+  
+   ### Página Principal
   
   ![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Mockup/Loja.png?raw=true)
   
@@ -87,6 +94,9 @@ Samuel Figueiredo Veronez 12542626
   ### Registrar
   
   ![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Mockup/Sing-in.png?raw=true)
+
+  </details>
+  
     
 
 </details>
