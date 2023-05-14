@@ -1,44 +1,35 @@
-* {
-    transition: 10s;
-}
-
-#store{
+#cart{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
 }
 
-.storeItem{
+.cartItem{
     background-color: var(--bg-color-nav);
     margin: 15px;
     padding: 10px;
     color: var(--text-color-nav);
     text-align: center;
     width: 225px;
-    cursor: pointer;
 }
 
-.storeItemText{
+.cartItemText{
     margin: 2px 10px 5px;
     text-align: left;
 }
 
-.storeItem img{
+.cartItem img{
     margin: 0px 0px 5px;
     height: 200px;
     width: 200px;
 }
 
-.itemName{
-    text-align: left;
-    font-size: 1em;
+#emptyText {
+    color: var(--text-color-content);
+    margin: 30px auto;
+    font-size: 30px;
 }
 
-.itemId{
-    text-align: lef;
-    font-size: 0.8em;
-}
-
-.itemPrice{
-    text-align: right;
+#cartBtns {
+    text-align: center;
 }

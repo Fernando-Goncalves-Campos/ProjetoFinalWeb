@@ -61,14 +61,14 @@ function ItemDetails({ user, setUser, logged, adm, items, setCustomers }) {
 
 	//Seleciona a função de acordo com o tipo de login
 	let buyButton = (
-		<button id="buyButton" onClick={login}>
+		<button id="buyButton" className="buttonCont" onClick={login}>
 			{item.price}
 		</button>
 	);
 
     if (!logged) {
         buyButton = (
-            <button id="buyButton" onClick={login}>
+            <button id="buyButton" className="buttonCont" onClick={login}>
                 Login {item.price}
             </button>
         );
@@ -76,27 +76,27 @@ function ItemDetails({ user, setUser, logged, adm, items, setCustomers }) {
         //Determina se é possível realizar a compra (se existem itens em estoque)
         if (item.quantity > 0) {
             buyButton = (
-                <button id="buyButton" onClick={buy}>
+                <button id="buyButton" className="buttonCont" onClick={buy}>
                     Buy {item.price}
                 </button>
             );
         } else {
             buyButton = (
-                <button id="buyButton" disabled>
+                <button id="buyButton" className="buttonCont" disabled>
                     Sold Out
                 </button>
             );
         }
     } else {
         buyButton = (
-            <button id="buyButton" onClick={editItem}>
+            <button id="buyButton" className="buttonCont" onClick={editItem}>
                 Edit {item.price}
             </button>
         );
     }
 
 	return (
-		<div id="itemDetails">
+		<div>
 			<img src={item.photo} alt={item.name} id="detailsImg" />
 			<div id="detailsContainer">
 				<span id="detailsName">{item.name}</span> <br />

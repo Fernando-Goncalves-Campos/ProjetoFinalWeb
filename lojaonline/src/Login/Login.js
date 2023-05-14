@@ -1,6 +1,6 @@
 import { useState, memo } from "react";
 import LoginUser from "./LoginUser.js";
-import LoginSignIn from "./LoginSignIn.js";
+import LoginCreate from "./LoginCreate.js";
 import './Login.css';
 
 function Login({setUser, setLogged, setAdm, customers, setCustomers, adms}) {
@@ -12,7 +12,7 @@ function Login({setUser, setLogged, setAdm, customers, setCustomers, adms}) {
         dataSubmit = <LoginUser setUser={(value)=>{setUser(value)}} setLogged={(value)=>{setLogged(value)}} setAdm={(value)=>{setAdm(value)}} customers={customers} adms={adms}/>;
     }
     else{
-        dataSubmit = <LoginSignIn setUser={(value)=>{setUser(value)}} setLogged={(value)=>{setLogged(value)}} customers={customers} setCustomers={(value)=>{setCustomers(value)}} adms={adms}/>;
+        dataSubmit = <LoginCreate setUser={(value)=>{setUser(value)}} setLogged={(value)=>{setLogged(value)}} customers={customers} setCustomers={(value)=>{setCustomers(value)}} adms={adms}/>;
     }
 
     return (
@@ -20,8 +20,8 @@ function Login({setUser, setLogged, setAdm, customers, setCustomers, adms}) {
             <br />
             <input type="radio" className="selectType" id="login" name="type" value="login" onChange={(e) => setType(e.target.value)} />
             <label htmlFor="login">Login  </label>
-            <input type="radio" className="selectType" id="signIn" name="type" value="signIn" onChange={(e) => setType(e.target.value)} />
-            <label htmlFor="signIn">Sign In  </label> <br /><br /><br />
+            <input type="radio" className="selectType" id="create" name="type" value="create" onChange={(e) => setType(e.target.value)} />
+            <label htmlFor="create">Create  </label> <br /><br /><br />
 
             {dataSubmit}
         </div>

@@ -49,7 +49,7 @@ function AddAdm({customers, adms, setAdms}) {
                 Email:<br /><input type="email" className="inputLogin" name="Email" onChange={(e) => setEmail(e.target.value)} /><br /><br />
                 Phone:<br /><input type="tel" className="inputLogin" name="Phone" onChange={(e) => setPhone(e.target.value)} /><br /><br />
 
-                <input type="submit" id="confirmLogin" value="Submit"/>
+                <input type="submit" className="buttonCont buttonForm" id="confirmLogin" value="Submit"/>
             </form>    
         </div>
     );

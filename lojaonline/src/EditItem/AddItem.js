@@ -55,7 +55,7 @@ function AddItem({items, setItems}) {
                 Price:<br /><input type="text" className="inputItem" name="price" onChange={(e) => setPrice(e.target.value)} /><br /><br />
                 Quantity:<br /><input type="number" className="inputItem" name="quantity" onChange={(e) => setQuantity( Number(e.target.value) )} /><br /><br />
 
-                <input type="submit" id="confirmItem" value="Submit"/>
+                <input type="submit" className="buttonCont buttonForm" id="confirmItem" value="Submit"/>
             </form>    
         </div>
     );

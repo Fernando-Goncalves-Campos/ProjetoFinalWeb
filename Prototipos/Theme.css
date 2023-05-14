@@ -4,11 +4,16 @@
     --bg-color-nav: #2d2d2d;
     --bg-color-content: #242424;
     --bg-color-search: #242424;
+    --bg-color-button: #2d2d2d;
+    --bg-color-button-hover: #515151;
 
     /*Cores texto*/
     --text-color-nav: #c1cccc;
     --text-color-content: #c1cccc;
     --text-color-search: #c1cccc;
+    --text-color-button: #c0c0c0;
+    --text-color-button-hover: #b0b0b0;
+
     /*Cor para quando o texto é selecionado*/
     --text-selection-color: #204182cc;
 
@@ -17,7 +22,7 @@
 
     /*Barra de scroll*/
     --track-scrollbar-color: #2d2d2d;
-    --hump-scrollbar-color: #464646;
+    --hump-scrollbar-color: #2d2d2d;
     --hump-scrollbar-hover-color: #515151;
 }
 
@@ -27,12 +32,15 @@
     --bg-color-nav: #dbdbdb;
     --bg-color-content: #ffffff;
     --bg-color-search: #ffffff;
-
+    --bg-color-button: #dbdbdb;
+    --bg-color-button-hover: #c0c0c0;
 
     /*Cores texto*/
     --text-color-nav: #5d5e5e;
     --text-color-content: #5d5e5e;
     --text-color-search: #5d5e5e;
+    --text-color-button: #3d3d3d;
+    --text-color-button-hover: #515151;
 
     /*Cor para quando o texto for selecionado*/
     --text-selection-color: #3390ffaa;

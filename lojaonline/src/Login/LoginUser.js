@@ -40,7 +40,7 @@ function LoginUser({setUser, setLogged, setAdm, customers, adms}) {
             <form onSubmit={handleSubmit}>
                 Name:<br /><input type="text" className="inputLogin" name="Username" onChange={(e) => setUsername(e.target.value)} /><br /><br />
                 Password:<br /><input type="password" className="inputLogin" name="Password" onChange={(e) => setPassword(e.target.value)} /><br />
-                <input type="submit" id="confirmLogin" value="Submit"/>
+                <input type="submit" className="buttonCont buttonForm" id="confirmLogin" value="Submit"/>
             </form>    
         </div>
     );

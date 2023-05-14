@@ -3,7 +3,7 @@
     padding: 0;
     outline: none;
     border: none;
-    transition: 0s, background-color 0.5s, color 0.5s, border 0.5s;
+    transition: background-color 0.5s, color 0.2s, border 0.5s;
     box-sizing: border-box;
 }
 
@@ -85,4 +85,23 @@ body::after{
 
     cursor: pointer;
     text-decoration: none;
+}
+
+.buttonForm {
+    background-color: var(--bg-color-button);
+    color: var(--text-color-button);
+
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    width: 100px;
+    height: 50px;
+
+    border-radius: 4px;
+}
+
+.buttonForm:hover {
+    background-color: var(--bg-color-button-hover);
+    color: var(--text-color-button-hover);
+    cursor: pointer;
 }

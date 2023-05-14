@@ -1,11 +1,12 @@
-import React from "react";
+import React, { memo } from "react";
 
 const ItemCart = ({ user, setUser, setCustomers, item, qnt, newCart }) => {
 
-	let addBtn = <button onClick={() => handleQntBtnClick(true)}>+</button>;
+    //Botões que modificam a quantidade de items selecionados
+	let addBtn = <button className="buttonCont buttonQuant" onClick={() => handleQntBtnClick(true)}>+</button>;
+	let subBtn = <button className="buttonCont buttonQuant" onClick={() => handleQntBtnClick(false)}>-</button>;
 
-	let subBtn = <button onClick={() => handleQntBtnClick(false)}>-</button>;
-
+    //Função que realiza a adição/subtração de um item
 	function buy(sum) {
 		let itemCartIndex = newCart.findIndex(
 			(itemCart) => itemCart[0] === item.id
@@ -25,8 +26,8 @@ const ItemCart = ({ user, setUser, setCustomers, item, qnt, newCart }) => {
 			}
 		}
 
-		//Adiciona a conta à lista de usuários
-		setCustomers((prevCustomers) =>
+		//Modifica na lista de usuários
+		setCustomers(prevCustomers =>
 			prevCustomers.map((cust) => {
 				if (cust.name === user.name) {
 					return {
@@ -43,6 +44,7 @@ const ItemCart = ({ user, setUser, setCustomers, item, qnt, newCart }) => {
 			})
 		);
 
+        //Modifica o usuário
 		setUser({
 			name: user.name,
 			email: user.email,
@@ -57,6 +59,9 @@ const ItemCart = ({ user, setUser, setCustomers, item, qnt, newCart }) => {
 		if (sum) {
 			if (qnt < item.quantity) {
 				qnt++;
+                if(qnt === item.quantity){
+                    addBtn = <button className="buttonCont buttonQuant" onClick={() => handleQntBtnClick(true)} disabled>+</button>;
+                }
                 buy(true);
 			}
 		} else {
@@ -67,9 +72,9 @@ const ItemCart = ({ user, setUser, setCustomers, item, qnt, newCart }) => {
 
 	return (
 		<div>
-			<div className="storeItem">
+			<div className="cartItem">
 				<img src={item.photo} alt={item.name} /> <br />
-				<div class="storeItemText">
+				<div className="cartItemText">
 					<span className="itemName"> {item.name} </span> <br />
 					<span className="itemId"> id: {item.id} </span> <br />
 					<span>quantidade disponível: {item.quantity}</span>
@@ -82,4 +87,4 @@ const ItemCart = ({ user, setUser, setCustomers, item, qnt, newCart }) => {
 	);
 };
 
-export default ItemCart;
+export default memo(ItemCart);

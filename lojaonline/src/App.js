@@ -3,11 +3,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./NavBar/Layout.js";
 import Store from "./Store/Store.js";
 import Login from "./Login/Login.js";
-import ItemDetails from "./Store/ItemDetails.js";
+import ItemDetails from "./ItemDetails/ItemDetails.js";
 import AddAdm from "./Login/AddAdm.js";
 import AddItem from "./EditItem/AddItem.js";
 import EditItem from "./EditItem/EditItem.js";
-import Cart from "./Store/Cart.jsx";
+import Cart from "./Cart/Cart.jsx";
 
 import "./App.css";
 import "./Theme.css";

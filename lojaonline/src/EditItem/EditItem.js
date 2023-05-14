@@ -22,19 +22,19 @@ function EditItem({items, setItems}) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         
-        setItems(
-            items.map(prevItems => 
-                prevItems.id === item.id ?
-                {   
-                    name: name,
-                    id: id,
-                    photo: photo,
-                    description: description,
-                    price: price,
-                    quantity: quantity,
-                    quantitySold: 0
-                }
-                : {...prevItems}
+        setItems(prevItems => 
+            prevItems.map(itemOfStore =>
+            itemOfStore.id === id ?
+            {   
+                name: name,
+                id: id,
+                photo: photo,
+                description: description,
+                price: price,
+                quantity: quantity,
+                quantitySold: 0
+            }
+            : {...itemOfStore}
         ));
         navigate("/");
     };
@@ -57,8 +57,8 @@ function EditItem({items, setItems}) {
                 Price:<br /><input type="text" className="inputItem" name="price" defaultValue={item.price} onChange={(e) => setPrice(e.target.value)} /><br /><br />
                 Quantity:<br /><input type="number" className="inputItem" name="quantity" defaultValue={item.quantity} onChange={(e) => setQuantity( Number(e.target.value) )} /><br /><br />
 
-                <input type="submit" id="confirmItem" value="Submit"/>
-                <button id="deleteItem" onClick={deleteItem}>Delete</button>
+                <input type="submit" className="buttonCont buttonForm" id="confirmItem" value="Submit"/>
+                <button id="deleteItem" className="buttonCont buttonForm" onClick={deleteItem}>Delete</button>
             </form>    
         </div>
     );

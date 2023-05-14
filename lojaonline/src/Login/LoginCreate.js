@@ -2,7 +2,7 @@ import { useState, memo } from "react";
 import { useNavigate } from "react-router-dom";
 import './Login.css';
 
-function LoginSignIn({setUser, setLogged, customers, setCustomers, adms}) {
+function LoginCreate({setUser, setLogged, customers, setCustomers, adms}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [phone, setPhone] = useState("");
@@ -61,11 +61,11 @@ function LoginSignIn({setUser, setLogged, customers, setCustomers, adms}) {
                 Phone:<br /><input type="tel" className="inputLogin" name="Phone" onChange={(e) => setPhone(e.target.value)} /><br /><br />
                 Address:<br /><input type="text" className="inputLogin" name="Address" onChange={(e) => setAddress(e.target.value)} /><br />
 
-                <input type="submit" id="confirmLogin" value="Submit"/>
+                <input type="submit" className="buttonCont buttonForm" id="confirmLogin" value="Submit"/>
             </form>    
         </div>
     );
 }
 
 
-export default memo(LoginSignIn);
+export default memo(LoginCreate);

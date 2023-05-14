@@ -84,3 +84,22 @@ body::after{
     cursor: pointer;
     text-decoration: none;
 }
+
+.buttonCont {
+    background-color: var(--bg-color-button);
+    color: var(--text-color-button);
+    cursor: pointer;
+}
+
+.buttonCont:hover{
+    background-color: var(--bg-color-button-hover);
+    color: var(--text-color-button-hover);
+}
+
+.buttonForm {
+    display: block;
+    margin: auto;
+    width: 100px;
+    height: 50px;
+    border-radius: 4px;
+}
