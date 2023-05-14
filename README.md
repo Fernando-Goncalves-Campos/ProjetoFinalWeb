@@ -8,7 +8,6 @@ Samuel Figueiredo Veronez 12542626
 
 ![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Diagrama.png?raw=true)
 
-
 <!--Requirements-->
 <details>
 <summary>
@@ -56,6 +55,39 @@ Samuel Figueiredo Veronez 12542626
 </summary>
   
   1. Os arquivos .css utilizam como cor uma váriavel, que é decidida que pode ter seu valor "invertido" utilizando o botão de Dark Mode
+
+  Uma <a href="https://www.figma.com/proto/x9shT7gVxjjd68K5l27GCM/Web?type=design&node-id=1-3&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A3">Versão Figma</a> do mockup também foi feita.
+  
+  Os arquivos HTML/CSS de algumas dessas páginas estão disponibilizados na <a href="https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/tree/main/Prototipos">Pasta Prototipos</a>.
+  
+  ### Página Principal
+  
+  ![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Mockup/Loja.png?raw=true)
+  
+  ### Página Principal - versão white mode
+ 
+  ![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Mockup/Loja-white.png?raw=true)
+  
+  ### Detalhes do item
+  
+  ![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Mockup/Item-details.png?raw=true)
+  
+  ### Carrinho de compra
+  
+  ![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Mockup/Cart.png?raw=true)
+  
+  ### Carrinho de compra + user menu
+  
+  ![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Mockup/Cart+usermenu.png?raw=true)
+  
+  ### Login
+  
+  ![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Mockup/Login.png?raw=true)
+  
+  ### Registrar
+  
+  ![alt text](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/Mockup/Sing-in.png?raw=true)
+    
 
 </details>
 
