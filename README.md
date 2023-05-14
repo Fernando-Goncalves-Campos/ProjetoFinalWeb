@@ -23,6 +23,7 @@ Samuel Figueiredo Veronez 12542626
     . Cada registro de cliente inclui, pelo menos: nome, id, endereço, telefone e e-mail.
 
   2. Produtos
+  
     . Os registros de produtos/serviços incluem, pelo menos: nome, id, foto, descrição, preço, quantidade em estoque e quantidade vendida.
 
     . Venda de Produtos (ou Serviços): Produtos são selecionados, sua quantidade escolhida e incluídos em um carrinho. Os produtos são comprados usando um número de cartão de crédito.
