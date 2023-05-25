@@ -22,7 +22,7 @@ function App() {
 			photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
 			description:
 				"Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
-			price: 100.00,
+			price: 100.0,
 			quantity: 0,
 			quantitySold: 0,
 		},
@@ -32,7 +32,7 @@ function App() {
 			photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
 			description:
 				"Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
-			price: 200.00,
+			price: 200.0,
 			quantity: 1,
 			quantitySold: 0,
 		},
@@ -42,7 +42,7 @@ function App() {
 			photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
 			description:
 				"Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
-			price: 300.00,
+			price: 300.0,
 			quantity: 2,
 			quantitySold: 0,
 		},
@@ -52,7 +52,7 @@ function App() {
 			photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
 			description:
 				"Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
-			price: 400.00,
+			price: 400.0,
 			quantity: 3,
 			quantitySold: 0,
 		},
@@ -62,7 +62,7 @@ function App() {
 			photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
 			description:
 				"Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
-			price: 500.00,
+			price: 500.0,
 			quantity: 4,
 			quantitySold: 0,
 		},
@@ -72,7 +72,7 @@ function App() {
 			photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
 			description:
 				"Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
-			price: 600.00,
+			price: 600.0,
 			quantity: 5,
 			quantitySold: 0,
 		},
@@ -82,7 +82,7 @@ function App() {
 			photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
 			description:
 				"Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
-			price: 700.00,
+			price: 700.0,
 			quantity: 6,
 			quantitySold: 0,
 		},
@@ -92,7 +92,7 @@ function App() {
 			photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
 			description:
 				"Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
-			price: 800.00,
+			price: 800.0,
 			quantity: 7,
 			quantitySold: 0,
 		},
@@ -132,20 +132,139 @@ function App() {
 	//Usuário logado
 	const [user, setUser] = useState({ name: "" });
 
+	const [priceRange, setPriceRange] = useState([0, 1000]);
+
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" element={<Layout user={user} setUser={(value)=>{setUser(value)}} logged={logged} setLogged={(value)=>{setLogged(value)}} adm={adm} setAdm={(value)=>{setAdm(value)}} setSearchItem={(value)=>{setSearchItem(value)}}/>}>
-					<Route index element={<Store items={items} searchItem={searchItem}/>} />
+				<Route
+					path="/"
+					element={
+						<Layout
+							user={user}
+							setUser={(value) => {
+								setUser(value);
+							}}
+							logged={logged}
+							setLogged={(value) => {
+								setLogged(value);
+							}}
+							adm={adm}
+							setAdm={(value) => {
+								setAdm(value);
+							}}
+							setSearchItem={(value) => {
+								setSearchItem(value);
+							}}
+						/>
+					}
+				>
+					<Route
+						index
+						element={
+							<Store
+								items={items}
+								searchItem={searchItem}
+								priceRange={priceRange}
+								setPriceRange={(value) => {
+									setPriceRange(value);
+								}}
+							/>
+						}
+					/>
 
-					<Route path="/itemDetails/:itemId"element={<ItemDetails user={user} setUser={(value)=>{setUser(value)}} logged={logged} adm={adm} items={items} setCustomers={(value)=>{setCustomers(value)}}/>} />
+					<Route
+						path="/itemDetails/:itemId"
+						element={
+							<ItemDetails
+								user={user}
+								setUser={(value) => {
+									setUser(value);
+								}}
+								logged={logged}
+								adm={adm}
+								items={items}
+								setCustomers={(value) => {
+									setCustomers(value);
+								}}
+							/>
+						}
+					/>
 
-					<Route path="/login" element={<Login setUser={(value)=>{setUser(value)}} setLogged={(value)=>{setLogged(value)}} setAdm={(value)=>{setAdm(value)}} customers={customers} setCustomers={(value)=>{setCustomers(value)}} adms={adms} />} />
+					<Route
+						path="/login"
+						element={
+							<Login
+								setUser={(value) => {
+									setUser(value);
+								}}
+								setLogged={(value) => {
+									setLogged(value);
+								}}
+								setAdm={(value) => {
+									setAdm(value);
+								}}
+								customers={customers}
+								setCustomers={(value) => {
+									setCustomers(value);
+								}}
+								adms={adms}
+							/>
+						}
+					/>
 
-					<Route path="/addAdm" element={<AddAdm customers={customers} adms={adms} setAdms={(value)=>{setAdms(value)}}/>} />
-					<Route path="/addItem" element={<AddItem items={items} setItems={(value)=>{setItems(value)}} />} />
-					<Route path="/editItem/:itemId" element={<EditItem items={items} setItems={(value)=>{setItems(value)}}/>} />
-					<Route path="/cart" element={<Cart user={user} setUser={(value)=>{setUser(value)}} setCustomers={(value)=>{setCustomers(value)}} items={items} setItems={(value)=>{setItems(value)}}/>} />
+					<Route
+						path="/addAdm"
+						element={
+							<AddAdm
+								customers={customers}
+								adms={adms}
+								setAdms={(value) => {
+									setAdms(value);
+								}}
+							/>
+						}
+					/>
+					<Route
+						path="/addItem"
+						element={
+							<AddItem
+								items={items}
+								setItems={(value) => {
+									setItems(value);
+								}}
+							/>
+						}
+					/>
+					<Route
+						path="/editItem/:itemId"
+						element={
+							<EditItem
+								items={items}
+								setItems={(value) => {
+									setItems(value);
+								}}
+							/>
+						}
+					/>
+					<Route
+						path="/cart"
+						element={
+							<Cart
+								user={user}
+								setUser={(value) => {
+									setUser(value);
+								}}
+								setCustomers={(value) => {
+									setCustomers(value);
+								}}
+								items={items}
+								setItems={(value) => {
+									setItems(value);
+								}}
+							/>
+						}
+					/>
 
 					<Route path="*" element={<NoPage />} />
 				</Route>
