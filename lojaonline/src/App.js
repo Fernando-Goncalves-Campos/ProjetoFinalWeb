@@ -153,6 +153,7 @@ function App() {
 							setAdm={(value) => {
 								setAdm(value);
 							}}
+                            searchItem={searchItem}
 							setSearchItem={(value) => {
 								setSearchItem(value);
 							}}

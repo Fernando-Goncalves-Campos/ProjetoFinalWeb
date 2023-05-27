@@ -11,7 +11,7 @@ function Store({ items, searchItem, priceRange, setPriceRange }) {
 	let startPrice = [items[0].price, items[0].price];
 
 	const setRange = () => {
-		items.map((item) => {
+		items.forEach((item) => {
 			if (item.price < startPrice[0]) {
 				startPrice[0] = item.price;
 			} else if (item.price > startPrice[1]) {
@@ -19,6 +19,7 @@ function Store({ items, searchItem, priceRange, setPriceRange }) {
 			}
 		});
 	};
+
 	setRange();
 	//Filtra os itens de acordo com a barra de pesquisa
 	useEffect(() => {
