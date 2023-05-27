@@ -134,6 +134,12 @@ function App() {
 
 	const [priceRange, setPriceRange] = useState([0, 1000]);
 
+    console.log(JSON.stringify(items))
+    console.log(JSON.stringify(customers))
+    console.log(JSON.stringify(adms))
+
+
+
 	return (
 		<BrowserRouter>
 			<Routes>
