@@ -11,6 +11,7 @@ const RangeSlider = ({ priceRange, setPriceRange, startPrice }) => {
 		<Slider
 			sx={{
 				width: "100%",
+				color: "var(--text-color-nav)",
 			}}
 			getAriaLabel={() => "Temperature range"}
 			value={value}
