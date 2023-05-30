@@ -4,7 +4,6 @@ import "./Store.css";
 import RangeSlider from "./RangeSlider.jsx";
 
 import Carousel from "react-material-ui-carousel";
-import { Paper, Button } from "@mui/material";
 
 function Store({ items, searchItem, priceRange, setPriceRange }) {
 	//Cria os elementos para os itens que estão à venda
@@ -62,7 +61,7 @@ function Store({ items, searchItem, priceRange, setPriceRange }) {
 			<div id="carousel">
 				<Carousel>
 					{images.map((link) => (
-						<img class="carousel-img" src={link} />
+						<img class="carousel-img" src={link} alt="carousel"/>
 					))}
 				</Carousel>
 			</div>

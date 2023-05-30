@@ -103,3 +103,13 @@ body::after{
     height: 50px;
     border-radius: 4px;
 }
+
+svg {
+    margin: auto 40px auto 80px;
+    line-height: var(--nav-height);
+    cursor: pointer;
+}
+
+path {
+    fill: var(--text-color-nav);
+}
