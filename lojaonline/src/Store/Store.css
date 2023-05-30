@@ -1,63 +1,50 @@
-#store {
+#carousel {
+	overflow: hidden;
+	width: 100%;
+}
+.carousel-img {
+	margin-left: auto;
+	margin-right: auto;
+}
+#itens {
 	width: 80%;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
-}
-
-.storeItem {
-	background-color: var(--bg-color-nav);
-	margin: 10px;
-	padding: 10px;
-	color: var(--text-color-nav);
-	text-align: center;
-	width: 225px;
-	cursor: pointer;
-}
-
-.storeItemText {
-	margin: 2px 10px 5px;
-	text-align: left;
-}
-
-.storeItem img {
-	margin: 0px 0px 5px;
-	height: 200px;
-	width: 200px;
-}
-
-.itemName {
-	text-align: left;
-	font-size: 1em;
-}
-
-.itemId {
-	text-align: lef;
-	font-size: 0.8em;
-}
-
-.itemPrice {
-	text-align: right;
+	justify-content: space-evenly;
 }
 
 .float-container {
 	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-evenly;
 }
 .float-child {
 	width: 50%;
-	float: left;
+	height: 500px;
 }
 
 #filter {
 	background-color: var(--bg-color-nav);
-	width: 20%;
-	margin-top: 10px;
+	border-radius: 3%;
+	width: 18%;
+	margin: 1%;
+	padding: 1%;
 	height: 80%;
-	justify-content: center;
 	display: flex;
-	align-items: center;
+	flex-direction: column;
 }
-
-#slider {
-	width: 80%;
+#filter-title {
+	margin-bottom: 5%;
+}
+#price-slider {
+	margin-top: 5%;
+}
+#min-t {
+	float: left;
+}
+#max-t {
+	float: right;
 }

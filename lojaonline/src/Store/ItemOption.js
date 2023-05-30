@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Store.css";
+import "./ItemOption.css";
 
 function ItemOption({ item }) {
 	//Usado para redirecionar o usuário para outra rota do site
@@ -15,9 +15,15 @@ function ItemOption({ item }) {
 		<div className="storeItem" onClick={handleClick}>
 			<img src={item.photo} alt={item.name} /> <br />
 			<div className="storeItemText">
-				<span className="itemName"> {item.name} </span> <br />
-				<span className="itemId"> {item.id} </span> <br />
-				<span className="itemPrice"> {item.price} </span> <br />
+				<span className="itemPrice">
+					{" "}
+					R${item.price} <span className="itemQnt"> qnt {item.quantity} </span>
+				</span>{" "}
+				<br />
+				<span className="itemName"> {item.name} </span>
+				<br />
+				<span className="itemDescription"> {item.description} </span>
+				<br />
 			</div>
 		</div>
 	);
