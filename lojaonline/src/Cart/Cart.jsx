@@ -5,41 +5,48 @@ import "./Cart.css";
 const Cart = ({ user, setUser, setCustomers, items, setItems }) => {
 	let sum = 0;
 
-	let Total;
 	let newCart = user.cart;
 
-	let itemsOnCart = newCart.map((itemOnCart) => {
-		let itemFound = items.find(itemOfStore => {
-			if (itemOfStore.id === itemOnCart[0]) {
-				sum += itemOfStore.price * itemOnCart[1];
-				return true;
-			}
-			return false;
-		});
+	//caso o carrinho seja vazio toma um valor diferente
+	let itemsOnCart =
+		newCart.length === 0 ? (
+			<span id="emptyText">Carrinho Vazio</span>
+		) : (
+			newCart.map((itemOnCart) => {
+				let itemFound = items.find((itemOfStore) => {
+					if (itemOfStore.id === itemOnCart[0]) {
+						sum += itemOfStore.price * itemOnCart[1];
+						return true;
+					}
+					return false;
+				});
 
-		return (
-			<ItemCart
-                user={user}
-                setUser={setUser}
-                setCustomers={setCustomers}
-				newCart={newCart}
-				qnt={itemOnCart[1]}
-				item={itemFound}
-			/>
+				return (
+					<ItemCart
+						user={user}
+						setUser={setUser}
+						setCustomers={setCustomers}
+						newCart={newCart}
+						qnt={itemOnCart[1]}
+						item={itemFound}
+					/>
+				);
+			})
 		);
-	});
+
+	let Total = itemsOnCart.length !== 0 ? <p>R$ {sum}</p> : <></>;
 
 	const handleEmptyCart = () => {
 		setUser({
-            name: user.name,
+			name: user.name,
 			password: user.password,
 			phone: user.phone,
 			email: user.email,
 			address: user.address,
 			cart: [],
-        })
+		});
 
-        setCustomers(prevCustomers =>
+		setCustomers((prevCustomers) =>
 			prevCustomers.map((cust) => {
 				if (cust.name === user.name) {
 					return {
@@ -58,51 +65,51 @@ const Cart = ({ user, setUser, setCustomers, items, setItems }) => {
 	};
 
 	const handleBuy = () => {
-        //Esvazia o carrinho ao finalzar a compra
-        handleEmptyCart();
+		//Esvazia o carrinho ao finalzar a compra
+		handleEmptyCart();
 
-        //Altera a contagem de cada item comprado
-        newCart.forEach(itemOnCart =>{
-            setItems(prevItems => 
-                prevItems.map(itemOfStore =>
-                itemOfStore.id === itemOnCart[0] ?
-                {   
-                    name: itemOfStore.name,
-                    id: itemOfStore.id,
-                    photo: itemOfStore.photo,
-                    description: itemOfStore.description,
-                    price: itemOfStore.price,
-                    quantity: itemOfStore.quantity - itemOnCart[1],
-                    quantitySold: itemOfStore.quantitySold + itemOnCart[1]
-                }
-                : {...itemOfStore}
-            ));                
-        });
-    };
-    
-    //Botões para a compra
-    let buttonsCart = [
-        <button  className="buttonCont buttonCart" onClick={handleEmptyCart}>limpar Carrinho</button>,
-        <br />,
-        <button  className="buttonCont buttonCart" onClick={handleBuy}>comprar{Total}</button>
-    ]
+		//Altera a contagem de cada item comprado
+		newCart.forEach((itemOnCart) => {
+			setItems((prevItems) =>
+				prevItems.map((itemOfStore) =>
+					itemOfStore.id === itemOnCart[0]
+						? {
+								name: itemOfStore.name,
+								id: itemOfStore.id,
+								photo: itemOfStore.photo,
+								description: itemOfStore.description,
+								price: itemOfStore.price,
+								quantity: itemOfStore.quantity - itemOnCart[1],
+								quantitySold: itemOfStore.quantitySold + itemOnCart[1],
+						  }
+						: { ...itemOfStore }
+				)
+			);
+		});
+	};
 
-    //Distingui entre o carrinho vazio e ele cheio
-	if (itemsOnCart.length === 0) {
-		itemsOnCart = <span id="emptyText">Carrinho Vazio</span>;
-		Total = <></>;
-        buttonsCart = <></>
-	} else {
-		Total = <p>R$ {sum}</p>;
-	}
+	//Botões para a compra
+	//caso o carrinho seja vazio toma um valor diferente
+
+	let buttonsCart =
+		newCart.length === 0 ? (
+			<></>
+		) : (
+			[
+				<button className="buttonCont buttonCart" onClick={handleEmptyCart}>
+					limpar Carrinho
+				</button>,
+				<br />,
+				<button className="buttonCont buttonCart" onClick={handleBuy}>
+					comprar{Total}
+				</button>,
+			]
+		);
 
 	return (
 		<div>
 			<div id="cart">{itemsOnCart}</div>
-            <div id="cartBtns">
-                {buttonsCart}
-            </div>
-			
+			<div id="cartBtns">{buttonsCart}</div>
 		</div>
 	);
 };
