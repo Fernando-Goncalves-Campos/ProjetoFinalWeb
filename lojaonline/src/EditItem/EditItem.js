@@ -40,10 +40,9 @@ function EditItem({items, setItems}) {
     };
 
     function deleteItem(){
-        setItems(
-            items.filter(prevItems => 
-                prevItems.id !== item.id
-    ))}
+        setItems(items.filter(prevItems => prevItems.id !== item.id))
+        navigate("/");
+    }
 
     return (
         <div id="itemInfo">
