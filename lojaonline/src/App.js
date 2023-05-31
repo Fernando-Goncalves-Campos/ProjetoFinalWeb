@@ -11,6 +11,7 @@ import Cart from "./Cart/Cart.jsx";
 
 import "./App.css";
 import "./Theme.css";
+import EditAdm from "./Login/EditAdm.jsx";
 
 function App() {
 	//////Inicializa os estados que serão usados em todo o site (alguns deles seriam substituídos pelo banco de dados)//////
@@ -127,6 +128,18 @@ function App() {
 			phone: "999999999",
 			email: "admin@admin.com",
 		},
+		{
+			name: "admin1",
+			password: "admin",
+			phone: "999999999",
+			email: "admin@admin.com",
+		},
+		{
+			name: "admin2",
+			password: "admin",
+			phone: "999999999",
+			email: "admin@admin.com",
+		},
 	]);
 
 	//Usuário logado
@@ -134,11 +147,9 @@ function App() {
 
 	const [priceRange, setPriceRange] = useState([0, 1000]);
 
-    console.log(JSON.stringify(items))
-    console.log(JSON.stringify(customers))
-    console.log(JSON.stringify(adms))
-
-
+	console.log(JSON.stringify(items));
+	console.log(JSON.stringify(customers));
+	console.log(JSON.stringify(adms));
 
 	return (
 		<BrowserRouter>
@@ -159,7 +170,7 @@ function App() {
 							setAdm={(value) => {
 								setAdm(value);
 							}}
-                            searchItem={searchItem}
+							searchItem={searchItem}
 							setSearchItem={(value) => {
 								setSearchItem(value);
 							}}
@@ -179,7 +190,18 @@ function App() {
 							/>
 						}
 					/>
-
+					<Route
+						path="/editAdm"
+						element={
+							<EditAdm
+								adms={adms}
+								user={user}
+								setAdms={(value) => {
+									setAdms(value);
+								}}
+							/>
+						}
+					/>
 					<Route
 						path="/itemDetails/:itemId"
 						element={

@@ -1,80 +1,78 @@
 /*Texto com o nome do usuário na barra de navegação*/
-#loginNav{
-    margin-left: 40px;
-    line-height: var(--nav-height);
+#loginNav {
+	margin-left: 40px;
+	line-height: var(--nav-height);
 
-    font-size: calc(var(--nav-height) / 3);
+	font-size: calc(var(--nav-height) / 3);
 
-    float: right;
+	float: right;
 
-    color: var(--text-color-nav);
-    background-color: var(--bg-color-nav);
-    text-decoration: none;
-
+	color: var(--text-color-nav);
+	background-color: var(--bg-color-nav);
+	text-decoration: none;
 }
 
-#userNav{
-    margin-left: 40px;
-    width: 120px;
-    line-height: var(--nav-height);
-    float: right;
+#userNav {
+	margin-left: 40px;
+	width: 120px;
+	line-height: var(--nav-height);
+	float: right;
 
-    color: var(--text-color-nav);
-    background-color: var(--bg-color-nav);
-    z-index: 1;
+	color: var(--text-color-nav);
+	background-color: var(--bg-color-nav);
+	z-index: 2;
 }
 
-#userNav label{
-    line-height: calc(var(--nav-height)-10px);
+#userNav label {
+	line-height: calc(var(--nav-height)-10px);
 
-    font-size: calc(var(--nav-height) / 3);
-    
-    color: var(--text-color-nav);
-    background-color: var(--bg-color-nav);
+	font-size: calc(var(--nav-height) / 3);
 
-    cursor: pointer;
+	color: var(--text-color-nav);
+	background-color: var(--bg-color-nav);
+
+	cursor: pointer;
 }
 
 #userNav ul {
-    list-style-type: none;
-    text-align: center;
+	list-style-type: none;
+	text-align: center;
 }
 
 #userNav a {
-    display: block;
-    text-decoration: none;
-    color: var(--text-color-nav);
-    background-color: var(--bg-color-nav);
-    font-size: calc(var(--nav-height) / 3);
-    cursor: pointer;
+	display: block;
+	text-decoration: none;
+	color: var(--text-color-nav);
+	background-color: var(--bg-color-nav);
+	font-size: calc(var(--nav-height) / 3);
+	cursor: pointer;
 }
 
 #userNav button {
-    display: block;
-    min-width: 120px;
-    text-decoration: none;
-    color: var(--text-color-nav);
-    background-color: var(--bg-color-nav);
-    font-size: calc(var(--nav-height) / 3);
-    cursor: pointer;
+	display: block;
+	min-width: 120px;
+	text-decoration: none;
+	color: var(--text-color-nav);
+	background-color: var(--bg-color-nav);
+	font-size: calc(var(--nav-height) / 3);
+	cursor: pointer;
 }
 
 .menu-content {
-    max-height: 0;
-    overflow: hidden;
+	max-height: 0;
+	overflow: hidden;
 }
 
 input {
-    display: none;
-    width: 0;
-    height: 0;
+	display: none;
+	width: 0;
+	height: 0;
 }
-
 
 /* Toggle Effect */
 input:checked ~ .menu-content {
-    max-height: 100vh;
+	max-height: 100vh;
 }
 input:checked ~ li {
-    display: none;
+	display: none;
 }
