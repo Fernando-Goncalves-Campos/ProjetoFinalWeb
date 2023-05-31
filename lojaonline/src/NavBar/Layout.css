@@ -77,6 +77,11 @@ body::after{
     color: var(--text-color-button-hover);
 }
 
+.buttonCont:disabled{
+    background-color: var(--bg-color-button-disabled);
+    color: var(--text-color-button-disabled);
+}
+
 .buttonForm {
     display: block;
     margin: auto;
