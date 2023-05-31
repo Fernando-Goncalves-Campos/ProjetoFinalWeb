@@ -92,7 +92,7 @@ body::after{
 
 svg {
     float: left;
-    margin: auto 40px auto 80px;
+    margin: auto 20px auto 80px;
     line-height: var(--nav-height);
     cursor: pointer;
 }
