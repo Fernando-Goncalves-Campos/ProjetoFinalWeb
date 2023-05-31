@@ -3,28 +3,28 @@
 	background-color: var(--bg-color-content);
 	color: var(--text-color-content);
 
-    width: calc(100% - 380px);
+    width: calc(100% - 480px);
 	min-height: calc(100vh - var(--nav-height) - 40px);
     float: right;
 	overflow: auto;
 }
 
 #detailsImg {
-	width: 300px;
+	width: 400px;
 	margin: 20px;
     float: left;
 }
 
 #detailsName {
-	font-size: 2em;
+	font-size: 24px;
 }
 
 #detailsId {
-	font-size: 0.6em;
+	font-size: 12px;
 }
 
 #detailsText {
-	font-size: 0.8em;
+	font-size: 14px;
 }
 
 #detailsQuantity {
@@ -32,6 +32,8 @@
 }
 
 #buyButton {
+    width: 120px;
+    height: 40px;
     font-size: 1em;
     padding: 5px;
     border-radius: 4px;

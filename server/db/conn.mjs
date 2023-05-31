@@ -1,7 +1,8 @@
 import { MongoClient } from "mongodb";
-const uri = "mongodb+srv://fernando:fernando@cluster0.jsvvpuu.mongodb.net/?retryWrites=true&w=majority";
 
-const client = new MongoClient(uri);
+const connectionString = process.env.URI || "";
+
+const client = new MongoClient(connectionString);
 
 let conn;
 try {
@@ -10,6 +11,6 @@ try {
   console.error(e);
 }
 
-let db = conn.db("sample_training");
+let db = conn.db("projetoWeb");
 
 export default db;

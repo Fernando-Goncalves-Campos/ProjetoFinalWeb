@@ -66,25 +66,6 @@ body::after{
     cursor: pointer;
 }
 
-
-
-/*Logo na barra de navegação*/
-#logo{
-    margin-left: 80px;
-    margin-right: 40px;
-    line-height: var(--nav-height);
-
-    font-size: 2.9em;
-
-    float:left;
-
-    color: var(--text-color-nav);
-    background-color: var(--bg-color-nav);
-
-    cursor: pointer;
-    text-decoration: none;
-}
-
 .buttonCont {
     background-color: var(--bg-color-button);
     color: var(--text-color-button);
@@ -105,6 +86,7 @@ body::after{
 }
 
 svg {
+    float: left;
     margin: auto 40px auto 80px;
     line-height: var(--nav-height);
     cursor: pointer;
