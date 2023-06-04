@@ -3,6 +3,12 @@ import db from "../db/conn.mjs";
 
 const router = express.Router();
 
+//Retorna a lista de administradores
+router.get("/adms", async (req, res) => {
+    let adms = await db.collection("adms");
+    let results = await adms.find({}).toArray();
+    res.send(results).status(200);
+})
 
 //Procura por um usuário
 router.post("/login", async (req, res) => {
@@ -71,7 +77,7 @@ router.post("/", async (req, res) => {
 });
 
 //Modifica o carrinho de um usuário
-router.patch("/:name", async (req, res) => {
+router.patch("/customer/:name/cart", async (req, res) => {
     let customers = await db.collection("customers");
     let newValue = {
         $set: {
@@ -84,7 +90,7 @@ router.patch("/:name", async (req, res) => {
 })
 
 //Remove um adm
-router.delete("/:name", async (req, res) => {
+router.delete("/adm/:name", async (req, res) => {
     const adms = await db.collection("adms");
     let result = await adms.deleteOne({name: req.params.name});
 

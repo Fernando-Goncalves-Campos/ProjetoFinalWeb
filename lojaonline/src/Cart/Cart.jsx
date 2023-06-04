@@ -23,6 +23,7 @@ const Cart = ({ user, setUser, setCustomers, items, setItems }) => {
 
 				return (
 					<ItemCart
+                        key={itemFound.id}
 						user={user}
 						setUser={setUser}
 						setCustomers={setCustomers}

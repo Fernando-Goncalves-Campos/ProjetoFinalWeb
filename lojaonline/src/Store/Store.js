@@ -8,10 +8,10 @@ import Carousel from "react-material-ui-carousel";
 function Store({ items, searchItem, priceRange, setPriceRange }) {
 	//Cria os elementos para os itens que estão à venda
 	const [offers, setOffers] = useState(
-		items.map((item) => <ItemOption item={item} />)
+		items.map((item) => <ItemOption key={item.id} item={item} />)
 	);
 
-	let startPrice = [items[0].price, items[0].price];
+	const [startPrice, setStartPrice] = useState([0, 0])
 
 	const setRange = () => {
 		items.forEach((item) => {
@@ -23,16 +23,16 @@ function Store({ items, searchItem, priceRange, setPriceRange }) {
 		});
 	};
 
-	setRange();
 	//Filtra os itens de acordo com a barra de pesquisa
 	useEffect(() => {
+        setRange()
 		if (searchItem === "") {
 			setOffers(
 				items
 					.filter(
 						(item) => item.price >= priceRange[0] && item.price <= priceRange[1]
 					)
-					.map((item) => <ItemOption item={item} />)
+					.map((item) => <ItemOption key={item.id} item={item} />)
 			);
 		} else {
 			setOffers(
@@ -43,7 +43,7 @@ function Store({ items, searchItem, priceRange, setPriceRange }) {
 							item.price >= priceRange[0] &&
 							item.price <= priceRange[1]
 					)
-					.map((item) => <ItemOption item={item} />)
+					.map((item) => <ItemOption key={item.id} item={item} />)
 			);
 		}
 	}, [searchItem, items, priceRange]);
@@ -61,12 +61,12 @@ function Store({ items, searchItem, priceRange, setPriceRange }) {
 			<div id="carousel">
 				<Carousel>
 					{images.map((link) => (
-						<img class="carousel-img" src={link} alt="carousel"/>
+						<img className="carousel-img" key={link} src={link} alt="carousel"/>
 					))}
 				</Carousel>
 			</div>
-			<div class="float-container">
-				<div id="filter" class="float-child">
+			<div className="float-container">
+				<div id="filter" className="float-child">
 					<p>Filter</p>
 
 					<div id="price-slider">
@@ -82,7 +82,7 @@ function Store({ items, searchItem, priceRange, setPriceRange }) {
 						</div>
 					</div>
 				</div>
-				<div id="itens" class="float-child">
+				<div id="itens" className="float-child">
 					{offers}
 				</div>
 			</div>

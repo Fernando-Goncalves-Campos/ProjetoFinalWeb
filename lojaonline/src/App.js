@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./NavBar/Layout.js";
 import Store from "./Store/Store.js";
@@ -14,90 +14,26 @@ import "./Theme.css";
 import EditAdm from "./Login/EditAdm.jsx";
 
 function App() {
-	//////Inicializa os estados que serão usados em todo o site (alguns deles seriam substituídos pelo banco de dados)//////
+	//////Inicializa os estados que serão usados em todo o site
 	//Lista dos itens da loja
-	const [items, setItems] = useState([
-		{
-			name: "Capivara",
-			id: "0",
-			photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
-			description:
-				"Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
-			price: 100.0,
-			quantity: 0,
-			quantitySold: 0,
-		},
-		{
-			name: "Capivara",
-			id: "1",
-			photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
-			description:
-				"Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
-			price: 200.0,
-			quantity: 1,
-			quantitySold: 0,
-		},
-		{
-			name: "Capivara",
-			id: "2",
-			photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
-			description:
-				"Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
-			price: 300.0,
-			quantity: 2,
-			quantitySold: 0,
-		},
-		{
-			name: "Capivara",
-			id: "3",
-			photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
-			description:
-				"Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
-			price: 400.0,
-			quantity: 3,
-			quantitySold: 0,
-		},
-		{
-			name: "Capivara",
-			id: "4",
-			photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
-			description:
-				"Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
-			price: 500.0,
-			quantity: 4,
-			quantitySold: 0,
-		},
-		{
-			name: "Capivara",
-			id: "5",
-			photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
-			description:
-				"Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
-			price: 600.0,
-			quantity: 5,
-			quantitySold: 0,
-		},
-		{
-			name: "Capivara",
-			id: "6",
-			photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
-			description:
-				"Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
-			price: 700.0,
-			quantity: 6,
-			quantitySold: 0,
-		},
-		{
-			name: "Capivara",
-			id: "7",
-			photo: "https://pbs.twimg.com/media/ByTcwxAIUAESdve.jpg",
-			description:
-				"Como vc pode ver, essa é uma capivara com chapéu, óculos escuros e uma blusa, ela é avaliada pelos clientes como tendo o maior custo benefício do mercado.",
-			price: 800.0,
-			quantity: 7,
-			quantitySold: 0,
-		},
-	]);
+	const [items, setItems] = useState([]);
+    useEffect(() => {
+        async function getItems() {
+            const response = await fetch(`http://localhost:5050/items/`);
+        
+            if (!response.ok) {
+              const message = `An error occurred: ${response.statusText}`;
+              console.log(message);
+              return;
+            }
+        
+            const readItems = await response.json();
+            await readItems.sort((a, b) => a.id - b.id)
+            setItems(readItems);
+          }
+        
+          getItems();
+    }, []);
 
 	//Valor que está na barra de pesquisa
 	const [searchItem, setSearchItem] = useState("");
@@ -146,10 +82,6 @@ function App() {
 	const [user, setUser] = useState({ name: "" });
 
 	const [priceRange, setPriceRange] = useState([0, 1000]);
-
-	console.log(JSON.stringify(items));
-	console.log(JSON.stringify(customers));
-	console.log(JSON.stringify(adms));
 
 	return (
 		<BrowserRouter>

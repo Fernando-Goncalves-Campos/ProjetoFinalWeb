@@ -1,12 +1,9 @@
 import Slider from "@mui/material/Slider";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const RangeSlider = ({ priceRange, setPriceRange, startPrice }) => {
 	const [value, setValue] = useState(priceRange);
 
-	useEffect(() => {
-		console.log(priceRange);
-	}, [priceRange]);
 	return (
 		<Slider
 			sx={{
