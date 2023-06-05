@@ -2,37 +2,43 @@ import { useState, memo } from "react";
 import { useNavigate } from "react-router-dom";
 import './Login.css';
 
-function LoginUser({setUser, setLogged, setAdm, customers, adms}) {
+function LoginUser({setUser, setLogged, setAdm}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
     //Usado para redirecionar o usuário para outra rota do site
     const navigate = useNavigate();
 
+    //Adiciona a conta no banco de dados
+    const loginDB = async () => {
+        const response = await fetch(`http://localhost:5050/users/login`, {
+            method: "POST",
+            body: JSON.stringify({
+                name: username,
+                password: password
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+
+        if(response.status === 200){
+            const loggedUser = await response.json();
+            setLogged(true);
+            await setUser(loggedUser.user);
+            setAdm(loggedUser.adm);
+            navigate("/");
+        }
+        else{
+            alert("account doesn't exist or the password is wrong!");
+        }
+    }
+
     //Realiza a validação dos dados
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        //Verifica se a conta existe e se a senha está correta
-        let account = customers.find((user) => user.name === username);
-        if (account && account.password === password) {
-            setLogged(true);
-            setUser(account);
-            navigate("/");
-        }
-        else{
-            account = adms.find((user) => user.name === username);
-            if (account && account.password === password) {
-                setLogged(true);
-                setAdm(true);
-                setUser(account);
-                navigate("/");
-            }
-
-            else{
-                alert("account doesn't exist or the password is wrong!");
-            }
-        }
+        loginDB();
     };
 
     return (

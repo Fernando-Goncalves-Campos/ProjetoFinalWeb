@@ -7,7 +7,7 @@ const router = express.Router();
 router.get("/adms", async (req, res) => {
     let adms = await db.collection("adms");
     let results = await adms.find({}).toArray();
-    res.send(results).status(200);
+    res.status(200).send(results);
 })
 
 //Procura por um usuário
@@ -20,22 +20,22 @@ router.post("/login", async (req, res) => {
     
     if(customer){
         if(customer.password === req.body.password){
-            res.send({user: customer, adm: false}).status(200);
+            res.status(200).send({user: customer, adm: false});
         }
         else{
-            res.send("Wrong password").status(403);
+            res.status(403).send("Wrong password");
         }
     }
     else if(adm){
         if(adm.password === req.body.password){
-            res.send({user: adm, adm: true}).status(200);
+            res.status(200).send({user: adm, adm: true});
         }
         else{
-            res.send("Wrong password").status(403);
+            res.status(403).send("Wrong password");
         }
     }
     else{
-        res.send("Not found").status(404);
+        res.status(404).send("Not found");
     }
 });
 
@@ -48,7 +48,7 @@ router.post("/", async (req, res) => {
     let customer = await customers.findOne({name: req.body.user.name});
     
     if(customer || adm){
-        res.send("Already exists!").status(409);
+        res.status(409).send("Already exists!");
     }
     else if(req.body.adm){
         let newAdm = {
@@ -59,7 +59,7 @@ router.post("/", async (req, res) => {
         }
 
         let result = await adms.insertOne(newAdm);
-        res.send(result).status(201);
+        res.status(201).send(result);
     }        
     else{
         let newCustomer = {
@@ -72,7 +72,7 @@ router.post("/", async (req, res) => {
         }
 
         let result = await customers.insertOne(newCustomer);
-        res.send(result).status(201);
+        res.status(201).send(result);
     }
 });
 
@@ -86,7 +86,7 @@ router.patch("/customer/:name/cart", async (req, res) => {
     }
 
     let result = customers.updateOne({name: req.params.name}, newValue);
-    res.send(result).status(200);
+    res.status(200).send(result);
 })
 
 //Remove um adm
@@ -94,7 +94,7 @@ router.delete("/adm/:name", async (req, res) => {
     const adms = await db.collection("adms");
     let result = await adms.deleteOne({name: req.params.name});
 
-    res.send(result).status(200);
+    res.status(200).send(result);
 });
 
 export default router;

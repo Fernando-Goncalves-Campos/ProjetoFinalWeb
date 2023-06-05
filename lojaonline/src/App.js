@@ -30,7 +30,7 @@ function App() {
             const readItems = await response.json();
             await readItems.sort((a, b) => a.id - b.id)
             setItems(readItems);
-          }
+        }
         
           getItems();
     }, []);
@@ -119,18 +119,22 @@ function App() {
 								setPriceRange={(value) => {
 									setPriceRange(value);
 								}}
-							/>
-						}
+                                />
+                            }
 					/>
+
+                    <Route
+                        path="/addAdm"
+                        element={
+                            <AddAdm />
+                        }
+                    />
+                    
 					<Route
 						path="/editAdm"
 						element={
-							<EditAdm
-								adms={adms}
+                            <EditAdm
 								user={user}
-								setAdms={(value) => {
-									setAdms(value);
-								}}
 							/>
 						}
 					/>
@@ -164,24 +168,6 @@ function App() {
 								}}
 								setAdm={(value) => {
 									setAdm(value);
-								}}
-								customers={customers}
-								setCustomers={(value) => {
-									setCustomers(value);
-								}}
-								adms={adms}
-							/>
-						}
-					/>
-
-					<Route
-						path="/addAdm"
-						element={
-							<AddAdm
-								customers={customers}
-								adms={adms}
-								setAdms={(value) => {
-									setAdms(value);
 								}}
 							/>
 						}

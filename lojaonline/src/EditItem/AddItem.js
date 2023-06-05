@@ -15,8 +15,8 @@ function AddItem({items, setItems}) {
     const navigate = useNavigate();
     
     //Adiciona o item no banco de dados
-    const addItemDB = () => {
-        fetch(`http://localhost:5050/items/`, {
+    const addItemDB = async () => {
+        await fetch(`http://localhost:5050/items/`, {
             method: "POST",
             body: JSON.stringify({
                 name: name,

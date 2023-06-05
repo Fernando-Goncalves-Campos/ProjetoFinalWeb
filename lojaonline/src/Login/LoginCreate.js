@@ -2,7 +2,7 @@ import { useState, memo } from "react";
 import { useNavigate } from "react-router-dom";
 import './Login.css';
 
-function LoginCreate({setUser, setLogged, customers, setCustomers, adms}) {
+function LoginCreate({setUser, setLogged}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [phone, setPhone] = useState("");
@@ -12,44 +12,43 @@ function LoginCreate({setUser, setLogged, customers, setCustomers, adms}) {
     //Usado para redirecionar o usuário para outra rota do site
     const navigate = useNavigate();
     
+    //Adiciona a conta no banco de dados
+    const addCustomerDB = async () => {
+        const response = await fetch(`http://localhost:5050/users/`, {
+            method: "POST",
+            body: JSON.stringify({
+                user: {
+                    name: username,
+                    password: password,
+                    email: email,
+                    phone: phone,
+                    address: address,
+                },
+                adm: false
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+
+        return response;
+    }
+
     //Realiza a validação dos dados
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        //Asseguram que não existam outros usuários com o mesmo nome
-        const accountCustomer = customers.find((user) => user.name === username);
-        const accountAdm = adms.find((user) => user.name === username);
-        if (accountCustomer || accountAdm) {
-            alert("Account already exists!!!")
-        }
-        else{
-            //Faz o login
+        //Adiciona o administrador ao banco de dados
+        const response = await addCustomerDB()
+        if(response.status === 201){
+            const loggedUser = await response.json();
             setLogged(true);
-            setUser({
-                name: username,
-                email: email,
-                phone: phone,
-                password: password,
-                address: address,
-                cart: []
-            });
-            
-
-            //Adiciona a conta à lista de usuários
-            setCustomers(prevCustomers => [
-                ...prevCustomers,
-                {
-                    name: username,
-                    email: email,
-                    phone: phone,
-                    password: password,
-                    address: address,
-                    cart: []
-                }
-            ]);
+            await setUser(loggedUser.user);
             navigate("/");
         }
-            
+        else{
+            alert("Account already exists!!!");
+        }
     };
 
     return (

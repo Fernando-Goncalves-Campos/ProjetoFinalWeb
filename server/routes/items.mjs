@@ -7,14 +7,15 @@ const router = express.Router();
 router.get("/", async (req, res) => {
     let collection = await db.collection("items");
     let results = await collection.find({}).toArray();
-    res.send(results).status(200);
+    res.status(200).send(results);
 });
 
 //Adiciona um item
 router.post("/", async (req, res) => {
     let collection = await db.collection("items");
+    let item = await collection.findOne({id: req.body.id});
     if(item){
-        res.send("Already exists!").status(409);
+        res.status(409).send("Already exists!");
     }
     else{
         let newValue = {
@@ -28,7 +29,7 @@ router.post("/", async (req, res) => {
         }
     
         let result = await collection.insertOne(newValue);
-        res.send(result).status(201);
+        res.status(201).send(result);
     }
 });
 
@@ -46,7 +47,7 @@ router.patch("/:id", async (req, res) => {
     }
 
     let result = await collection.updateOne({id: req.params.id}, newValue);
-    res.send(result).status(200);
+    res.status(200).send(result);
 });
 
 router.patch("/:id/quantity", async (req, res) => {
@@ -59,7 +60,7 @@ router.patch("/:id/quantity", async (req, res) => {
     }
 
     let result = await collection.updateOne({id: req.params.id}, newValue);
-    res.send(result).status(200);
+    res.status(200).send(result);
 });
 
 //Deleta um item
@@ -67,7 +68,7 @@ router.delete("/:id", async (req, res) => {
     const collection = db.collection("items");
     let result = await collection.deleteOne({id: req.params.id});
   
-    res.send(result).status(200);
+    res.status(200).send(result);
 });
 
 export default router;

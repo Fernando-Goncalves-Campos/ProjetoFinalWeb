@@ -2,7 +2,7 @@ import { useState, memo } from "react";
 import { useNavigate } from "react-router-dom";
 import './Login.css';
 
-function AddAdm({customers, adms, setAdms}) {
+function AddAdm() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [phone, setPhone] = useState("");
@@ -11,30 +11,36 @@ function AddAdm({customers, adms, setAdms}) {
     //Usado para redirecionar o usuário para outra rota do site
     const navigate = useNavigate();
     
+    //Adiciona a conta no banco de dados
+    const addAdmDB = async () => {
+        const response = await fetch(`http://localhost:5050/users/`, {
+            method: "POST",
+            body: JSON.stringify({
+                user: {
+                    name: username,
+                    password: password,
+                    email: email,
+                    phone: phone
+                },
+                adm: true
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+        
+        return response;
+    }
+
     //Realiza a validação dos dados
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        //Assegura que não existem outros adms com o mesmo nome
-        const accountCustomer = customers.find((user) => user.name === username);
-        const accountAdm = adms.find((user) => user.name === username);
-        if (accountCustomer || accountAdm) {
-            alert("Account already exists!!!")
+        const response = await addAdmDB()
+        if (response.status === 201) {
+            navigate("/editAdm");
         }
-
-
         else{
-            //Adiciona o adm à lista
-            setAdms(prevAdms => [
-                ...prevAdms,
-                {
-                    name: username,
-                    email: email,
-                    phone: phone,
-                    password: password,
-                }
-            ]);
-            navigate("/");
+            alert("Account already exists!!!");
         }
             
     };
