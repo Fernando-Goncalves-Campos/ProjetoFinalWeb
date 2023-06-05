@@ -13,8 +13,6 @@ router.get("/", async (req, res) => {
 //Adiciona um item
 router.post("/", async (req, res) => {
     let collection = await db.collection("items");
-    let item = await collection.findOne({id: req.body.id});
-
     if(item){
         res.send("Already exists!").status(409);
     }
@@ -44,6 +42,19 @@ router.patch("/:id", async (req, res) => {
 			description: req.body.description,
 			price: req.body.price,
 			quantity: req.body.quantity,
+        }
+    }
+
+    let result = await collection.updateOne({id: req.params.id}, newValue);
+    res.send(result).status(200);
+});
+
+router.patch("/:id/quantity", async (req, res) => {
+    let collection = await db.collection("items");
+    let newValue = {
+        $set: {
+			quantity: req.body.quantity,
+            quantitySold: req.body.quantitySold
         }
     }
 

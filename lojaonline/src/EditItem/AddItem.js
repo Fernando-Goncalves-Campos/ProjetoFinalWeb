@@ -14,6 +14,24 @@ function AddItem({items, setItems}) {
     //Usado para redirecionar o usuário para outra rota do site
     const navigate = useNavigate();
     
+    //Adiciona o item no banco de dados
+    const addItemDB = () => {
+        fetch(`http://localhost:5050/items/`, {
+            method: "POST",
+            body: JSON.stringify({
+                name: name,
+                id: id,
+                photo: photo,
+                description: description,
+                price: price,
+                quantity: quantity
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+    }
+
     //Realiza a validação dos dados
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -24,6 +42,9 @@ function AddItem({items, setItems}) {
             alert("Another item have the same id!!!!");
         }
         else{
+            //Adiciona o item no banco de dados
+            addItemDB();
+
             //Adiciona o item à lista
             setItems(prevItems => [
                 ...prevItems,

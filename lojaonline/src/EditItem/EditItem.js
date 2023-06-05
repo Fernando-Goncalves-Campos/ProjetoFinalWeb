@@ -18,10 +18,36 @@ function EditItem({items, setItems}) {
     //Usado para redirecionar o usuário para outra rota do site
     const navigate = useNavigate();
     
+    //Atualiza o item no banco de dados
+    const updateItemDB = async () => {
+        await fetch(`http://localhost:5050/items/${id}`, {
+            method: 'PATCH',
+            body: JSON.stringify({
+                name: name,
+                photo: photo,
+                description: description,
+                price: price,
+                quantity: quantity
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+    }
+
+    //Remove o item do banco de dados
+    const removeItemDB = async () => {
+        await fetch(`http://localhost:5050/items/${id}`, {
+            method: "DELETE"
+        });
+    }
+
     //Salva as alterações
     const handleSubmit = async (e) => {
         e.preventDefault();
         
+        updateItemDB();
+
         setItems(prevItems => 
             prevItems.map(itemOfStore =>
             itemOfStore.id === id ?
@@ -40,7 +66,8 @@ function EditItem({items, setItems}) {
     };
 
     function deleteItem(){
-        setItems(items.filter(prevItems => prevItems.id !== item.id))
+        removeItemDB();
+        setItems(items.filter(prevItems => prevItems.id !== item.id));
         navigate("/");
     }
 
