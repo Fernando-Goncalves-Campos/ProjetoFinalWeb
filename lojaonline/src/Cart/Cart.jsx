@@ -121,11 +121,11 @@ const Cart = ({ user, setUser, items, setItems }) => {
 			<></>
 		) : (
 			[
-				<button id="btnClean" className="buttonCont buttonCart" onClick={handleEmptyCart}>
+				<button key="btnClean" id="btnClean" className="buttonCont buttonCart" onClick={handleEmptyCart}>
 					limpar Carrinho
 				</button>,
-				<br />,
-				<button id="btnBuy" className="buttonCont buttonCart" onClick={handleBuy}>
+				<br key="br"/>,
+				<button key="btnBuy" id="btnBuy" className="buttonCont buttonCart" onClick={handleBuy}>
 					comprar{Total}
 				</button>,
 			]
