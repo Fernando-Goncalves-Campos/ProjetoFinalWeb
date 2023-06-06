@@ -118,6 +118,9 @@ Samuel Figueiredo Veronez 12542626
 É preciso ter o node.js instalado (eu acho): https://nodejs.org/en
 a versão utilizada foi a 18.16
 
+Antes de abrir o site é necessário ligar o servidor de banco de dados, estando no diretório (server)
+rode o comando "node server.mjs"
+  
 Para abrir o site, deve-se abrir o diretório do react (lojaonline) no terminal e rodar o comando "npm start".
 
 </details>
