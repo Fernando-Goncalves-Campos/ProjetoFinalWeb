@@ -1,102 +1,100 @@
-*{
-    margin: 0;
-    padding: 0;
-    outline: none;
-    border: none;
-    transition: 0s, background-color 0.5s, color 0.2s, border 0.5s;
-    box-sizing: border-box;
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	border: none;
+	transition: 0s, background-color 0.5s, color 0.2s, border 0.5s;
+	box-sizing: border-box;
 }
 
 :root {
-    /*Alturas*/
-    --nav-height: 80px;
-    --search-height: 40px;
+	/*Alturas*/
+	--nav-height: 80px;
+	--search-height: 40px;
 }
-
-
 
 /*Envolve toda página*/
-body{
-    background-color: var(--bg-color-content);
-    overflow: auto;
+body {
+	background-color: var(--bg-color-content);
+	overflow: auto;
 }
 
-body::after{
-    clear:both;
+body::after {
+	clear: both;
 }
 
-.dark-theme, light-theme{
-    background-color: var(--bg-color-content);
-    overflow: auto;
+.dark-theme,
+light-theme {
+	background-color: var(--bg-color-content);
+	overflow: auto;
 }
 
 /*Conteúdo*/
-#content{
-    min-width: 800px;
-    height: calc(100vh - var(--nav-height));
+#content {
+	min-width: 800px;
+	height: calc(100vh - var(--nav-height));
 
-    background-color: var(--bg-color-content);
-    overflow: auto;
+	background-color: var(--bg-color-content);
+	overflow: auto;
 }
 
 /*Barra de navegação*/
-#navBar{
-    min-width: 800px;
-    height: var(--nav-height);
+#navBar {
+	min-width: 800px;
+	height: var(--nav-height);
 
-    background-color: var(--bg-color-nav);
+	background-color: var(--bg-color-nav);
 
-    display: flex;
-    vertical-align: center;
+	display: flex;
+	vertical-align: center;
 
-    padding-right: 16px;
+	padding-right: 16px;
 }
-
 
 /*Botão para mudança do tema*/
 #switchTheme {
-    line-height: var(--nav-height);
-    font-size: 2em;
+	line-height: var(--nav-height);
+	font-size: 2em;
 
-    color: var(--text-color-nav);
-    background: none;
+	color: var(--text-color-nav);
+	background: none;
 
-    float:right;
+	float: right;
 
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .buttonCont {
-    background-color: var(--bg-color-button);
-    color: var(--text-color-button);
-    cursor: pointer;
+	background-color: var(--bg-color-button);
+	color: var(--text-color-button);
+	cursor: pointer;
 }
 
-.buttonCont:hover{
-    background-color: var(--bg-color-button-hover);
-    color: var(--text-color-button-hover);
+.buttonCont:hover {
+	background-color: var(--bg-color-button-hover);
+	color: var(--text-color-button-hover);
 }
 
-.buttonCont:disabled{
-    background-color: var(--bg-color-button-disabled);
-    color: var(--text-color-button-disabled);
+.buttonCont:disabled {
+	background-color: var(--bg-color-button-disabled);
+	color: var(--text-color-button-disabled);
 }
 
 .buttonForm {
-    display: block;
-    margin: auto;
-    width: 100px;
-    height: 50px;
-    border-radius: 4px;
+	display: block;
+	margin: auto;
+	width: 100px;
+	height: 50px;
+	border-radius: 4px;
 }
 
 svg {
-    float: left;
-    margin: auto 20px auto 80px;
-    line-height: var(--nav-height);
-    cursor: pointer;
+	float: left;
+	margin: auto 20px auto 80px;
+	line-height: var(--nav-height);
+	cursor: pointer;
 }
 
 path {
-    fill: var(--text-color-nav);
+	fill: var(--text-color-nav);
 }

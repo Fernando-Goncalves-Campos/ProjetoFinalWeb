@@ -11,21 +11,20 @@ function Store({ items, searchItem, priceRange, setPriceRange }) {
 		items.map((item) => <ItemOption key={item.id} item={item} />)
 	);
 
-	const [startPrice, setStartPrice] = useState([0, 0])
+	const [startPrice, setStartPrice] = useState([0, 0]);
 
 	const setRange = () => {
 		items.forEach((item) => {
 			if (item.price < startPrice[0]) {
-				startPrice[0] = item.price;
+				setStartPrice([item.price, startPrice[1]]);
 			} else if (item.price > startPrice[1]) {
-				startPrice[1] = item.price;
+				setStartPrice([startPrice[0], item.price]);
 			}
 		});
 	};
 
 	//Filtra os itens de acordo com a barra de pesquisa
 	useEffect(() => {
-        setRange()
 		if (searchItem === "") {
 			setOffers(
 				items
@@ -48,13 +47,13 @@ function Store({ items, searchItem, priceRange, setPriceRange }) {
 		}
 	}, [searchItem, items, priceRange]);
 
-    //Images do carousel
+	//Images do carousel
 	let images = [
 		"https://http2.mlstatic.com/D_NQ_630919-MLA69532845491_052023-OO.webp",
 		"https://http2.mlstatic.com/D_NQ_817571-MLA69622836112_052023-OO.webp",
 	];
 
-    //Define os limites do slider sempre que a lista de itens atualiza
+	//Define os limites do slider sempre que a lista de itens atualiza
 	useEffect(() => {
 		setRange();
 	}, [items]);
@@ -64,7 +63,12 @@ function Store({ items, searchItem, priceRange, setPriceRange }) {
 			<div id="carousel">
 				<Carousel>
 					{images.map((link) => (
-						<img className="carousel-img" key={link} src={link} alt="carousel"/>
+						<img
+							className="carousel-img"
+							key={link}
+							src={link}
+							alt="carousel"
+						/>
 					))}
 				</Carousel>
 			</div>
