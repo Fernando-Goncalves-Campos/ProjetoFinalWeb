@@ -6,7 +6,7 @@ const Cart = ({ user, setUser, items, setItems }) => {
 	let sum = 0;
 	let newCart = user.cart;
 
-	//caso o carrinho seja vazio toma um valor diferente
+	//Caso o carrinho seja vazio toma um valor diferente
 	let itemsOnCart =
 		newCart.length === 0 ? (
 			<span id="emptyText">Carrinho Vazio</span>

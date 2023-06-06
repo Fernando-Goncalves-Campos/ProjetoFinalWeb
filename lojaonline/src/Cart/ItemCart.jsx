@@ -53,6 +53,7 @@ const ItemCart = ({ user, setUser, item, qnt, newCart }) => {
 		});
 	}
 
+    //Determina o que acontece ao clicar o botão
 	const handleQntBtnClick = (sum) => {
 		if (sum) {
 			if (qnt < item.quantity) {

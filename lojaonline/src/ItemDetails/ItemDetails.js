@@ -65,12 +65,15 @@ function ItemDetails({ user, setUser, logged, adm, items }) {
 		</button>
 	);
 
+    //Caso o usuário não esteja logado
     if (!logged) {
         buyButton = (
             <button id="buyButton" className="buttonCont" onClick={login}>
                 Login {item.price}
             </button>
         );
+
+    //Caso o usuário não seja um adm
     } else if (!adm) {
         //Determina se é possível realizar a compra (se existem itens em estoque)
         if (item.quantity > 0) {
@@ -94,6 +97,7 @@ function ItemDetails({ user, setUser, logged, adm, items }) {
         );
     }
 
+    //Caso o usuário seja um adm
 	return (
 		<div>
 			<img src={item.photo} alt={item.name} id="detailsImg" />

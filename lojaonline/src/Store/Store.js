@@ -48,10 +48,13 @@ function Store({ items, searchItem, priceRange, setPriceRange }) {
 		}
 	}, [searchItem, items, priceRange]);
 
+    //Images do carousel
 	let images = [
 		"https://http2.mlstatic.com/D_NQ_630919-MLA69532845491_052023-OO.webp",
 		"https://http2.mlstatic.com/D_NQ_817571-MLA69622836112_052023-OO.webp",
 	];
+
+    //Define os limites do slider sempre que a lista de itens atualiza
 	useEffect(() => {
 		setRange();
 	}, [items]);

@@ -35,6 +35,7 @@ const EditAdm = ({ user }) => {
         )))
     }
 
+    //Lê os adms do banco de dados
     async function getAdms() {
         const response = await fetch(`http://localhost:5050/users/adms`);
     

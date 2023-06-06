@@ -65,6 +65,7 @@ function EditItem({ items, setItems }) {
         navigate("/");
     };
 
+    //Deleta um item da loja
     function deleteItem(){
         removeItemDB();
         setItems(items.filter(prevItems => prevItems.id !== item.id));

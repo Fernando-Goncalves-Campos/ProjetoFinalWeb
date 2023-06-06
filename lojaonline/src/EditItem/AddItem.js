@@ -77,7 +77,7 @@ function AddItem({ items, setItems }) {
                 Quantity:<br /><input type="number" className="inputItem" name="quantity" onChange={(e) => setQuantity( Number(e.target.value) )} /><br /><br />
 
                 <input type="submit" className="buttonCont buttonForm" id="confirmItem" value="Submit"/>
-            </form>    
+            </form>
         </div>
     );
 }
