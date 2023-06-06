@@ -14,13 +14,16 @@ function Store({ items, searchItem, priceRange, setPriceRange }) {
 	const [startPrice, setStartPrice] = useState([0, 0]);
 
 	const setRange = () => {
+		let aux = [0, 0];
 		items.forEach((item) => {
-			if (item.price < startPrice[0]) {
-				setStartPrice([item.price, startPrice[1]]);
-			} else if (item.price > startPrice[1]) {
-				setStartPrice([startPrice[0], item.price]);
+			console.log(aux);
+			if (item.price < aux[0]) {
+				aux[0] = item.price;
+			} else if (item.price > aux[1]) {
+				aux[1] = item.price;
 			}
 		});
+		setStartPrice(aux);
 	};
 
 	//Filtra os itens de acordo com a barra de pesquisa
