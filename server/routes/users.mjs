@@ -85,7 +85,7 @@ router.patch("/customer/:name/cart", async (req, res) => {
         }
     }
 
-    let result = customers.updateOne({name: req.params.name}, newValue);
+    let result = await customers.updateOne({name: req.params.name}, newValue);
     res.status(200).send(result);
 })
 

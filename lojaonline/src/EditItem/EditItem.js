@@ -2,7 +2,7 @@ import { useState, memo } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import './AddItem.css';
 
-function EditItem({items, setItems}) {
+function EditItem({ items, setItems }) {
     //Lê o item cujo ID esta no URL da página
     const {itemId} = useParams();
     let item = items.find(object => object.id === itemId);

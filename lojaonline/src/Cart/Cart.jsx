@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import ItemCart from "./ItemCart";
 import "./Cart.css";
 
-const Cart = ({ user, setUser, setCustomers, items, setItems }) => {
+const Cart = ({ user, setUser, items, setItems }) => {
 	let sum = 0;
 	let newCart = user.cart;
 
@@ -25,7 +25,6 @@ const Cart = ({ user, setUser, setCustomers, items, setItems }) => {
                         key={itemFound.id}
 						user={user}
 						setUser={setUser}
-						setCustomers={setCustomers}
 						newCart={newCart}
 						qnt={itemOnCart[1]}
 						item={itemFound}
@@ -36,8 +35,23 @@ const Cart = ({ user, setUser, setCustomers, items, setItems }) => {
 
 	let Total = itemsOnCart.length !== 0 ? <p>R$ {sum}</p> : <></>;
 
+    //Esvazia o carrinho no banco de dados
+    const emptyCartDB = async () => {
+        await fetch(`http://localhost:5050/users/customer/${user.name}/cart`, {
+            method: 'PATCH',
+            body: JSON.stringify({
+                cart: []
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+    }
+
     //Esvazia o carrinho do cliente
 	const handleEmptyCart = () => {
+        emptyCartDB();
+
 		setUser({
 			name: user.name,
 			password: user.password,
@@ -46,23 +60,6 @@ const Cart = ({ user, setUser, setCustomers, items, setItems }) => {
 			address: user.address,
 			cart: [],
 		});
-
-		setCustomers((prevCustomers) =>
-			prevCustomers.map((cust) => {
-				if (cust.name === user.name) {
-					return {
-						name: user.name,
-						email: user.email,
-						phone: user.phone,
-						password: user.password,
-						address: user.address,
-						cart: [],
-					};
-				} else {
-					return cust;
-				}
-			})
-		);
 	};
 
     //Atualiza a quantidade de itens no banco de dados

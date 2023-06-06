@@ -32,7 +32,7 @@ function App() {
             setItems(readItems);
         }
         
-          getItems();
+        getItems();
     }, []);
 
 	//Valor que está na barra de pesquisa
@@ -43,40 +43,6 @@ function App() {
 
 	//Tipo de usuário
 	const [adm, setAdm] = useState(false);
-
-	//Lista de contas de clientes
-	const [customers, setCustomers] = useState([
-		{
-			name: "user",
-			password: "user",
-			phone: "000000000",
-			email: "user@user.com",
-			address: "userland",
-			cart: [],
-		},
-	]);
-
-	//Lista de contas de adms
-	const [adms, setAdms] = useState([
-		{
-			name: "admin",
-			password: "admin",
-			phone: "999999999",
-			email: "admin@admin.com",
-		},
-		{
-			name: "admin1",
-			password: "admin",
-			phone: "999999999",
-			email: "admin@admin.com",
-		},
-		{
-			name: "admin2",
-			password: "admin",
-			phone: "999999999",
-			email: "admin@admin.com",
-		},
-	]);
 
 	//Usuário logado
 	const [user, setUser] = useState({ name: "" });
@@ -149,9 +115,6 @@ function App() {
 								logged={logged}
 								adm={adm}
 								items={items}
-								setCustomers={(value) => {
-									setCustomers(value);
-								}}
 							/>
 						}
 					/>
@@ -201,9 +164,6 @@ function App() {
 								user={user}
 								setUser={(value) => {
 									setUser(value);
-								}}
-								setCustomers={(value) => {
-									setCustomers(value);
 								}}
 								items={items}
 								setItems={(value) => {

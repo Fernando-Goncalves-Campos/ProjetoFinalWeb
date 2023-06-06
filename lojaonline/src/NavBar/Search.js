@@ -2,7 +2,7 @@ import { memo } from "react";
 import { useLocation } from "react-router-dom";
 import "./Search.css";
 
-function Search({ searchItem, setSearchItem}) {
+function Search({ searchItem, setSearchItem }) {
     //Verifica se esta na página inicial
     let location = useLocation();
     if(location.pathname === "/"){

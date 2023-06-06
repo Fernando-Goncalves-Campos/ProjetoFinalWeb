@@ -2,7 +2,7 @@ import { memo } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./ItemDetails.css";
 
-function ItemDetails({ user, setUser, logged, adm, items, setCustomers }) {
+function ItemDetails({ user, setUser, logged, adm, items }) {
 	const { itemId } = useParams();
 	const item = items.find((object) => object.id === itemId);
 
@@ -15,6 +15,19 @@ function ItemDetails({ user, setUser, logged, adm, items, setCustomers }) {
 		navigate("/login");
 	}
 
+    //Atualiza o carrinho no banco de dados
+    const updateCartDB = async (newCart) => {
+        await fetch(`http://localhost:5050/users/customer/${user.name}/cart`, {
+            method: 'PATCH',
+            body: JSON.stringify({
+                cart: newCart
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+    }
+
 	//Para a tela com o restante dos dados do item, enviando o ID do item no URL
 	function buy() {
 		//Modifica os valores que salvam as quantidades do item em estoque e vendidos
@@ -25,22 +38,8 @@ function ItemDetails({ user, setUser, logged, adm, items, setCustomers }) {
 		if (itemCartIndex === -1) {
 			newCart.push([itemId, 1]);
 
-            //Adiciona a conta à lista de usuários
-            setCustomers((prevCustomers) =>
-            prevCustomers.map((cust) => {
-                if (cust.name === user.name) {
-                    return {
-                        name: user.name,
-                        email: user.email,
-                        phone: user.phone,
-                        password: user.password,
-                        address: user.address,
-                        cart: newCart,
-                    };
-                } else {
-                    return cust;
-                }
-            }));
+            //Adiciona o item ao carrinho
+            updateCartDB(newCart);
 
             setUser({
                 name: user.name,

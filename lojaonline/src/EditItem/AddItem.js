@@ -2,7 +2,7 @@ import { useState, memo } from "react";
 import { useNavigate } from "react-router-dom";
 import './AddItem.css';
 
-function AddItem({items, setItems}) {
+function AddItem({ items, setItems }) {
     //Salva os valores inseridos nos inputs constantemente
     const [name, setName] = useState("");
     const [id, setId] = useState("");

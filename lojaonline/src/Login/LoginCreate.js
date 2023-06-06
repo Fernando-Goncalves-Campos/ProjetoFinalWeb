@@ -2,7 +2,7 @@ import { useState, memo } from "react";
 import { useNavigate } from "react-router-dom";
 import './Login.css';
 
-function LoginCreate({setUser, setLogged}) {
+function LoginCreate({ setUser, setLogged }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [phone, setPhone] = useState("");

@@ -1,10 +1,23 @@
 import React, { memo } from "react";
 
-const ItemCart = ({ user, setUser, setCustomers, item, qnt, newCart }) => {
+const ItemCart = ({ user, setUser, item, qnt, newCart }) => {
 
     //Botões que modificam a quantidade de items selecionados
 	let addBtn = <button className="buttonCont buttonQuant" onClick={() => handleQntBtnClick(true)}>+</button>;
 	let subBtn = <button className="buttonCont buttonQuant" onClick={() => handleQntBtnClick(false)}>-</button>;
+
+    //Atualiza o carrinho no banco de dados
+    const updateCartDB = async (newCart) => {
+        await fetch(`http://localhost:5050/users/customer/${user.name}/cart`, {
+            method: 'PATCH',
+            body: JSON.stringify({
+                cart: newCart
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+    }
 
     //Função que realiza a adição/subtração de um item
 	function buy(sum) {
@@ -27,22 +40,7 @@ const ItemCart = ({ user, setUser, setCustomers, item, qnt, newCart }) => {
 		}
 
 		//Modifica na lista de usuários
-		setCustomers(prevCustomers =>
-			prevCustomers.map((cust) => {
-				if (cust.name === user.name) {
-					return {
-						name: user.name,
-						email: user.email,
-						phone: user.phone,
-						password: user.password,
-						address: user.address,
-						cart: newCart,
-					};
-				} else {
-					return cust;
-				}
-			})
-		);
+		updateCartDB(newCart);
 
         //Modifica o usuário
 		setUser({
