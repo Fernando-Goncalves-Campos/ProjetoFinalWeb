@@ -31,6 +31,12 @@
     font-size: 20px;
 }
 
+.buttonQuant:hover{
+    transform: scale(1);
+    color: inherit;
+    background-color: inherit;
+}
+
 #emptyText {
 	color: var(--text-color-content);
 	margin: 30px auto;
