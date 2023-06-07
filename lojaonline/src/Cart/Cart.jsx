@@ -152,13 +152,13 @@ const Cart = ({ user, setUser, items, setItems }) => {
 		<div id="cardscreen">
 			<p>Dados do cartão</p>
 			N°:
-			<input type="text" className="inputLogin" />
+			<input type="text" className="inputCart" />
 			{Total}
-			<div id="buybtns">
-				<button className="buttonCont buttonCart" onClick={handleBuy}>
+			<div id="buyBtns">
+				<button className="buttonCart buttonCartPay" onClick={handleBuy}>
 					Confirmar
 				</button>
-				<button className="buttonCont buttonCart" onClick={handleClickBuy}>
+				<button className="buttonCart buttonCartPay" onClick={handleClickBuy}>
 					Cancelar
 				</button>
 			</div>

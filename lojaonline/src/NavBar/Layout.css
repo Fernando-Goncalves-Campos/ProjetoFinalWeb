@@ -3,7 +3,7 @@
 	padding: 0;
 	outline: none;
 	border: none;
-	transition: 0s, background-color 0.5s, color 0.2s, border 0.5s;
+	transition: 0s, background-color 0.5s, color 0.2s, border 0.5s, transform 0.1s;
 	box-sizing: border-box;
 }
 
@@ -29,43 +29,48 @@ light-theme {
 	overflow: auto;
 }
 
+
 /*Conteúdo*/
 #content {
-	min-width: 800px;
+    min-width: 800px;
 	height: calc(100vh - var(--nav-height));
-
+    
 	background-color: var(--bg-color-content);
 	overflow: auto;
 }
 
 /*Barra de navegação*/
 #navBar {
-	min-width: 800px;
+    min-width: 800px;
 	height: var(--nav-height);
 
 	background-color: var(--bg-color-nav);
-
+    
 	display: flex;
 	vertical-align: center;
-
+    
 	padding-right: 16px;
 }
 
 /*Botão para mudança do tema*/
 #switchTheme {
-	line-height: var(--nav-height);
+    line-height: var(--nav-height);
 	font-size: 2em;
-
+    
 	color: var(--text-color-nav);
 	background: none;
-
+    
 	float: right;
-
+    
 	cursor: pointer;
 }
 
+button:hover{
+    transform: scale(1.03);
+}
+
 .buttonCont {
-	background-color: var(--bg-color-button);
+    background-color: var(--bg-color-button);
 	color: var(--text-color-button);
 	cursor: pointer;
 }

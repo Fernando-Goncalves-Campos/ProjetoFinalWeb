@@ -7,8 +7,9 @@
 .cartItem {
 	background-color: var(--bg-color-nav);
 	margin: 15px;
-	padding: 10px;
+	padding: 8px;
 	color: var(--text-color-nav);
+    border: solid 2px var(--bd-content);
 	text-align: center;
 	width: 225px;
 }
@@ -24,6 +25,12 @@
 	width: 200px;
 }
 
+.buttonQuant{
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+}
+
 #emptyText {
 	color: var(--text-color-content);
 	margin: 30px auto;
@@ -35,21 +42,39 @@
 	display: flex;
 }
 
-.buttonCart {
-	width: 120px;
-	height: 50px;
-	font-size: 1em;
-	padding: 5px;
-	border-radius: 4px;
-	margin: 20px auto;
-}
 
 #btnClean {
-	margin-right: 10px;
+    margin-right: 10px;
 }
 
 #btnBuy {
-	margin-left: 10px;
+    margin-left: 10px;
+}
+
+#buyBtns{
+    text-align: center;
+}
+
+.buttonCart {
+	cursor: pointer;
+    width: 120px;
+    height: 50px;
+    font-size: 1em;
+    padding: 5px;
+    border-radius: 4px;
+    margin: 20px auto;
+}
+
+.buttonCartPay {
+    background-color: var(--bg-color-content);
+	color: var(--text-color-content);
+    vertical-align: bottom;
+    margin: 20px
+}
+
+.buttonCartPay:hover {
+	background-color: var(--bg-color-button-hover);
+	color: var(--text-color-button-hover);
 }
 
 #cardscreen {
@@ -58,7 +83,24 @@
 	position: relative;
 	border-radius: 10px;
 	padding: 10px;
-	background-color: var(--bd-content);
-	left: 25%;
-	top: 25%;
+    color: var(--text-color-nav);
+	background-color: var(--bg-color-nav);
+    border: solid 2px var(--bd-content);
+	left: 25vw;
+	top: 15%;
+}
+
+.inputCart {
+    display: block;
+    margin: auto;
+    padding: 0 10px;
+    width: 400px;
+    height: 40px;
+    border-radius: 3px;
+    background-color: var(--bg-color-search);
+    color: var(--text-color-nav);
+
+    font-size: 15px;
+    
+    cursor: pointer;
 }

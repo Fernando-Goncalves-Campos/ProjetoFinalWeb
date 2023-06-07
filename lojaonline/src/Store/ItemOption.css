@@ -10,6 +10,10 @@
 	cursor: pointer;
 }
 
+.storeItem:hover{
+    transform: scale(1.03);
+}
+
 .storeItem img {
 	margin: 0px 0px 5px;
 	height: 200px;
@@ -30,6 +34,7 @@
 
 .itemQnt {
 	font-size: 0.8em;
+    margin: 0 10px 0 0;
 	float: right;
 	font-weight: normal;
 }
