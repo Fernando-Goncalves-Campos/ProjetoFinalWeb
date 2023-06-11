@@ -90,6 +90,7 @@ Samuel Figueiredo Veronez 12542626
 
 </summary>
 
+  Comentários pontuáis foram feitos em linha de código.
 
 </details>
 
@@ -102,9 +103,49 @@ Samuel Figueiredo Veronez 12542626
 </summary>
 
 ### Plano de teste
-
+  
+  Para seguir o plano de teste é necessário compilar a programção de acordo com o tópico "Processo para compilação"
+  com ambos ,servidor e react, rodando é possível prosseguir para os testes manuais das funcionalidades.
+  
+  Para poder seguir o diagrama de navegação apresentado anteriormente duas contas já estão no sistema:
+  
+  #### Administrador
+  
+    Login: admin 
+    Senha: admin
+  
+  - Items podem ser editados ao clicar no item desejado na tela inicial da loja.
+  - Para editar usuários comums e administradores acesse pelo menu ao cliclar no nome da conta.
+  
+  #### Usuário Comum
+  
+    Login: user 
+    Senha: user
+  
+  - Acesse o carrinho ao clicar no nome de usuário.
+  
+  #### Testes
+      Gerais
+  
+        - verificar a navegação apresentada no diagrama.
+        - Acessar os dois tipos de usuários.
+        - Criar uma conta para usuário comum.
+  
+      Usuário Comum
+  
+        - Comprar Produtos.
+        - Modificar o carrinho de compras.
+        -
+  
+      Administrador
+  
+        - Modificar/Criar Items.
+        - Gerenciar/Criar outras contas.
+  
 ### Resultado dos testes
 
+  Ao seguir os testes manualmente alguns problemas foram encontrados e assim foram sendo resolvidos.
+ 
 </details>
 
 <!--Build procedures-->
