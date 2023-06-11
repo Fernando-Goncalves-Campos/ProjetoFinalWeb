@@ -30,8 +30,8 @@ function App() {
 
 			const readItems = await response.json();
 
-			await readItems.sort((a, b) => a.id - b.id);
-			setItems(readItems.sort((a, b) => (a.price > b.price ? 1 : -1)));
+			await readItems.sort((a, b) => (a.price > b.price ? 1 : -1));
+			setItems(readItems);
 		}
 
 		getItems();
