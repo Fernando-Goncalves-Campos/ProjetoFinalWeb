@@ -17,23 +17,25 @@ function App() {
 	//////Inicializa os estados que serão usados em todo o site
 	//Lista dos itens da loja
 	const [items, setItems] = useState([]);
-    useEffect(() => {
-        async function getItems() {
-            const response = await fetch(`http://localhost:5050/items/`);
-        
-            if (!response.ok) {
-              const message = `An error occurred: ${response.statusText}`;
-              console.log(message);
-              return;
-            }
-        
-            const readItems = await response.json();
-            await readItems.sort((a, b) => a.id - b.id)
-            setItems(readItems);
-        }
-        
-        getItems();
-    }, []);
+
+	useEffect(() => {
+		async function getItems() {
+			const response = await fetch(`http://localhost:5050/items/`);
+
+			if (!response.ok) {
+				const message = `An error occurred: ${response.statusText}`;
+				console.log(message);
+				return;
+			}
+
+			const readItems = await response.json();
+
+			await readItems.sort((a, b) => a.id - b.id);
+			setItems(readItems.sort((a, b) => (a.price > b.price ? 1 : -1)));
+		}
+
+		getItems();
+	}, []);
 
 	//Valor que está na barra de pesquisa
 	const [searchItem, setSearchItem] = useState("");
@@ -85,25 +87,13 @@ function App() {
 								setPriceRange={(value) => {
 									setPriceRange(value);
 								}}
-                                />
-                            }
-					/>
-
-                    <Route
-                        path="/addAdm"
-                        element={
-                            <AddAdm />
-                        }
-                    />
-                    
-					<Route
-						path="/editAdm"
-						element={
-                            <EditAdm
-								user={user}
 							/>
 						}
 					/>
+
+					<Route path="/addAdm" element={<AddAdm />} />
+
+					<Route path="/editAdm" element={<EditAdm user={user} />} />
 					<Route
 						path="/itemDetails/:itemId"
 						element={

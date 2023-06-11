@@ -5,6 +5,8 @@ import RangeSlider from "./RangeSlider.jsx";
 
 import Carousel from "react-material-ui-carousel";
 
+import { Skeleton } from "@mui/material";
+
 function Store({ items, searchItem, priceRange, setPriceRange }) {
 	//Cria os elementos para os itens que estão à venda
 	const [offers, setOffers] = useState(
