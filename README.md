@@ -111,7 +111,7 @@ Samuel Figueiredo Veronez 12542626
   
   #### Administrador
   
-    Login: admin <br>
+    Login: admin 
     Senha: admin
   
   - Items podem ser editados ao clicar no item desejado na tela inicial da loja.
@@ -119,7 +119,7 @@ Samuel Figueiredo Veronez 12542626
   
   #### Usuário Comum
   
-    Login: user <br>
+    Login: user 
     Senha: user
   
   - Acesse o carrinho ao clicar no nome de usuário.
