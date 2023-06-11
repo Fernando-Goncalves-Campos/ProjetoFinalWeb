@@ -107,6 +107,9 @@ Samuel Figueiredo Veronez 12542626
   Para seguir o plano de teste é necessário compilar a programção de acordo com o tópico "Processo para compilação"
   com ambos ,servidor e react, rodando é possível prosseguir para os testes manuais das funcionalidades.
   
+  Como o servidor de Banco de dados já está implementado mudanças feitas em contas ou items são persistentes,
+  por esse motivo caso deseje testar alguma modificação(item, conta) crie novos objetos.
+  
   Para poder seguir o diagrama de navegação apresentado anteriormente duas contas já estão no sistema:
   
   #### Administrador
@@ -174,6 +177,8 @@ Para abrir o site, deve-se abrir o diretório do react (lojaonline) no terminal 
 
 </summary>
 
+  Alguns problemas de reatividade e do css estão 
+  
 </details>
 
 <!--Comments-->
