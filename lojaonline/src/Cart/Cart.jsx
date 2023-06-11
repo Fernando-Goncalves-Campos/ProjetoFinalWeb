@@ -78,6 +78,7 @@ const Cart = ({ user, setUser, items, setItems }) => {
 		});
 	};
 
+	//função para alterar o bollean que mostra a tela de cartão
 	const handleClickBuy = () => {
 		setView(!cardView);
 	};
@@ -148,6 +149,7 @@ const Cart = ({ user, setUser, items, setItems }) => {
 			]
 		);
 
+	//mostra a tela que pede o número do cartão caso clique em comprar
 	let cardscreen = cardView ? (
 		<div id="cardscreen">
 			<p>Dados do cartão</p>
