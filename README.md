@@ -44,7 +44,8 @@ Samuel Figueiredo Veronez 12542626
 
 </summary>
   
-  PetLove é um site de petshop completo, oferecendo produtos e informações para cuidar dos animais de estimação. Com interface amigável.
+  
+CapVárias é uma plataforma online de vendas dedicada exclusivamente a produtos relacionados às adoráveis e fascinantes capivaras. Com sua interface amigável e intuitiva, o site oferece uma ampla variedade de itens únicos, desde roupas e acessórios temáticos até decoração para casa inspirada nesses encantadores roedores. Com uma paixão genuína pelas capivaras, a CapVárias visa proporcionar uma experiência de compra agradável, onde os amantes desses animais podem encontrar facilmente produtos de alta qualidade e expressar sua devoção por essas criaturas carismáticas. Seja você um fã fervoroso ou esteja em busca de um presente especial, a CapVárias é o destino perfeito para celebrar e compartilhar o amor pelas capivaras.
   
   Como funcionalidade extra uma barra de pesquisa junto com um filtro de preço.
 
@@ -129,10 +130,11 @@ Samuel Figueiredo Veronez 12542626
   
   #### Testes
       Gerais
-  
+    
         - verificar a navegação apresentada no diagrama.
         - Acessar os dois tipos de usuários.
         - Criar uma conta para usuário comum.
+        - Barra de pesquisa e Filtro por valor. 
   
       Usuário Comum
   
