@@ -115,7 +115,7 @@ Samuel Figueiredo Veronez 12542626
     Senha: admin
   
   - Items podem ser editados ao clicar no item desejado na tela inicial da loja.
-  - Para editar usúarios comums e administradores acesse pelo menu ao cliclar no nome da conta.
+  - Para editar usuários comums e administradores acesse pelo menu ao cliclar no nome da conta.
   
   #### Usuário Comum
   
