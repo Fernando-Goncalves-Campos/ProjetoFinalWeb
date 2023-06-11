@@ -129,10 +129,11 @@ Samuel Figueiredo Veronez 12542626
   
   #### Testes
       Gerais
-  
+    
         - verificar a navegação apresentada no diagrama.
         - Acessar os dois tipos de usuários.
         - Criar uma conta para usuário comum.
+        - Barra de pesquisa e Filtro por valor. 
   
       Usuário Comum
   
