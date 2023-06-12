@@ -1,25 +1,48 @@
 import React, { memo } from "react";
 
 const ItemCart = ({ user, setUser, item, qnt, newCart }) => {
+	//Botões que modificam a quantidade de items selecionados
+	let addBtn =
+		qnt < item.quantity ? (
+			<button
+				className="buttonCont buttonQuant"
+				onClick={() => handleQntBtnClick(true)}
+			>
+				+
+			</button>
+		) : (
+			<button
+				className="buttonCont buttonQuant"
+				onClick={() => handleQntBtnClick(true)}
+				disabled
+			>
+				+
+			</button>
+		);
 
-    //Botões que modificam a quantidade de items selecionados
-	let addBtn = <button className="buttonCont buttonQuant" onClick={() => handleQntBtnClick(true)}>+</button>;
-	let subBtn = <button className="buttonCont buttonQuant" onClick={() => handleQntBtnClick(false)}>-</button>;
+	let subBtn = (
+		<button
+			className="buttonCont buttonQuant"
+			onClick={() => handleQntBtnClick(false)}
+		>
+			-
+		</button>
+	);
 
-    //Atualiza o carrinho no banco de dados
-    const updateCartDB = async (newCart) => {
-        await fetch(`http://localhost:5050/users/customer/${user.name}/cart`, {
-            method: 'PATCH',
-            body: JSON.stringify({
-                cart: newCart
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        });
-    }
+	//Atualiza o carrinho no banco de dados
+	const updateCartDB = async (newCart) => {
+		await fetch(`http://localhost:5050/users/customer/${user.name}/cart`, {
+			method: "PATCH",
+			body: JSON.stringify({
+				cart: newCart,
+			}),
+			headers: {
+				"Content-Type": "application/json",
+			},
+		});
+	};
 
-    //Função que realiza a adição/subtração de um item
+	//Função que realiza a adição/subtração de um item
 	function buy(sum) {
 		let itemCartIndex = newCart.findIndex(
 			(itemCart) => itemCart[0] === item.id
@@ -42,7 +65,7 @@ const ItemCart = ({ user, setUser, item, qnt, newCart }) => {
 		//Modifica na lista de usuários
 		updateCartDB(newCart);
 
-        //Modifica o usuário
+		//Modifica o usuário
 		setUser({
 			name: user.name,
 			email: user.email,
@@ -53,15 +76,13 @@ const ItemCart = ({ user, setUser, item, qnt, newCart }) => {
 		});
 	}
 
-    //Determina o que acontece ao clicar o botão
+	//Determina o que acontece ao clicar o botão
 	const handleQntBtnClick = (sum) => {
 		if (sum) {
 			if (qnt < item.quantity) {
 				qnt++;
-                if(qnt === item.quantity){
-                    addBtn = <button className="buttonCont buttonQuant" onClick={() => handleQntBtnClick(true)} disabled>+</button>;
-                }
-                buy(true);
+
+				buy(true);
 			}
 		} else {
 			qnt--;

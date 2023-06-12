@@ -44,7 +44,8 @@ Samuel Figueiredo Veronez 12542626
 
 </summary>
   
-  PetLove é um site de petshop completo, oferecendo produtos e informações para cuidar dos animais de estimação. Com interface amigável.
+  
+CapVárias é uma plataforma online de vendas dedicada exclusivamente a produtos relacionados às adoráveis e fascinantes capivaras. Com sua interface amigável e intuitiva, o site oferece uma ampla variedade de itens únicos, desde roupas e acessórios temáticos até decoração para casa inspirada nesses encantadores roedores. Com uma paixão genuína pelas capivaras, a CapVárias visa proporcionar uma experiência de compra agradável, onde os amantes desses animais podem encontrar facilmente produtos de alta qualidade e expressar sua devoção por essas criaturas carismáticas. Seja você um fã fervoroso ou esteja em busca de um presente especial, a CapVárias é o destino perfeito para celebrar e compartilhar o amor pelas capivaras.
   
   Como funcionalidade extra uma barra de pesquisa junto com um filtro de preço.
 
@@ -90,6 +91,7 @@ Samuel Figueiredo Veronez 12542626
 
 </summary>
 
+  Comentários pontuáis foram feitos em linha de código.
 
 </details>
 
@@ -102,9 +104,53 @@ Samuel Figueiredo Veronez 12542626
 </summary>
 
 ### Plano de teste
-
+  
+  Para seguir o plano de teste é necessário compilar a programção de acordo com o tópico "Processo para compilação"
+  com ambos ,servidor e react, rodando é possível prosseguir para os testes manuais das funcionalidades.
+  
+  Como o servidor de Banco de dados já está implementado mudanças feitas em contas ou items são persistentes,
+  por esse motivo caso deseje testar alguma modificação(item, conta) crie novos objetos.
+  
+  Para poder seguir o diagrama de navegação apresentado anteriormente duas contas já estão no sistema:
+  
+  #### Administrador
+  
+    Login: admin 
+    Senha: admin
+  
+  - Items podem ser editados ao clicar no item desejado na tela inicial da loja.
+  - Para editar usuários comums e administradores acesse pelo menu ao cliclar no nome da conta.
+  
+  #### Usuário Comum
+  
+    Login: user 
+    Senha: user
+  
+  - Acesse o carrinho ao clicar no nome de usuário.
+  
+  #### Testes
+      Gerais
+    
+        - verificar a navegação apresentada no diagrama.
+        - Acessar os dois tipos de usuários.
+        - Criar uma conta para usuário comum.
+        - Barra de pesquisa e Filtro por valor. 
+  
+      Usuário Comum
+  
+        - Comprar Produtos.
+        - Modificar o carrinho de compras.
+        -
+  
+      Administrador
+  
+        - Modificar/Criar Items.
+        - Gerenciar/Criar outras contas.
+  
 ### Resultado dos testes
 
+  Ao seguir os testes manualmente alguns problemas foram encontrados e assim foram sendo resolvidos.
+ 
 </details>
 
 <!--Build procedures-->
@@ -133,6 +179,8 @@ Para abrir o site, deve-se abrir o diretório do react (lojaonline) no terminal 
 
 </summary>
 
+  Alguns problemas de reatividade e do css estão 
+  
 </details>
 
 <!--Comments-->
