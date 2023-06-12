@@ -90,26 +90,7 @@ function App() {
 							/>
 						}
 					/>
-
-					<Route path="/addAdm" element={<AddAdm />} />
-
-					<Route path="/editAdm" element={<EditAdm user={user} />} />
-					<Route
-						path="/itemDetails/:itemId"
-						element={
-							<ItemDetails
-								user={user}
-								setUser={(value) => {
-									setUser(value);
-								}}
-								logged={logged}
-								adm={adm}
-								items={items}
-							/>
-						}
-					/>
-
-					<Route
+                    <Route
 						path="/login"
 						element={
 							<Login
@@ -125,28 +106,57 @@ function App() {
 							/>
 						}
 					/>
-					<Route
-						path="/addItem"
-						element={
-							<AddItem
-								items={items}
-								setItems={(value) => {
-									setItems(value);
-								}}
-							/>
-						}
-					/>
-					<Route
-						path="/editItem/:itemId"
-						element={
-							<EditItem
-								items={items}
-								setItems={(value) => {
-									setItems(value);
-								}}
-							/>
-						}
-					/>
+
+					<Route path="/addAdm" element={<AddAdm />} />
+
+					<Route path="/editAdm" element={<EditAdm user={user} />} />
+
+
+                    <Route path="/items">
+                        <Route
+                            path="/items/addItem"
+                            element={
+                                <AddItem
+                                    items={items}
+                                    setItems={(value) => {
+                                        setItems(value);
+                                    }}
+                                />
+                            }
+                        />
+
+                        <Route
+                            path="/items/:itemId/itemDetails"
+                            element={
+                                <ItemDetails
+                                    user={user}
+                                    setUser={(value) => {
+                                        setUser(value);
+                                    }}
+                                    logged={logged}
+                                    adm={adm}
+                                    items={items}
+                                />
+                            }
+                        />
+
+                        <Route
+                            path="/items/:itemId/editItem"
+                            element={
+                                <EditItem
+                                    items={items}
+                                    setItems={(value) => {
+                                        setItems(value);
+                                    }}
+                                />
+                            }
+                        />
+                    </Route>
+					
+
+					
+					
+					
 					<Route
 						path="/cart"
 						element={

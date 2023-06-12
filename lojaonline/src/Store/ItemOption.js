@@ -8,7 +8,7 @@ function ItemOption({ item }) {
 
 	//Para a tela com o restante dos dados do item, enviando o ID do item no URL
 	function handleClick() {
-		navigate(`/itemDetails/${item.id}`);
+		navigate(`/items/${item.id}/itemDetails`);
 	}
 
 	return (

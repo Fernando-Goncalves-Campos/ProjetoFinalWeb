@@ -55,7 +55,7 @@ function ItemDetails({ user, setUser, logged, adm, items }) {
 
 	//Para a tela de edição de itens com o ID do item
 	function editItem() {
-		navigate(`/editItem/${item.id}`);
+		navigate(`/items/${item.id}/editItem`);
 	}
 
 	//Seleciona a função de acordo com o tipo de login

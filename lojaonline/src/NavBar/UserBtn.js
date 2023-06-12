@@ -39,7 +39,7 @@ function UserBtn({ user, setUser, logged, setLogged, adm, setAdm }) {
 				<div className="menu-content">
 					<ul>
 						<li>
-							<Link to="/addItem">Add Item</Link>
+							<Link to="/items/addItem">Add Item</Link>
 						</li>
 						<li>
 							<Link to="/editAdm">Edit Adm</Link>
