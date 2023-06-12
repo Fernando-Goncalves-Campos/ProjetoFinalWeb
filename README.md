@@ -14,7 +14,7 @@ Samuel Figueiredo Veronez 12542626
 
   1. Dois tipos de usuários: Clientes e Administradores:<br>
   
-    . Administradores gerenciam o registro de outros administradores, clientes e produtos/serviços.
+    . Administradores gerenciam o registro de outros administradores e produtos/serviços.
   
     . Os clientes são usuários que acessam o sistema para comprar produtos/serviços.
   
