@@ -91,7 +91,8 @@ CapVárias é uma plataforma online de vendas dedicada exclusivamente a produtos
 
 </summary>
 
-  Comentários pontuáis foram feitos em linha de código.
+  - A funcionalidade de barra de pesquisa e filtro por preço foi implementada de forma que a pesquisa seja feita em cada alteração, em uma loja de itens real a pesquisa deve ser alterada para após o usuário terminar a entrada(enter, 'botão buscar').
+  - Comentários pontuáis foram feitos em linha de código.
 
 </details>
 
@@ -161,7 +162,7 @@ CapVárias é uma plataforma online de vendas dedicada exclusivamente a produtos
 
 </summary>
 
-É preciso ter o node.js instalado (eu acho): https://nodejs.org/en
+É preciso ter o node.js instalado : https://nodejs.org/en
 a versão utilizada foi a 18.16
 
 Antes de abrir o site é necessário ligar o servidor de banco de dados, estando no diretório (server)
