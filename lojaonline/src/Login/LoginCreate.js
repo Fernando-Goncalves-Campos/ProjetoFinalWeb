@@ -41,9 +41,15 @@ function LoginCreate({ setUser, setLogged }) {
         //Adiciona o administrador ao banco de dados
         const response = await addCustomerDB()
         if(response.status === 201){
-            const loggedUser = await response.json();
             setLogged(true);
-            await setUser(loggedUser.user);
+            setUser({
+                name: username,
+                password: password,
+                email: email,
+                phone: phone,
+                address: address,
+                cart: []
+            });
             navigate("/");
         }
         else{
