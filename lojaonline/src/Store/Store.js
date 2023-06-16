@@ -16,7 +16,6 @@ function Store({ items, searchItem, priceRange, setPriceRange }) {
 	const setRange = () => {
 		let aux = [0, 0];
 		items.forEach((item) => {
-			console.log(aux);
 			if (item.price < aux[0]) {
 				aux[0] = item.price;
 			} else if (item.price > aux[1]) {
