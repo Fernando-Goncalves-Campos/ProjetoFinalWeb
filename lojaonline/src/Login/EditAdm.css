@@ -12,16 +12,27 @@
 
 .admDiv {
 	display: flex;
-	padding: 10px 30px 10px 40px;
+	align-items: stretch;
+	justify-content: left;
+
+	gap: 12px;
+
+	padding: 10px 0px 10px 11px;
 	background-color: var(--bg-color-nav);
-	margin: 10px;
+	margin: 5px;
 }
+
 .admDelBtn {
 	background-color: var(--bg-color-nav);
-	margin: 10px;
+	font-size: 20px;
+
+	vertical-align: middle;
 	color: red;
-	width: 100%;
+	text-align: center;
 	height: 100%;
+
+	padding-left: 11px;
+	padding-right: 11px;
 }
 
 .admDelBtn:hover {
@@ -30,7 +41,11 @@
 
 .admText {
 	background-color: var(--bg-color-nav);
-
+	width: 85%;
 	color: var(--text-color-nav);
 	text-align: left;
+}
+
+.newAdm {
+	color: var(--text-color-nav);
 }

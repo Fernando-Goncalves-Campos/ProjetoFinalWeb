@@ -76,7 +76,7 @@ function Store({ items, searchItem, priceRange, setPriceRange }) {
 			</div>
 			<div className="float-container">
 				<div id="filter" className="float-child">
-					<p>Filter</p>
+					<p id="filter-title">Filter</p>
 
 					<div id="price-slider">
 						<p>Price Range:</p>

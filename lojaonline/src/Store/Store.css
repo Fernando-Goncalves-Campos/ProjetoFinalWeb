@@ -28,7 +28,9 @@
 }
 
 #filter {
+	color: var(--text-color-nav);
 	background-color: var(--bg-color-nav);
+
 	border-radius: 3%;
 	width: 18%;
 	margin: 1%;
@@ -38,14 +40,17 @@
 	flex-direction: column;
 }
 #filter-title {
-	margin-bottom: 5%;
+	font-weight: bold;
 }
 #price-slider {
+	color: var(--text-color-nav);
 	margin-top: 5%;
 }
 #min-t {
+	color: var(--text-color-nav);
 	float: left;
 }
 #max-t {
+	color: var(--text-color-nav);
 	float: right;
 }
