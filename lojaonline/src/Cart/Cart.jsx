@@ -39,7 +39,7 @@ const Cart = ({ user, setUser, items, setItems }) => {
 
 	//Esvazia o carrinho no banco de dados
 	const emptyCartDB = async () => {
-		await fetch(`http://localhost:5050/users/customer/${user.name}/cart`, {
+		await fetch(`http://localhost:5050/users/customers/${user.name}`, {
 			method: "PATCH",
 			body: JSON.stringify({
 				cart: [],
@@ -66,7 +66,7 @@ const Cart = ({ user, setUser, items, setItems }) => {
 
 	//Atualiza a quantidade de itens no banco de dados
 	const updateItemDB = async (id, newQuantity, newQuantitySold) => {
-		await fetch(`http://localhost:5050/items/${id}/quantity`, {
+		await fetch(`http://localhost:5050/items/${id}`, {
 			method: "PATCH",
 			body: JSON.stringify({
 				quantity: newQuantity,

@@ -17,7 +17,7 @@ function ItemDetails({ user, setUser, logged, adm, items }) {
 
     //Atualiza o carrinho no banco de dados
     const updateCartDB = async (newCart) => {
-        await fetch(`http://localhost:5050/users/customer/${user.name}/cart`, {
+        await fetch(`http://localhost:5050/users/customers/${user.name}`, {
             method: 'PATCH',
             body: JSON.stringify({
                 cart: newCart

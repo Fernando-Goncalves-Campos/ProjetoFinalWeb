@@ -36,30 +36,29 @@ router.post("/", async (req, res) => {
 //Modifica um item
 router.patch("/:id", async (req, res) => {
     let collection = await db.collection("items");
-    let newValue = {
-        $set: {
-            name: req.body.name,
-			photo: req.body.photo,
-			description: req.body.description,
-			price: req.body.price,
-			quantity: req.body.quantity,
-        }
+
+    //Impede que sejam modificadas informações inválidas
+    let newValues = {}
+    if(req.body.quantitySold !== undefined){
+        newValues.quantitySold = req.body.quantitySold;
+    }
+    if(req.body.quantity !== undefined){
+        newValues.quantity = req.body.quantity;
+    }
+    if(req.body.price !== undefined){
+        newValues.price = req.body.price;
+    }
+    if(req.body.description !== undefined){
+        newValues.description = req.body.description;
+    }
+    if(req.body.name !== undefined){
+        newValues.name = req.body.name;
+    }
+    if(req.body.photo !== undefined){
+        newValues.photo = req.body.photo;
     }
 
-    let result = await collection.updateOne({id: req.params.id}, newValue);
-    res.status(200).send(result);
-});
-
-router.patch("/:id/quantity", async (req, res) => {
-    let collection = await db.collection("items");
-    let newValue = {
-        $set: {
-			quantity: req.body.quantity,
-            quantitySold: req.body.quantitySold
-        }
-    }
-
-    let result = await collection.updateOne({id: req.params.id}, newValue);
+    let result = await collection.updateOne({id: req.params.id}, {$set: newValues});
     res.status(200).send(result);
 });
 

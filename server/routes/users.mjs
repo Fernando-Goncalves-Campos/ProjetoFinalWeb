@@ -3,6 +3,13 @@ import db from "../db/conn.mjs";
 
 const router = express.Router();
 
+//Retorna a lista de clientes
+router.get("/customers", async (req, res) => {
+    let adms = await db.collection("customers");
+    let results = await adms.find({}).toArray();
+    res.status(200).send(results);
+})
+
 //Retorna a lista de administradores
 router.get("/adms", async (req, res) => {
     let adms = await db.collection("adms");
@@ -76,22 +83,40 @@ router.post("/", async (req, res) => {
     }
 });
 
-//Modifica o carrinho de um usuário
-router.patch("/customer/:name/cart", async (req, res) => {
+//Modifica os dados de um cliente
+router.patch("/customers/:name", async (req, res) => {
     let customers = await db.collection("customers");
-    let newValue = {
-        $set: {
-			cart: req.body.cart
-        }
+
+    //Impede que sejam modificadas informações inválidas
+    let newValues = {}
+    if(req.body.cart !== undefined){
+        newValues.cart = req.body.cart;
+    }
+    if(req.body.address !== undefined){
+        newValues.address = req.body.address;
+    }
+    if(req.body.email !== undefined){
+        newValues.email = req.body.email;
+    }
+    if(req.body.phone !== undefined){
+        newValues.phone = req.body.phone;
     }
 
-    let result = await customers.updateOne({name: req.params.name}, newValue);
+    let result = await customers.updateOne({name: req.params.name}, {$set: newValues});
     res.status(200).send(result);
 })
 
 //Remove um adm
-router.delete("/adm/:name", async (req, res) => {
+router.delete("/adms/:name", async (req, res) => {
     const adms = await db.collection("adms");
+    let result = await adms.deleteOne({name: req.params.name});
+
+    res.status(200).send(result);
+});
+
+//Remove um cliente
+router.delete("/customers/:name", async (req, res) => {
+    const adms = await db.collection("customers");
     let result = await adms.deleteOne({name: req.params.name});
 
     res.status(200).send(result);
