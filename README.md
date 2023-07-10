@@ -108,9 +108,19 @@ CapVárias é uma plataforma online de vendas dedicada exclusivamente a produtos
   
   Para seguir o plano de teste é necessário compilar a programção de acordo com o tópico "Processo para compilação"
   com ambos ,servidor e react, rodando é possível prosseguir para os testes manuais das funcionalidades.
-  
-  Como o servidor de Banco de dados já está implementado mudanças feitas em contas ou items são persistentes,
-  por esse motivo caso deseje testar alguma modificação(item, conta) crie novos objetos.
+
+### Servidor
+
+  O servidor pode ser testado individualmente utilizando aplicativos de teste como Insônia.
+
+  por padrão os request devem ser feitos em http://localhost:5050/{route}
+
+  as rotas e tipos de request podem ser vistas nos arquivos <a href="https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/server/routes/items.mjs"> items.mjs<a> ou <a href="https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/blob/main/server/routes/users.mjs"> user.mjs<a>
+
+  exemplo de um get em http://localhost:5050/items e seu retorno(json com todos os item)
+![image](https://github.com/Fernando-Goncalves-Campos/ProjetoFinalWeb/assets/82330802/da45c46f-9757-426f-8286-e1f382455b86)
+
+  ### React 
   
   Para poder seguir o diagrama de navegação apresentado anteriormente duas contas já estão no sistema:
   
