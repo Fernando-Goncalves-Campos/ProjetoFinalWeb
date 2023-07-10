@@ -172,25 +172,4 @@ Para abrir o site, deve-se abrir o diretório do react (lojaonline) no terminal 
 
 </details>
 
-<!--Problems-->
-<details>
-<summary>
 
-## Problemas
-
-</summary>
-
-  Alguns problemas de reatividade e do css estão 
-  
-</details>
-
-<!--Comments-->
-<details>
-<summary>
-
-## Comentários
-
-</summary>
-
-
-</details>
