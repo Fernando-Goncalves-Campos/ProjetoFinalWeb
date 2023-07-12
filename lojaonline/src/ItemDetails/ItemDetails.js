@@ -15,6 +15,7 @@ function ItemDetails({ user, setUser, logged, adm, items }) {
 		navigate("/login");
 	}
 
+<<<<<<< HEAD
 	//Atualiza o carrinho no banco de dados
 	const updateCartDB = async (newCart) => {
 		await fetch(`http://localhost:5050/users/customer/${user.name}/cart`, {
@@ -27,6 +28,20 @@ function ItemDetails({ user, setUser, logged, adm, items }) {
 			},
 		});
 	};
+=======
+    //Atualiza o carrinho no banco de dados
+    const updateCartDB = async (newCart) => {
+        await fetch(`http://localhost:5050/users/customers/${user.name}`, {
+            method: 'PATCH',
+            body: JSON.stringify({
+                cart: newCart
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+    }
+>>>>>>> 9b131fe24967ba4cb077412e6cfc478c90b131e3
 
 	//Para a tela com o restante dos dados do item, enviando o ID do item no URL
 	function buy() {

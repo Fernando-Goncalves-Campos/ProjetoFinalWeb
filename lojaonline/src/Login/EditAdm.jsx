@@ -58,7 +58,7 @@ const EditAdm = ({ user }) => {
 
 	//Remove o item do banco de dados
 	const removeAdmDB = async (name) => {
-		await fetch(`http://localhost:5050/users/adm/${name}`, {
+		await fetch(`http://localhost:5050/users/adms/${name}`, {
 			method: "DELETE",
 		});
 	};
