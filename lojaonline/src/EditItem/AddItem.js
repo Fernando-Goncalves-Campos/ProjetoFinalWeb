@@ -40,6 +40,10 @@ function AddItem({ items, setItems }) {
 		//Garante que não existem itens com o mesmo id
 		if (oldItem) {
 			alert("Another item have the same id!!!!");
+		} else if (quantity < 0) {
+			alert("Quantidade inválida");
+		} else if (price <= 0) {
+			alert("Preço inválido");
 		} else {
 			//Adiciona o item no banco de dados
 			addItemDB();
@@ -75,6 +79,7 @@ function AddItem({ items, setItems }) {
 					className="inputItem"
 					name="name"
 					onChange={(e) => setName(e.target.value)}
+					required
 				/>
 				<br />
 				<br />
@@ -85,6 +90,7 @@ function AddItem({ items, setItems }) {
 					className="inputItem"
 					name="id"
 					onChange={(e) => setId(e.target.value)}
+					required
 				/>
 				<br />
 				<br />
@@ -95,6 +101,7 @@ function AddItem({ items, setItems }) {
 					className="inputItem"
 					name="photo"
 					onChange={(e) => setPhoto(e.target.value)}
+					required
 				/>
 				<br />
 				<br />
@@ -106,6 +113,7 @@ function AddItem({ items, setItems }) {
 					className="inputItem"
 					name="description"
 					onChange={(e) => setDescription(e.target.value)}
+					required
 				/>
 				<br />
 				<br />
@@ -116,6 +124,7 @@ function AddItem({ items, setItems }) {
 					className="inputItem"
 					name="price"
 					onChange={(e) => setPrice(Number(e.target.value))}
+					required
 				/>
 				<br />
 				<br />
@@ -126,6 +135,7 @@ function AddItem({ items, setItems }) {
 					className="inputItem"
 					name="quantity"
 					onChange={(e) => setQuantity(Number(e.target.value))}
+					required
 				/>
 				<br />
 				<br />
@@ -134,6 +144,7 @@ function AddItem({ items, setItems }) {
 					className="buttonCont buttonForm"
 					id="confirmItem"
 					value="Submit"
+					required
 				/>
 			</form>
 		</div>

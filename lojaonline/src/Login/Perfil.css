@@ -1,0 +1,9 @@
+#divPerfil {
+	margin: 0 50% 50% 0;
+	float: right;
+	align-items: center;
+}
+
+.textPerfil {
+	color: var(--text-color-nav);
+}

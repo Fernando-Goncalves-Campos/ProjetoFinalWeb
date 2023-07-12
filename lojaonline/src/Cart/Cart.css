@@ -9,7 +9,7 @@
 	margin: 15px;
 	padding: 8px;
 	color: var(--text-color-nav);
-    border: solid 2px var(--bd-content);
+	border: solid 2px var(--bd-content);
 	text-align: center;
 	width: 225px;
 }
@@ -25,16 +25,16 @@
 	width: 200px;
 }
 
-.buttonQuant{
-    width: 20px;
-    height: 20px;
-    font-size: 20px;
+.buttonQuant {
+	width: 20px;
+	height: 20px;
+	font-size: 20px;
 }
 
-.buttonQuant:hover{
-    transform: scale(1);
-    color: inherit;
-    background-color: inherit;
+.buttonQuant:hover {
+	transform: scale(1);
+	color: inherit;
+	background-color: inherit;
 }
 
 #emptyText {
@@ -48,34 +48,33 @@
 	display: flex;
 }
 
-
 #btnClean {
-    margin-right: 10px;
+	margin-right: 10px;
 }
 
 #btnBuy {
-    margin-left: 10px;
+	margin-left: 10px;
 }
 
-#buyBtns{
-    text-align: center;
+#buyBtns {
+	text-align: center;
 }
 
 .buttonCart {
 	cursor: pointer;
-    width: 120px;
-    height: 50px;
-    font-size: 1em;
-    padding: 5px;
-    border-radius: 4px;
-    margin: 20px auto;
+	width: 120px;
+	height: 50px;
+	font-size: 1em;
+	padding: 5px;
+	border-radius: 4px;
+	margin: 20px auto;
 }
 
 .buttonCartPay {
-    background-color: var(--bg-color-content);
+	background-color: var(--bg-color-content);
 	color: var(--text-color-content);
-    vertical-align: bottom;
-    margin: 20px
+	vertical-align: bottom;
+	margin: 20px;
 }
 
 .buttonCartPay:hover {
@@ -89,24 +88,24 @@
 	position: relative;
 	border-radius: 10px;
 	padding: 10px;
-    color: var(--text-color-nav);
+	color: var(--text-color-nav);
 	background-color: var(--bg-color-nav);
-    border: solid 2px var(--bd-content);
+	border: solid 2px var(--bd-content);
 	left: 25vw;
 	top: 15%;
 }
 
 .inputCart {
-    display: block;
-    margin: auto;
-    padding: 0 10px;
-    width: 400px;
-    height: 40px;
-    border-radius: 3px;
-    background-color: var(--bg-color-search);
-    color: var(--text-color-nav);
+	display: block;
+	margin: auto;
+	padding: 0 10px;
+	width: 400px;
+	height: 40px;
+	border-radius: 3px;
+	background-color: var(--bg-color-search);
+	color: var(--text-color-nav);
 
-    font-size: 15px;
-    
-    cursor: pointer;
+	font-size: 15px;
+
+	cursor: pointer;
 }

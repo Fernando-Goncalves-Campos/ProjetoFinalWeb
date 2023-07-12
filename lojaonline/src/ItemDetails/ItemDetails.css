@@ -3,16 +3,16 @@
 	background-color: var(--bg-color-content);
 	color: var(--text-color-content);
 
-    width: calc(100% - 520px);
+	width: calc(100% - 520px);
 	min-height: calc(100vh - var(--nav-height) - 40px);
-    float: right;
+	float: right;
 	overflow: auto;
 }
 
 #detailsImg {
 	width: 400px;
 	margin: 40px 20px 40px 40px;
-    float: left;
+	float: left;
 }
 
 #detailsName {
@@ -28,13 +28,13 @@
 }
 
 #detailsQuantity {
-	font-size: 0.6em;
+	font-size: 14px;
 }
 
 #buyButton {
-    width: 120px;
-    height: 40px;
-    font-size: 1em;
-    padding: 5px;
-    border-radius: 4px;
+	width: 120px;
+	height: 40px;
+	font-size: 1em;
+	padding: 5px;
+	border-radius: 4px;
 }

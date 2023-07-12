@@ -99,7 +99,7 @@ const ItemCart = ({ user, setUser, item, qnt, newCart }) => {
 					<span className="itemId"> id: {item.id} </span> <br />
 					<span>quantidade disponível: {item.quantity}</span>
 					<br />
-					<span className="itemPrice"> R$: {item.price} </span> <br />
+					<span className="itemPrice"> R$: {item.price * qnt} </span> <br />
 				</div>
 				{subBtn} {qnt} {addBtn}
 			</div>

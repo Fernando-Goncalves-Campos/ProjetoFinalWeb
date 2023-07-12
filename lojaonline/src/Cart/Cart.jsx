@@ -1,5 +1,6 @@
 import React, { memo, useState } from "react";
 import ItemCart from "./ItemCart";
+import InputMask from "react-input-mask";
 import "./Cart.css";
 
 const Cart = ({ user, setUser, items, setItems }) => {
@@ -153,8 +154,24 @@ const Cart = ({ user, setUser, items, setItems }) => {
 	let cardscreen = cardView ? (
 		<div id="cardscreen">
 			<p>Dados do cartão</p>
-			N°:
-			<input type="text" className="inputCart" />
+
+			<InputMask
+				className="inputCart"
+				mask="9999 9999 9999 9999"
+				placeholder="Número do Cartão"
+			/>
+			<br />
+			<InputMask
+				className="inputCart"
+				mask="999"
+				placeholder="Número de segurança"
+			/>
+			<br />
+			<InputMask
+				className="inputCart"
+				mask="999.999.999-99"
+				placeholder="Digite o seu CPF"
+			/>
 			{Total}
 			<div id="buyBtns">
 				<button className="buttonCart buttonCartPay" onClick={handleBuy}>

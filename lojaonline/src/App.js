@@ -12,6 +12,7 @@ import Cart from "./Cart/Cart.jsx";
 import "./App.css";
 import "./Theme.css";
 import EditAdm from "./Login/EditAdm.jsx";
+import Perfil from "./Login/Perfil.jsx";
 
 function App() {
 	//////Inicializa os estados que serão usados em todo o site
@@ -90,7 +91,7 @@ function App() {
 							/>
 						}
 					/>
-                    <Route
+					<Route
 						path="/login"
 						element={
 							<Login
@@ -111,52 +112,48 @@ function App() {
 
 					<Route path="/editAdm" element={<EditAdm user={user} />} />
 
+					<Route path="perfil" element={<Perfil user={user} />} />
+					<Route path="/items">
+						<Route
+							path="/items/addItem"
+							element={
+								<AddItem
+									items={items}
+									setItems={(value) => {
+										setItems(value);
+									}}
+								/>
+							}
+						/>
 
-                    <Route path="/items">
-                        <Route
-                            path="/items/addItem"
-                            element={
-                                <AddItem
-                                    items={items}
-                                    setItems={(value) => {
-                                        setItems(value);
-                                    }}
-                                />
-                            }
-                        />
+						<Route
+							path="/items/:itemId/itemDetails"
+							element={
+								<ItemDetails
+									user={user}
+									setUser={(value) => {
+										setUser(value);
+									}}
+									logged={logged}
+									adm={adm}
+									items={items}
+								/>
+							}
+						/>
 
-                        <Route
-                            path="/items/:itemId/itemDetails"
-                            element={
-                                <ItemDetails
-                                    user={user}
-                                    setUser={(value) => {
-                                        setUser(value);
-                                    }}
-                                    logged={logged}
-                                    adm={adm}
-                                    items={items}
-                                />
-                            }
-                        />
+						<Route
+							path="/items/:itemId/editItem"
+							element={
+								<EditItem
+									items={items}
+									setItems={(value) => {
+										setItems(value);
+									}}
+								/>
+							}
+						/>
+					</Route>
 
-                        <Route
-                            path="/items/:itemId/editItem"
-                            element={
-                                <EditItem
-                                    items={items}
-                                    setItems={(value) => {
-                                        setItems(value);
-                                    }}
-                                />
-                            }
-                        />
-                    </Route>
-					
-
-					
-					
-					
 					<Route
 						path="/cart"
 						element={

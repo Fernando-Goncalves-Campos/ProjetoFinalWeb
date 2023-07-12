@@ -63,6 +63,9 @@ function UserBtn({ user, setUser, logged, setLogged, adm, setAdm }) {
 				<label htmlFor="menu">{user.name}</label>
 				<div className="menu-content">
 					<ul>
+						{/* <li>
+							<Link to="/perfil">Perfil</Link>
+						</li> */}
 						<li>
 							<Link to="/cart">Cart</Link>
 						</li>
